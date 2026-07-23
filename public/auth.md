@@ -1,4 +1,6 @@
-# Invictus Hub Agent Authentication
+# Auth.md
+
+## Invictus Hub Agent Authentication
 
 This document describes how AI agents discover authentication metadata,
 understand supported authentication methods, and access protected
