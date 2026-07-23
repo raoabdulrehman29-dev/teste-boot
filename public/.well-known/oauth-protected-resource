@@ -1,7 +1,7 @@
 {
-  "resource": "https://teste-boot1.vercel.app",
+  "resource": "https://teste-boot.vercel.app",
   "authorization_servers": [
-    "https://teste-boot1.vercel.app"
+    "https://teste-boot.vercel.app"
   ],
   "scopes_supported": [
     "openid",

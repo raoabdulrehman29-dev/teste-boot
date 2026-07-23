@@ -10,7 +10,7 @@ Invictus Hub.
 
 Test Deployment
 
-https://teste-boot1.vercel.app
+https://teste-boot.vercel.app
 
 Production Website
 
@@ -25,11 +25,11 @@ following registration endpoint.
 
 Registration URI
 
-https://teste-boot1.vercel.app/auth.md
+https://teste-boot.vercel.app/auth.md
 
 General Contact
 
-https://teste-boot1.vercel.app/contact
+https://teste-boot.vercel.app/contact
 
 Production Contact
 
@@ -46,19 +46,19 @@ Invictus Hub supports:
 
 Discovery Metadata
 
-https://teste-boot1.vercel.app/.well-known/openid-configuration
+https://teste-boot.vercel.app/.well-known/openid-configuration
 
 OAuth Authorization Server
 
-https://teste-boot1.vercel.app/.well-known/oauth-authorization-server
+https://teste-boot.vercel.app/.well-known/oauth-authorization-server
 
 OAuth Protected Resource
 
-https://teste-boot1.vercel.app/.well-known/oauth-protected-resource
+https://teste-boot.vercel.app/.well-known/oauth-protected-resource
 
 API Catalog
 
-https://teste-boot1.vercel.app/.well-known/api-catalog
+https://teste-boot.vercel.app/.well-known/api-catalog
 
 ---
 
@@ -86,7 +86,7 @@ https://teste-boot1.vercel.app/.well-known/api-catalog
 
 OpenAPI Specification
 
-https://teste-boot1.vercel.app/openapi.json
+https://teste-boot.vercel.app/openapi.json
 
 ---
 
@@ -102,4 +102,4 @@ https://invictushub.com
 
 For registration, onboarding, or authentication assistance, visit
 
-https://teste-boot1.vercel.app/contact
+https://teste-boot.vercel.app/contact

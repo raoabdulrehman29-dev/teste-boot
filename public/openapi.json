@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://teste-boot1.vercel.app",
+      "url": "https://teste-boot.vercel.app",
       "description": "Test Deployment"
     },
     {

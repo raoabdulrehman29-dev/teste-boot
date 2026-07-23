@@ -1,16 +1,16 @@
 {
   "linkset": [
     {
-      "anchor": "https://teste-boot1.vercel.app",
+      "anchor": "https://teste-boot.vercel.app",
       "links": [
         {
           "rel": "service-desc",
-          "href": "https://teste-boot1.vercel.app/openapi.json",
+          "href": "https://teste-boot.vercel.app/openapi.json",
           "type": "application/openapi+json;version=3.0"
         },
         {
           "rel": "service-doc",
-          "href": "https://teste-boot1.vercel.app",
+          "href": "https://teste-boot.vercel.app",
           "type": "text/html"
         }
       ]
