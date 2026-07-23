@@ -8,9 +8,9 @@ Invictus Hub.
 
 ## Website
 
-Development Deployment
+Test Deployment
 
-https://company-website-three-opal.vercel.app
+https://teste-boot1.vercel.app
 
 Production Website
 
@@ -25,11 +25,11 @@ following registration endpoint.
 
 Registration URI
 
-https://company-website-three-opal.vercel.app/auth.md
+https://teste-boot1.vercel.app/auth.md
 
 General Contact
 
-https://company-website-three-opal.vercel.app/contact
+https://teste-boot1.vercel.app/contact
 
 Production Contact
 
@@ -46,19 +46,19 @@ Invictus Hub supports:
 
 Discovery Metadata
 
-https://company-website-three-opal.vercel.app/.well-known/openid-configuration
+https://teste-boot1.vercel.app/.well-known/openid-configuration
 
 OAuth Authorization Server
 
-https://company-website-three-opal.vercel.app/.well-known/oauth-authorization-server
+https://teste-boot1.vercel.app/.well-known/oauth-authorization-server
 
 OAuth Protected Resource
 
-https://company-website-three-opal.vercel.app/.well-known/oauth-protected-resource
+https://teste-boot1.vercel.app/.well-known/oauth-protected-resource
 
 API Catalog
 
-https://company-website-three-opal.vercel.app/.well-known/api-catalog
+https://teste-boot1.vercel.app/.well-known/api-catalog
 
 ---
 
@@ -86,7 +86,7 @@ https://company-website-three-opal.vercel.app/.well-known/api-catalog
 
 OpenAPI Specification
 
-https://company-website-three-opal.vercel.app/openapi.json
+https://teste-boot1.vercel.app/openapi.json
 
 ---
 
@@ -102,4 +102,4 @@ https://invictushub.com
 
 For registration, onboarding, or authentication assistance, visit
 
-https://company-website-three-opal.vercel.app/contact
+https://teste-boot1.vercel.app/contact

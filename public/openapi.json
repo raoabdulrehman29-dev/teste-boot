@@ -7,8 +7,8 @@
   },
   "servers": [
     {
-      "url": "https://company-website-three-opal.vercel.app",
-      "description": "Deployment"
+      "url": "https://teste-boot1.vercel.app",
+      "description": "Test Deployment"
     },
     {
       "url": "https://invictushub.com",

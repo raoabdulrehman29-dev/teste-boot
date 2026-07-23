@@ -1,7 +1,7 @@
 {
-  "resource": "https://company-website-three-opal.vercel.app",
+  "resource": "https://teste-boot1.vercel.app",
   "authorization_servers": [
-    "https://company-website-three-opal.vercel.app"
+    "https://teste-boot1.vercel.app"
   ],
   "scopes_supported": [
     "openid",
