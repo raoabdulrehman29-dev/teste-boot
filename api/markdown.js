@@ -1,9 +1,12 @@
 // api/markdown.js
+
 export default async function handler(req, res) {
   const accept = req.headers.accept || "";
 
   if (!accept.includes("text/markdown")) {
-    return res.status(406).send("This endpoint is intended for Markdown requests.");
+    return res
+      .status(406)
+      .send("This endpoint is intended for Markdown requests.");
   }
 
   const markdown = `# Invictus Hub
@@ -11,9 +14,11 @@ export default async function handler(req, res) {
 Welcome to Invictus Hub - your trusted technology partner.
 
 ## About Us
+
 Invictus Hub is a software development and digital transformation company that helps startups, enterprises, and growing businesses build scalable digital products and modern technology solutions.
 
 ## Our Services
+
 - Artificial Intelligence & Data Analytics
 - Web & Mobile Application Development
 - E-Commerce Solutions
@@ -23,14 +28,22 @@ Invictus Hub is a software development and digital transformation company that h
 - Digital Transformation
 
 ## Visit Our Website
+
 https://invictushub.com
 
 ## Contact Us
+
 https://invictushub.com/contact`;
 
   res.setHeader("Content-Type", "text/markdown; charset=utf-8");
   res.setHeader("Vary", "Accept");
   res.setHeader("Cache-Control", "public, max-age=3600");
   res.setHeader("x-markdown-tokens", "150");
+
+  res.setHeader(
+    "WWW-Authenticate",
+    'Bearer resource_metadata="https://teste-boot.vercel.app/.well-known/oauth-protected-resource"'
+  );
+
   res.status(200).send(markdown);
 }
