@@ -1,10 +1,12 @@
 # Auth.md
 
-## Invictus Hub Agent Authentication
+# Invictus Hub Agent Authentication
 
 This document describes how AI agents can discover authentication,
-register for access, and interact with protected resources exposed by
+request access, and interact with protected resources exposed by
 Invictus Hub.
+
+---
 
 ## Website
 
@@ -20,14 +22,10 @@ https://invictushub.com
 
 ## Agent Registration
 
-AI agents requiring authenticated access should register using the
-following registration endpoint.
+AI agents requesting authenticated access should use the contact
+information below.
 
-Registration URI
-
-https://teste-boot.vercel.app/auth.md
-
-General Contact
+Registration Contact
 
 https://teste-boot.vercel.app/contact
 
@@ -44,10 +42,6 @@ Invictus Hub supports:
 - OAuth 2.0
 - OpenID Connect (OIDC)
 
-Discovery Metadata
-
-https://teste-boot.vercel.app/.well-known/openid-configuration
-
 OAuth Authorization Server
 
 https://teste-boot.vercel.app/.well-known/oauth-authorization-server
@@ -55,6 +49,10 @@ https://teste-boot.vercel.app/.well-known/oauth-authorization-server
 OAuth Protected Resource
 
 https://teste-boot.vercel.app/.well-known/oauth-protected-resource
+
+OpenID Configuration
+
+https://teste-boot.vercel.app/.well-known/openid-configuration
 
 API Catalog
 
@@ -64,7 +62,9 @@ https://teste-boot.vercel.app/.well-known/api-catalog
 
 ## Supported Identity Types
 
-- openid
+- anonymous
+- identity_assertion
+- service_auth
 
 ---
 
@@ -84,22 +84,12 @@ https://teste-boot.vercel.app/.well-known/api-catalog
 
 ## API Documentation
 
-OpenAPI Specification
-
 https://teste-boot.vercel.app/openapi.json
-
----
-
-## Resource Owner
-
-Invictus Hub
-
-https://invictushub.com
 
 ---
 
 ## Support
 
-For registration, onboarding, or authentication assistance, visit
+For onboarding or authentication assistance, contact:
 
 https://teste-boot.vercel.app/contact
