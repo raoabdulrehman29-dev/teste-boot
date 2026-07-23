@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 Welcome to Invictus Hub - your trusted technology partner.
 
 ## About Us
-Invictus Hub is a software development and digital transformation company...
+Invictus Hub is a software development and digital transformation company that helps startups, enterprises, and growing businesses build scalable digital products and modern technology solutions.
 
 ## Our Services
 - Artificial Intelligence & Data Analytics
