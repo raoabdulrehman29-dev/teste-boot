@@ -2,25 +2,21 @@
 
 ## Invictus Hub Agent Authentication
 
-This document describes how AI agents discover authentication metadata for Invictus Hub.
+This document describes how AI agents discover authentication metadata and register to access protected resources exposed by Invictus Hub.
 
 ---
 
-## Website
-
-Production
+## Production Website
 
 https://invictushub.com
 
-Testing
+## Test Deployment
 
 https://teste-boot.vercel.app
 
 ---
 
 ## Agent Registration
-
-Agents may request access using the contact page.
 
 Registration URI
 
@@ -30,15 +26,17 @@ https://teste-boot.vercel.app/contact
 
 ## Authentication
 
-This website currently supports anonymous public access.
-
-Authentication metadata
+OAuth Authorization Server
 
 https://teste-boot.vercel.app/.well-known/oauth-authorization-server
 
-Protected Resource
+OAuth Protected Resource
 
 https://teste-boot.vercel.app/.well-known/oauth-protected-resource
+
+OpenID Configuration
+
+https://teste-boot.vercel.app/.well-known/openid-configuration
 
 API Catalog
 
@@ -46,15 +44,38 @@ https://teste-boot.vercel.app/.well-known/api-catalog
 
 ---
 
-## Identity Type
+## Supported Identity Types
 
 - anonymous
+- identity_assertion
+- service_auth
 
 ---
 
-## Credential Type
+## Supported Credential Types
 
-- none
+- oauth2
+
+---
+
+## Supported OAuth Grants
+
+- authorization_code
+- client_credentials
+
+---
+
+## Supported Scopes
+
+- openid
+- profile
+- email
+
+---
+
+## API Documentation
+
+https://teste-boot.vercel.app/openapi.json
 
 ---
 
