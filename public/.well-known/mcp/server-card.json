@@ -1,0 +1,14 @@
+{
+  "serverInfo": {
+    "name": "Invictus Hub MCP Server",
+    "version": "1.0.0"
+  },
+  "transport": {
+    "type": "sse",
+    "endpoint": "https://invictushub.com/mcp"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true
+  }
+}

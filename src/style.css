@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@theme {
+  --font-sans: "Inter", "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-poppins: "Poppins", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* scroll-behavior: smooth removed — GSAP ScrollSmoother owns scrolling */
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #111827;
+    background: #fff;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .title,
+  .subtitle,
+  .sm-title,
+  .box-title {
+    font-family:
+      "Sora",
+      "Manrope",
+      system-ui,
+      -apple-system,
+      sans-serif;
+    font-weight: 600;
+  }
+  .nav-item,
+  nav a,
+  .nav-link {
+    font-family:
+      "Sora",
+      "Manrope",
+      system-ui,
+      -apple-system,
+      sans-serif;
+    font-weight: 500;
+  }
+  button,
+  .btn,
+  .gradient-button,
+  .gradient-button-2 {
+    font-family:
+      "Sora",
+      "Manrope",
+      system-ui,
+      -apple-system,
+      sans-serif;
+    font-weight: 600;
+  }
+  p,
+  .main-text,
+  .main-text-sm,
+  .sm-main-text {
+    font-family:
+      "Manrope",
+      "Sora",
+      system-ui,
+      -apple-system,
+      sans-serif;
+    font-weight: 400;
+  }
+
+  footer,
+  .footer {
+    font-family:
+      "Manrope",
+      "Sora",
+      system-ui,
+      -apple-system,
+      sans-serif;
+    font-weight: 400;
+  }
+}
+@layer base {
+  html {
+    font-family:
+      "Inter",
+      "Poppins",
+      system-ui,
+      -apple-system,
+      sans-serif;
+  }
+
+  body {
+    font-family:
+      "Inter",
+      "Poppins",
+      system-ui,
+      -apple-system,
+      sans-serif;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .page-section {
+    @apply my-8 md:my-12 lg:my-16;
+  }
+
+  .page-hero {
+    @apply relative isolate my-6 overflow-hidden rounded-[2rem] px-4 sm:px-6 lg:px-8;
+    min-height: clamp(18rem, 48vh, 40rem);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .page-hero__inner {
+    @apply flex h-full min-h-[18rem] items-center justify-center py-12 text-center lg:py-16;
+  }
+
+  .page-hero__title {
+    @apply max-w-4xl text-3xl font-semibold text-white sm:text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  .page-hero__label {
+    @apply pointer-events-none absolute right-[-4.5rem] top-1/2 hidden -translate-y-1/2 -rotate-90 text-5xl font-extrabold uppercase tracking-[0.35em] text-transparent xl:block;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.85);
+  }
+
+  .page-hero__crumb {
+    @apply absolute bottom-0 left-0 z-20 rounded-tr-[1.75rem] bg-white px-4 py-3 text-sm text-gray-700 sm:px-6 sm:py-4 sm:text-base lg:px-8;
+  }
+
+  .page-hero__crumbs {
+    @apply flex flex-wrap items-center gap-2;
+  }
+
+  .content-shell {
+    @apply mx-auto w-full max-w-screen-xl;
+  }
+
+  .card-grid {
+    @apply grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3;
+  }
+}

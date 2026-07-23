@@ -1,0 +1,25 @@
+{
+  "issuer": "https://company-website-three-opal.vercel.app",
+  "authorization_endpoint": "https://company-website-three-opal.vercel.app/oauth/authorize",
+  "token_endpoint": "https://company-website-three-opal.vercel.app/oauth/token",
+  "jwks_uri": "https://company-website-three-opal.vercel.app/.well-known/jwks.json",
+  "grant_types_supported": [
+    "authorization_code",
+    "client_credentials"
+  ],
+  "response_types_supported": [
+    "code"
+  ],
+  "scopes_supported": [
+    "openid",
+    "profile",
+    "email"
+  ],
+  "agent_auth": {
+    "skill": "https://company-website-three-opal.vercel.app/auth.md",
+    "register_uri": "https://company-website-three-opal.vercel.app/auth.md",
+    "identity_types_supported": [
+      "openid"
+    ]
+  }
+}

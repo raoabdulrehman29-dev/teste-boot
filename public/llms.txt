@@ -1,0 +1,66 @@
+# Invictus Hub
+
+Invictus Hub is a software development and digital transformation company that helps startups, enterprises, and growing businesses build scalable digital products and modern technology solutions. Our expertise includes Artificial Intelligence, Data & Analytics, Web Development, Mobile Application Development, E-Commerce Solutions, UI/UX Design, Cloud Technologies, ERP/CRM systems, and Digital Transformation.
+
+Website
+https://invictushub.com
+
+## Primary Pages
+
+- Home: https://invictushub.com/
+- About: https://invictushub.com/about
+- Services: https://invictushub.com/services
+- Projects: https://invictushub.com/projects
+- Careers: https://invictushub.com/career
+- Contact: https://invictushub.com/contact
+
+## Service Categories
+
+### Data & AI
+
+- Generative AI Solutions
+- Data Analytics Services
+- Business Intelligence
+
+### E-Commerce
+
+- Design & Development
+- Maintenance & Support
+- Automation & Apps
+
+### Digital Transformation
+
+- Web Development
+- App Development
+- UX/UI Design
+
+## Featured Case Studies
+
+- Hospitality
+- MedLink Neurology
+- Plannio
+- TrueLeads
+- CapaMulti
+
+## Website Purpose
+
+This website provides information about Invictus Hub, its software development services, digital transformation expertise, AI capabilities, technology solutions, portfolio of completed projects, case studies, company information, career opportunities, and contact details.
+
+## Intended Audience
+
+- Businesses seeking digital transformation
+- Startups building MVPs and SaaS products
+- Enterprise organizations
+- Technology partners
+- Potential employees
+- Clients exploring software development services
+
+## Contact
+
+https://invictushub.com/contact
+## Additional Resources
+
+Sitemap: https://invictushub.com/sitemap.xml
+Robots: https://invictushub.com/robots.txt
+Our Location
+Plaza no 5, Block D Commercial Basement, Architects Engineers Housing Society, Lahore, 54000

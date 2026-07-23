@@ -1,0 +1,22 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Invictus Hub API",
+    "version": "1.0.0",
+    "description": "Public API for Invictus Hub"
+  },
+  "servers": [
+    {
+      "url": "https://company-website-three-opal.vercel.app",
+      "description": "Deployment"
+    },
+    {
+      "url": "https://invictushub.com",
+      "description": "Production"
+    }
+  ],
+  "paths": {},
+  "components": {
+    "schemas": {}
+  }
+}

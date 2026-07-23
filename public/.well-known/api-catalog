@@ -1,0 +1,19 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://invictushub.com",
+      "links": [
+        {
+          "rel": "service-desc",
+          "href": "https://invictushub.com/openapi.json",
+          "type": "application/openapi+json;version=3.0"
+        },
+        {
+          "rel": "service-doc",
+          "href": "https://invictushub.com",
+          "type": "text/html"
+        }
+      ]
+    }
+  ]
+}

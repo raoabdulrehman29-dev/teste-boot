@@ -1,0 +1,1126 @@
+{
+  "project": "Invictus Hub",
+  "categories": [
+    {
+      "name": "Data & AI",
+      "services": [
+        {
+          "id": "generative-ai-solutions",
+          "title": "GENERATIVE AI SOLUTIONS",
+          "hero": {
+            "tagline": "Transform Your Business with AI-Powered Innovation",
+            "description": "Leverage cutting-edge generative AI technologies to create intelligent solutions that drive growth, efficiency, and competitive advantage.",
+            "buttons": ["Start Your AI Journey", "Explore Capabilities"]
+          },
+          "intro": {
+            "heading": "Harness the Power of Generative AI",
+            "text": [
+              "Generative AI is revolutionizing how businesses operate, innovate, and engage with customers. These advanced systems can create new content, generate insights from vast datasets, and automate complex processes that previously required human intervention.",
+              "Our team of AI experts guides you through every stage of implementing generative AI solutions, from strategy development to deployment and optimization, ensuring you achieve measurable business outcomes."
+            ]
+          },
+          "tabs": {
+            "Core Capabilities": {
+              "type": "grid",
+              "heading": "Our Generative AI Services",
+              "content": [
+                {
+                  "title": "Conversational AI",
+                  "desc": "Build intelligent chatbots and virtual assistants that understand natural language and provide human-like interactions for customer service, sales, and internal support.",
+                  "bullets": [
+                    "Natural language understanding",
+                    "Multi-channel deployment",
+                    "Knowledge base integration"
+                  ]
+                },
+                {
+                  "title": "Content Generation",
+                  "desc": "Leverage AI to create high-quality, contextually relevant content for marketing, product descriptions, reports, and documentation at scale.",
+                  "bullets": [
+                    "Brand-aligned content",
+                    "Multilingual capabilities",
+                    "SEO-optimized content"
+                  ]
+                },
+                {
+                  "title": "Predictive Analytics",
+                  "desc": "Harness the power of AI to analyze data patterns, forecast trends, and make proactive decisions that drive business growth.",
+                  "bullets": [
+                    "Customer behavior prediction",
+                    "Demand forecasting",
+                    "Risk assessment models"
+                  ]
+                },
+                {
+                  "title": "Computer Vision",
+                  "desc": "Implement image and video recognition systems that can identify objects, analyze scenes, and extract valuable insights from visual data.",
+                  "bullets": [
+                    "Object and facial recognition",
+                    "Quality control automation",
+                    "Video content analysis"
+                  ]
+                },
+                {
+                  "title": "Process Automation",
+                  "desc": "Transform your operations with AI-powered automation that handles complex workflows, document processing, and decision-making tasks.",
+                  "bullets": [
+                    "Intelligent document processing",
+                    "Workflow optimization",
+                    "Automated decision support"
+                  ]
+                },
+                {
+                  "title": "Custom AI Solutions",
+                  "desc": "Develop tailored AI applications that address your unique business challenges and provide competitive advantages in your industry.",
+                  "bullets": [
+                    "Industry-specific models",
+                    "AI strategy consulting",
+                    "Integration with systems"
+                  ]
+                }
+              ]
+            },
+            "Industry Applications": {
+              "type": "nested_list",
+              "heading": "AI-Powered Solutions Across Industries",
+              "content": [
+                {
+                  "title": "Healthcare",
+                  "desc": "Transform patient care and operational efficiency with AI-powered diagnostics, personalized treatment plans, and intelligent health monitoring systems.",
+                  "bullets": [
+                    "Medical image analysis",
+                    "Patient outcome prediction",
+                    "Clinical documentation"
+                  ]
+                },
+                {
+                  "title": "Financial Services",
+                  "desc": "Enhance risk management, detect fraud, and deliver personalized financial advice with AI-driven analytics and automation.",
+                  "bullets": [
+                    "Fraud detection systems",
+                    "Algorithmic trading",
+                    "Personalized financial insights"
+                  ]
+                },
+                {
+                  "title": "Retail & E-commerce",
+                  "desc": "Revolutionize customer experiences and optimize operations with AI-powered product recommendations, inventory management, and personalized marketing.",
+                  "bullets": [
+                    "Intelligent product recommendations",
+                    "Demand forecasting",
+                    "Customer behavior analysis"
+                  ]
+                }
+              ]
+            },
+            "Our Approach": {
+              "type": "steps",
+              "heading": "AI Implementation Process",
+              "content": [
+                {
+                  "step": 1,
+                  "title": "Discovery",
+                  "desc": "We analyze your business objectives, data assets, and technical environment to identify the highest-value AI opportunities."
+                },
+                {
+                  "step": 2,
+                  "title": "Strategy",
+                  "desc": "We develop a comprehensive roadmap with clear milestones, KPIs, and technology selection tailored to your needs."
+                },
+                {
+                  "step": 3,
+                  "title": "Development",
+                  "desc": "Our AI experts build, train, and fine-tune models, ensuring they meet performance benchmarks and ethical standards."
+                },
+                {
+                  "step": 4,
+                  "title": "Integration",
+                  "desc": "We deploy AI solutions into your existing workflow and systems with minimal disruption to your operations."
+                },
+                {
+                  "step": 5,
+                  "title": "Continuous Improvement",
+                  "desc": "We monitor performance, gather feedback, and continuously refine models to ensure sustained value and adaptation."
+                }
+              ]
+            },
+            "Business Impact": {
+              "type": "simple_list",
+              "heading": "Business Impact of Generative AI",
+              "content": [
+                {
+                  "title": "Enhanced Efficiency",
+                  "desc": "Automate routine tasks, streamline processes, and reduce operational costs by up to 40% with AI-powered solutions that work 24/7."
+                },
+                {
+                  "title": "Data-Driven Decisions",
+                  "desc": "Transform massive data into actionable intelligence, enabling faster, more accurate decision-making and reducing uncertainty."
+                },
+                {
+                  "title": "Competitive Advantage",
+                  "desc": "Stay ahead of market trends with AI-powered insights that help you identify opportunities faster and respond more effectively to changes."
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "data-analytics-services",
+          "title": "DATA ANALYTICS SERVICES",
+          "hero": {
+            "tagline": "Transform Data into Strategic Business Insights",
+            "description": "Unlock the power of your data with our advanced analytics solutions that drive informed decision-making and business growth.",
+            "buttons": ["Start Your Analytics Journey", "Explore Services"]
+          },
+          "intro": {
+            "heading": "Harness the Full Potential of Your Data",
+            "text": [
+              "In today's data-driven world, the ability to extract meaningful insights from vast amounts of information is a critical competitive advantage. Our data analytics services transform raw data into actionable intelligence that drives strategic decision-making and operational excellence.",
+              "We combine cutting-edge technology with industry expertise to deliver tailored analytics solutions that address your specific business challenges, uncover hidden patterns, and predict future trends with precision."
+            ]
+          },
+          "tabs": {
+            "Our Services": {
+              "type": "grid",
+              "heading": "Comprehensive Data Analytics Solutions",
+              "content": [
+                {
+                  "title": "Business Intelligence",
+                  "desc": "Transform complex data into clear, actionable insights with customized dashboards and reports that enable real-time decision making.",
+                  "bullets": ["Interactive visualization", "KPI monitoring", "Automated reporting"]
+                },
+                {
+                  "title": "Predictive Analytics",
+                  "desc": "Leverage advanced statistical modeling and machine learning to forecast trends, identify opportunities, and mitigate potential risks.",
+                  "bullets": [
+                    "Demand forecasting",
+                    "Customer behavior prediction",
+                    "Risk assessment modeling"
+                  ]
+                },
+                {
+                  "title": "Data Engineering",
+                  "desc": "Build robust data infrastructure that integrates, transforms, and optimizes your data for advanced analytics and business intelligence.",
+                  "bullets": [
+                    "Data warehouse implementation",
+                    "ETL pipeline development",
+                    "Data integration"
+                  ]
+                },
+                {
+                  "title": "Big Data Analytics",
+                  "desc": "Process and analyze massive datasets at scale to uncover patterns, correlations, and insights that drive business innovation.",
+                  "bullets": [
+                    "Distributed computing",
+                    "Real-time processing",
+                    "Unstructured data analysis"
+                  ]
+                },
+                {
+                  "title": "Data Governance",
+                  "desc": "Establish robust data management policies and processes that ensure data accuracy, consistency, and security across your organization.",
+                  "bullets": [
+                    "Data quality assessment",
+                    "Metadata management",
+                    "Compliance monitoring"
+                  ]
+                },
+                {
+                  "title": "Advanced Analytics Consulting",
+                  "desc": "Strategic guidance on leveraging data for business growth, with custom analytics solutions tailored to your specific industry challenges.",
+                  "bullets": [
+                    "Strategy development",
+                    "Technology selection",
+                    "Capability assessment"
+                  ]
+                }
+              ]
+            },
+            "Industry Solutions": {
+              "type": "nested_list",
+              "heading": "Data Analytics Solutions by Industry",
+              "content": [
+                {
+                  "title": "Financial Services",
+                  "desc": "Leverage data analytics to optimize portfolio performance, mitigate risk, detect fraud, and enhance customer experiences across banking and investment services.",
+                  "bullets": ["Risk analytics", "Customer segmentation", "Fraud detection"]
+                },
+                {
+                  "title": "Retail & E-commerce",
+                  "desc": "Transform customer experiences and optimize operations with data-driven insights that improve merchandising, marketing, and supply chain efficiency.",
+                  "bullets": [
+                    "Customer behavior analysis",
+                    "Inventory optimization",
+                    "Personalized marketing"
+                  ]
+                },
+                {
+                  "title": "Healthcare",
+                  "desc": "Use data analytics to improve patient outcomes, optimize clinical trials, enhance operational efficiency, and drive innovation in healthcare delivery.",
+                  "bullets": [
+                    "Patient outcome analytics",
+                    "Clinical trial optimization",
+                    "Resource planning"
+                  ]
+                }
+              ]
+            },
+            "Our Methodology": {
+              "type": "steps",
+              "heading": "Data Analytics Implementation Process",
+              "content": [
+                {
+                  "step": 1,
+                  "title": "Assessment",
+                  "desc": "We analyze your business needs, data assets, technical infrastructure, and analytics maturity to identify high-value opportunities."
+                },
+                {
+                  "step": 2,
+                  "title": "Strategy",
+                  "desc": "We develop a comprehensive analytics roadmap with clear goals, metrics, technology recommendations, and implementation plans."
+                },
+                {
+                  "step": 3,
+                  "title": "Implementation",
+                  "desc": "Our experts build, test, and deploy your analytics solutions, ensuring they integrate seamlessly with your existing systems."
+                },
+                {
+                  "step": 4,
+                  "title": "Adoption",
+                  "desc": "We provide training and change management support to ensure user adoption and maximize the value of your analytics investments."
+                },
+                {
+                  "step": 5,
+                  "title": "Optimization",
+                  "desc": "We continuously monitor and refine your analytics solutions to ensure they evolve with your business needs and technological advances."
+                }
+              ]
+            },
+            "Key Advantages": {
+              "type": "simple_list",
+              "heading": "Key Advantages of Data Analytics",
+              "content": [
+                {
+                  "title": "Data-Driven Decision Making",
+                  "desc": "Replace guesswork with fact-based insights that reduce uncertainty and increase the speed and accuracy of business decisions at all levels of your organization."
+                },
+                {
+                  "title": "Operational Excellence",
+                  "desc": "Optimize business processes, reduce costs, and improve efficiencies by identifying bottlenecks, automating routine tasks, and predicting maintenance needs."
+                },
+                {
+                  "title": "Competitive Advantage",
+                  "desc": "Stay ahead of market trends, anticipate customer needs, and identify new business opportunities before your competitors through predictive insights."
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "business-intelligence",
+          "title": "BUSINESS INTELLIGENCE",
+          "hero": {
+            "tagline": "Turn data into actionable insights",
+            "description": "Transform complex data into clear, insightful visualizations that drive strategic decision-making and business growth.",
+            "buttons": ["Let's Talk", "Explore Services"]
+          },
+          "intro": {
+            "heading": "Empower Your Decision Making With Data-Driven Insights",
+            "text": [
+              "Our Business Intelligence solutions help organizations collect, integrate, analyze, and present critical business information. We enable better decision-making and optimize operations across your entire organization."
+            ]
+          },
+          "tabs": {
+            "Our Services": {
+              "type": "grid",
+              "heading": "Comprehensive Business Intelligence Solutions",
+              "content": [
+                {
+                  "title": "Data Warehousing",
+                  "desc": "Build robust data storage solutions that consolidate information from multiple sources into a single, reliable repository for analysis.",
+                  "bullets": [
+                    "Data extraction & transformation",
+                    "ETL & data pipeline development",
+                    "Cloud & on-premise solutions"
+                  ]
+                },
+                {
+                  "title": "Dashboard & Reporting",
+                  "desc": "Create interactive, visually compelling dashboards and reports that present key metrics and insights in an easily digestible format.",
+                  "bullets": [
+                    "Custom KPI dashboards",
+                    "Interactive data visualization",
+                    "Automated reporting systems"
+                  ]
+                },
+                {
+                  "title": "Advanced Analytics",
+                  "desc": "Leverage statistical analysis and predictive modeling to uncover patterns, predict trends, and gain deeper business insights.",
+                  "bullets": [
+                    "Predictive & prescriptive analytics",
+                    "Data mining & pattern detection",
+                    "Machine learning integration"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "E-commerce",
+      "services": [
+        {
+          "id": "design-and-development",
+          "title": "DESIGN & DEVELOPMENT",
+          "hero": {
+            "tagline": "Transform your vision into digital reality",
+            "description": "Craft exceptional digital experiences with our expert design and development services that seamlessly blend creativity with functionality.",
+            "buttons": ["Let's Talk", "Explore Services"]
+          },
+          "intro": {
+            "heading": "Turning Ideas into Exceptional Digital Experiences",
+            "text": [
+              "Our award-winning team combines strategic design thinking with cutting-edge development expertise to create digital solutions that not only look stunning but also deliver measurable results for your business."
+            ]
+          },
+          "tabs": {
+            "Our Services": {
+              "type": "grid",
+              "heading": "Comprehensive Design & Development Solutions",
+              "content": [
+                {
+                  "title": "Web Design & Development",
+                  "desc": "Create responsive, user-friendly websites that captivate your audience and drive conversions with our end-to-end web development services.",
+                  "bullets": [
+                    "Responsive website design",
+                    "Front-end & back-end development",
+                    "CMS integration"
+                  ]
+                },
+                {
+                  "title": "UX/UI Design",
+                  "desc": "Enhance user satisfaction with intuitive interfaces and seamless experiences that make your digital products a joy to use.",
+                  "bullets": ["User research", "Wireframing & prototyping", "Usability testing"]
+                },
+                {
+                  "title": "Mobile App Development",
+                  "desc": "Build powerful, feature-rich mobile applications that engage users across iOS and Android platforms with our expert app development services.",
+                  "bullets": [
+                    "Native & cross-platform",
+                    "API integration",
+                    "App store optimization"
+                  ]
+                }
+              ]
+            },
+            "Technical Expertise": {
+              "type": "nested_list",
+              "heading": "Our Technical Expertise",
+              "content": [
+                {
+                  "title": "Frontend Technologies",
+                  "desc": "We craft beautiful, responsive interfaces using the latest frontend technologies to ensure your digital products look and perform at their best.",
+                  "bullets": [
+                    "React, Angular, Vue.js",
+                    "HTML5, CSS3, JS/TS",
+                    "Bootstrap, Tailwind CSS"
+                  ]
+                },
+                {
+                  "title": "Backend Technologies",
+                  "desc": "Our backend solutions provide robust, scalable infrastructures that power your applications with reliable performance and security.",
+                  "bullets": [
+                    "Node.js, Python, PHP, .NET",
+                    "RESTful API design",
+                    "SQL, NoSQL, MongoDB"
+                  ]
+                },
+                {
+                  "title": "Mobile Development",
+                  "desc": "We build feature-rich mobile applications that deliver exceptional user experiences across all major platforms and devices.",
+                  "bullets": ["iOS (Swift) & Android (Kotlin)", "React Native, Flutter", "PWAs"]
+                }
+              ]
+            },
+            "Our Methodology": {
+              "type": "steps",
+              "heading": "Our Development Process",
+              "content": [
+                {
+                  "step": 1,
+                  "title": "Discovery",
+                  "desc": "We begin by understanding your business goals, target audience, and project requirements to establish a clear roadmap."
+                },
+                {
+                  "step": 2,
+                  "title": "Planning & Design",
+                  "desc": "We create wireframes, prototypes, and design mockups to visualize the solution before development begins."
+                },
+                {
+                  "step": 3,
+                  "title": "Development",
+                  "desc": "Our engineers build your solution using clean, efficient code and industry best practices with regular client checkpoints."
+                },
+                {
+                  "step": 4,
+                  "title": "Testing & QA",
+                  "desc": "We rigorously test your solution for functionality, usability, performance, and security to ensure a flawless user experience."
+                },
+                {
+                  "step": 5,
+                  "title": "Deployment & Support",
+                  "desc": "We launch your solution and provide ongoing maintenance, updates, and support to ensure continued success."
+                }
+              ]
+            },
+            "Why Choose Us": {
+              "type": "simple_list",
+              "heading": "Why Choose Invictus Hub",
+              "content": [
+                {
+                  "title": "User-Centered Design",
+                  "desc": "We put your users first, creating intuitive interfaces that enhance engagement and drive conversions."
+                },
+                {
+                  "title": "Performance Optimized",
+                  "desc": "Our solutions are engineered for speed, scalability, and reliability, ensuring optimal performance under all conditions."
+                },
+                {
+                  "title": "Future-Proof Technology",
+                  "desc": "We build with scalability in mind, using technologies that adapt and grow with your business needs."
+                },
+                {
+                  "title": "Collaborative Approach",
+                  "desc": "We work as an extension of your team, ensuring transparent communication and alignment throughout the project."
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "maintenance-and-support",
+          "title": "MAINTENANCE & SUPPORT",
+          "hero": {
+            "tagline": "Keep your systems running smoothly",
+            "description": "Ensure your digital assets remain secure, optimized, and up-to-date with our comprehensive maintenance and support services.",
+            "buttons": ["Let's Talk", "Explore Services"]
+          },
+          "intro": {
+            "heading": "Proactive Solutions for Long-Term Success",
+            "text": [
+              "We provide end-to-end maintenance and support services designed to maximize system performance, minimize downtime, and extend the lifespan of your digital investments. Our proactive approach identifies and resolves issues before they impact your business."
+            ]
+          },
+          "tabs": {
+            "Our Services": {
+              "type": "grid",
+              "heading": "Comprehensive Maintenance & Support Solutions",
+              "content": [
+                {
+                  "title": "Application Maintenance",
+                  "desc": "Keep your software applications running at peak performance with our comprehensive maintenance services that address bugs, optimize performance, and implement updates.",
+                  "bullets": ["Bug fixes", "Performance optimization", "Update implementation"]
+                },
+                {
+                  "title": "Technical Support",
+                  "desc": "Access expert assistance whenever you need it with our responsive technical support services that help troubleshoot issues and provide guidance.",
+                  "bullets": ["24/7 help desk", "Remote troubleshooting", "User training"]
+                },
+                {
+                  "title": "Security Management",
+                  "desc": "Protect your digital assets from evolving threats with our comprehensive security services designed to safeguard your systems and data.",
+                  "bullets": [
+                    "Security patches",
+                    "Vulnerability assessments",
+                    "Compliance monitoring"
+                  ]
+                }
+              ]
+            },
+            "Support Options": {
+              "type": "simple_list",
+              "heading": "Support Options",
+              "content": [
+                {
+                  "title": "Proactive Maintenance",
+                  "desc": "Regular system health checks and monitoring.",
+                  "bullets": [
+                    "Regular system health checks",
+                    "Performance monitoring & optimization",
+                    " Preventive issue resolution"
+                  ]
+                },
+                {
+                  "title": "Dedicated Support Team",
+                  "desc": "Assigned support specialists for your organization.",
+                  "bullets": [
+                    "Assigned support specialists",
+                    "Consistent point of contact",
+                    " Domain-specific expertise"
+                  ]
+                },
+                {
+                  "title": "Flexible Support Plans",
+                  "desc": "Standard, premium, and enterprise tiers available.",
+                  "bullets": [
+                    "Standard, premium, and enterprise tiers",
+                    "Customizable SLAs",
+                    " Pay-as-you-go options"
+                  ]
+                }
+              ]
+            },
+            "Our Approach": {
+              "type": "steps",
+              "heading": "Our Support Process",
+              "content": [
+                {
+                  "step": 1,
+                  "title": "Issue Identification",
+                  "desc": "We quickly identify the root cause of issues through advanced diagnostics and system analysis to determine the most effective solution path."
+                },
+                {
+                  "step": 2,
+                  "title": "Resolution Planning",
+                  "desc": "We develop a targeted plan to address the issue, considering factors like system interdependencies, business priorities, and potential impacts."
+                },
+                {
+                  "step": 3,
+                  "title": "Implementation",
+                  "desc": "We execute the resolution efficiently, following best practices and change management protocols to ensure minimal disruption to operations."
+                },
+                {
+                  "step": 4,
+                  "title": "Verification & Prevention",
+                  "desc": "We verify the solution's effectiveness, document the resolution, and implement preventive measures to avoid similar issues in the future."
+                }
+              ]
+            },
+            "Why Choose Us": {
+              "type": "simple_list",
+              "heading": "Why Choose Invictus Hub for Support",
+              "content": [
+                {
+                  "title": "Reduced Downtime",
+                  "desc": "Minimize business disruptions with quick issue resolution and proactive maintenance that prevents problems before they occur."
+                },
+                {
+                  "title": "Enhanced Security",
+                  "desc": "Keep your systems protected against the latest threats with regular security updates, patches, and proactive vulnerability management."
+                },
+                {
+                  "title": "Optimized Performance",
+                  "desc": "Maintain peak system performance with regular optimization, ensuring your software runs efficiently and delivers the best user experience."
+                },
+                {
+                  "title": "Cost Efficiency",
+                  "desc": "Reduce the total cost of ownership through preventive maintenance that extends system lifespan and prevents costly emergency fixes."
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "automation-and-apps",
+          "title": "AUTOMATION & APPS",
+          "hero": {
+            "tagline": "Streamline operations with intelligent automation",
+            "description": "Transform your business processes with custom automation solutions and purpose-built applications that drive efficiency and growth.",
+            "buttons": ["Let's Talk", "Explore Solutions"]
+          },
+          "intro": {
+            "heading": "Driving Operational Excellence Through Intelligent Automation",
+            "text": [
+              "Our automation solutions and custom applications help businesses eliminate repetitive tasks, streamline workflows, and optimize resource allocation. By leveraging cutting-edge technologies, we create tailored solutions that address your specific operational challenges."
+            ]
+          },
+          "tabs": {
+            "Our Services": {
+              "type": "grid",
+              "heading": "Comprehensive Automation & App Solutions",
+              "content": [
+                {
+                  "title": "Business Process Automation",
+                  "desc": "Streamline your operations by automating repetitive tasks and complex workflows, freeing up your team to focus on high-value activities.",
+                  "bullets": ["Workflow automation", "Document processing", "Administrative tasks"]
+                },
+                {
+                  "title": "Custom App Development",
+                  "desc": "Create purpose-built applications that address your specific business needs and integrate seamlessly with your existing systems.",
+                  "bullets": [
+                    "Enterprise mobile & web apps",
+                    "Internal process apps",
+                    "Cross-platform solutions"
+                  ]
+                },
+                {
+                  "title": "Integration Solutions",
+                  "desc": "Connect your business systems and applications to create a unified ecosystem that enables seamless data flow and process coordination.",
+                  "bullets": [
+                    "API development",
+                    "Third-party system integration",
+                    "Data synchronization"
+                  ]
+                }
+              ]
+            },
+            "Technologies We Leverage": {
+              "type": "nested_list",
+              "heading": "Technologies We Leverage",
+              "content": [
+                {
+                  "title": "Robotic Process Automation (RPA)",
+                  "desc": "Automate repetitive, rule-based tasks with software robots that interact with applications just like humans, reducing errors and increasing productivity.",
+                  "bullets": [
+                    "UiPath, Blue Prism, Automation Anywhere",
+                    "Attended & unattended automation",
+                    "Intelligent document processing"
+                  ]
+                },
+                {
+                  "title": "Low-Code/No-Code Platforms",
+                  "desc": "Rapidly develop and deploy applications with minimal coding, enabling faster time-to-market and easier maintenance.",
+                  "bullets": [
+                    "Microsoft Power Platform, Zapier, Airtable",
+                    "Visual workflow builders",
+                    "Drag-and-drop interface design"
+                  ]
+                },
+                {
+                  "title": "AI & Machine Learning",
+                  "desc": "Rapidly develop and deploy applications with minimal coding, enabling faster time-to-market and easier maintenance.",
+                  "bullets": [
+                    "Natural language processing",
+                    "Predictive analytics",
+                    "Computer vision"
+                  ]
+                }
+              ]
+            },
+            "Our Approach": {
+              "type": "steps",
+              "heading": "Our Implementation Process",
+              "content": [
+                {
+                  "step": 1,
+                  "title": "Process Assessment",
+                  "desc": "We analyze your existing processes to identify automation opportunities, inefficiencies, and potential bottlenecks to target."
+                },
+                {
+                  "step": 2,
+                  "title": "Solution Design",
+                  "desc": "We design a tailored solution that addresses your specific requirements, selecting the optimal technologies and approaches."
+                },
+                {
+                  "step": 3,
+                  "title": "Development",
+                  "desc": "We build your automation solution or custom application using agile methodologies, with regular demos and feedback cycles."
+                },
+                {
+                  "step": 4,
+                  "title": "Testing & Deployment",
+                  "desc": "We rigorously test your solution and deploy it with careful change management to ensure smooth adoption and minimal disruption."
+                },
+                {
+                  "step": 5,
+                  "title": "Optimization & Support",
+                  "desc": "We provide ongoing support and continuous optimization to ensure your automation solution or app adapts to evolving business needs."
+                }
+              ]
+            },
+            "Business Impact": {
+              "type": "simple_list",
+              "heading": "Business Impact of Automation",
+              "content": [
+                {
+                  "title": "Increased Productivity",
+                  "desc": "Eliminate repetitive tasks, reduce manual effort, and enable your team to focus on high-value activities that drive business growth."
+                },
+                {
+                  "title": "Enhanced Accuracy",
+                  "desc": "Minimize human error and ensure consistent, reliable results with automated processes and validated application workflows."
+                },
+                {
+                  "title": "Cost Savings",
+                  "desc": "Reduce operational costs through more efficient resource utilization, fewer errors, and improved process throughput."
+                },
+                {
+                  "title": "Scalability",
+                  "desc": "Easily scale your processes and operations to handle increased workloads without proportional increases in resources or costs."
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Digital Transformation",
+      "services": [
+        {
+          "id": "web-development",
+          "title": "WEB DEVELOPMENT",
+          "hero": {
+            "tagline": "Powerful, scalable web solutions",
+            "description": "We build high-performance websites and web applications that deliver exceptional user experiences and drive business growth.",
+            "buttons": ["Let's Talk", "Explore Services"]
+          },
+          "intro": {
+            "heading": "Building Websites That Drive Results",
+            "text": [
+              "We create custom, responsive websites and web applications that not only look great but deliver tangible business outcomes. Our expert team combines strategic thinking, cutting-edge technology, and creative design to develop web solutions that engage users and convert visitors into customers."
+            ]
+          },
+          "tabs": {
+            "Our Services": {
+              "type": "grid",
+              "heading": "Comprehensive Web Development Solutions",
+              "content": [
+                {
+                  "title": "Custom Website Development",
+                  "desc": "Tailor-made websites designed to meet your specific business requirements, with a focus on performance, scalability, and user experience.",
+                  "bullets": ["Responsive design", "E-commerce solutions", "CMS integration"]
+                },
+                {
+                  "title": "Web Application Development",
+                  "desc": "Complex, feature-rich web applications that streamline business processes and provide seamless user experiences across devices.",
+                  "bullets": [
+                    "Single-page applications (SPAs)",
+                    "Progressive web apps (PWAs)",
+                    "Custom business applications"
+                  ]
+                },
+                {
+                  "title": "API Development & Integration",
+                  "desc": "Connect your web applications with external services and systems through secure, scalable, and well-documented APIs.",
+                  "bullets": [
+                    "RESTful API development",
+                    "Third-party API integration",
+                    "Microservices architecture"
+                  ]
+                }
+              ]
+            },
+
+            "Our Approach": {
+              "type": "steps",
+              "heading": "Our Development Process",
+              "content": [
+                {
+                  "step": 1,
+                  "title": "Discovery",
+                  "desc": "We thoroughly understand your business goals, target audience, and project requirements to create a strategic roadmap."
+                },
+                {
+                  "step": 2,
+                  "title": "Planning",
+                  "desc": "We create a detailed project plan, define the technical architecture, and establish clear milestones and deliverables."
+                },
+                {
+                  "step": 3,
+                  "title": "Design",
+                  "desc": "We create wireframes and visual designs that align with your brand and provide optimal user experiences across all devices."
+                },
+                {
+                  "step": 4,
+                  "title": "Development",
+                  "desc": "Our engineers build your solution using clean, efficient code with regular demos and feedback cycles to ensure alignment."
+                },
+                {
+                  "step": 5,
+                  "title": "Testing",
+                  "desc": "We rigorously test for functionality, usability, performance, security, and compatibility across devices and browsers."
+                },
+                {
+                  "step": 6,
+                  "title": "Launch & Support",
+                  "desc": "We deploy your website or application and provide ongoing maintenance, updates, and support to ensure continued success."
+                }
+              ]
+            },
+            "Industry Expertise": {
+              "type": "nested_list",
+              "heading": "Industry Expertise",
+              "content": [
+                {
+                  "title": "E-commerce & Retail",
+                  "desc": "High-converting online stores with secure payment gateways, inventory management, and personalized shopping experiences.",
+                  "bullets": ["High-converting online stores", "Shopify, WooCommerce, Magento"]
+                },
+                {
+                  "title": "Fintech & Banking",
+                  "desc": "Secure, compliant financial applications with robust authentication, data encryption, and seamless transaction processing.",
+                  "bullets": [
+                    "Secure, compliant applications",
+                    "Data encryption & transaction processing"
+                  ]
+                },
+                {
+                  "title": "Healthcare & Wellness",
+                  "desc": "HIPAA-compliant healthcare portals and applications that streamline patient care, appointments, and medical record management.",
+                  "bullets": ["HIPAA-compliant portals", "Patient record management"]
+                },
+                {
+                  "title": "Education & eLearning",
+                  "desc": "Engaging learning management systems and educational platforms that facilitate knowledge sharing and student engagement.",
+                  "bullets": ["Learning management systems", "Interactive learning platforms"]
+                },
+                {
+                  "title": "SaaS & Enterprise",
+                  "desc": "Scalable software-as-a-service platforms and enterprise solutions designed for complex business requirements and high-volume usage.",
+                  "bullets": ["Multi-tenant architecture", "Enterprise-grade security"]
+                },
+                {
+                  "title": "Travel & Hospitality",
+                  "desc": "Engaging travel websites and booking systems that enhance customer experiences and streamline reservations and itinerary management.",
+                  "bullets": ["Booking engines", "Customer loyalty platforms"]
+                }
+              ]
+            },
+            "Why Choose Us": {
+              "type": "simple_list",
+              "heading": "Why Choose Invictus Hub",
+              "content": [
+                {
+                  "title": "Performance Optimized",
+                  "desc": "We create fast-loading websites and web applications that deliver exceptional user experiences, improving engagement and conversion rates."
+                },
+                {
+                  "title": "Secure & Reliable",
+                  "desc": "We implement robust security measures and follow best practices to ensure your website or application is protected against threats."
+                },
+                {
+                  "title": "Scalable Solutions",
+                  "desc": "Our applications are built to grow with your business, ensuring your digital presence can handle increasing traffic and expanding functionality."
+                },
+                {
+                  "title": "Mobile-First Approach",
+                  "desc": "We design and develop with mobile users in mind, ensuring your website or application delivers an exceptional experience on all devices."
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "app-development",
+          "title": "APP DEVELOPMENT",
+          "hero": {
+            "tagline": "Innovative Mobile Solutions",
+            "description": "Build powerful, user-friendly mobile applications that engage your audience and drive business growth across all platforms.",
+            "buttons": ["Let's Talk", "Explore Services"]
+          },
+          "intro": {
+            "heading": "Mobile Apps That Drive Engagement",
+            "text": [
+              "We develop feature-rich, intuitive mobile applications that connect brands with their audiences across iOS, Android, and cross-platform environments. Our expert team combines strategic thinking, cutting-edge technology, and user-centered design to create mobile experiences that drive measurable results."
+            ]
+          },
+          "tabs": {
+            "Our Services": {
+              "type": "grid",
+              "heading": "Comprehensive Mobile App Development",
+              "content": [
+                {
+                  "title": "Native App Development",
+                  "desc": "Platform-specific applications that leverage the full power of iOS and Android to deliver superior performance and user experience.",
+                  "bullets": [
+                    "iOS (Swift, Objective-C)",
+                    "Android (Kotlin, Java)",
+                    "Hardware feature integration"
+                  ]
+                },
+                {
+                  "title": "Cross-Platform Development",
+                  "desc": "Efficient, cost-effective solutions that deliver consistent experiences across multiple platforms while maintaining native-like performance.",
+                  "bullets": ["React Native", "Flutter", "Single codebase deployment"]
+                },
+                {
+                  "title": "Enterprise Mobility Solutions",
+                  "desc": "Secure, scalable mobile solutions that streamline business processes, enhance employee productivity, and protect sensitive data.",
+                  "bullets": [
+                    "Mobile device management",
+                    "Secure authentication",
+                    "Enterprise app development"
+                  ]
+                }
+              ]
+            },
+            "Mobile Expertise": {
+              "type": "nested_list",
+              "heading": "Our Mobile Expertise",
+              "content": [
+                {
+                  "title": "Mobile UI/UX Design",
+                  "desc": "We create intuitive, engaging mobile experiences that delight users and drive engagement with your brand.",
+                  "bullets": ["Human-centered design", "Prototyping & user testing"]
+                },
+                {
+                  "title": "Backend & API Development",
+                  "desc": "We build robust backend systems and APIs that power your mobile applications with reliable, scalable performance.",
+                  "bullets": ["RESTful & GraphQL API", "Database design & optimization"]
+                },
+                {
+                  "title": "Advanced Mobile Tech",
+                  "desc": "We leverage cutting-edge technologies to create feature-rich, innovative mobile experiences that set your app apart.",
+                  "bullets": ["AR integration", "AI & Machine Learning", "IoT device integration"]
+                },
+                {
+                  "title": "QA & Testing",
+                  "desc": "We ensure your mobile application delivers a flawless user experience across all devices, screen sizes, and operating systems.",
+                  "bullets": ["Automated & manual testing", "Cross-device compatibility"]
+                }
+              ]
+            },
+            "Our Approach": {
+              "type": "steps",
+              "heading": "Our App Development Process",
+              "content": [
+                {
+                  "step": 1,
+                  "title": "Discovery",
+                  "desc": "We understand your business goals, target audience, and app requirements to create a strategic development roadmap"
+                },
+                {
+                  "step": 2,
+                  "title": "Planning",
+                  "desc": "We develop wireframes, user flows, and technical specifications that outline the app's functionality and user experience."
+                },
+                {
+                  "step": 3,
+                  "title": "Design",
+                  "desc": "We create polished UI designs and interactive prototypes that deliver an intuitive, engaging user experience across devices."
+                },
+                {
+                  "step": 4,
+                  "title": "Development",
+                  "desc": "Our engineers build your app using clean, efficient code with regular demos and feedback cycles to ensure alignment."
+                },
+                {
+                  "step": 5,
+                  "title": "Testing",
+                  "desc": "We rigorously test for functionality, usability, performance, security, and compatibility across devices and operating systems."
+                },
+                {
+                  "step": 6,
+                  "title": "Launch & Support",
+                  "desc": "We deploy your app to the app stores and provide ongoing maintenance, updates, and support to ensure continued success."
+                }
+              ]
+            },
+            "App Categories": {
+              "type": "nested_list",
+              "heading": "App Categories We Build",
+              "content": [
+                {
+                  "title": "E-commerce Apps",
+                  "desc": "Mobile shopping experiences that convert browsers into buyers with intuitive navigation, secure payment processing, and personalized recommendations.",
+                  "bullets": ["Shopping experiences", "Secure payment processing"]
+                },
+                {
+                  "title": "Healthcare & Wellness",
+                  "desc": "Patient-focused mobile solutions that streamline healthcare delivery, improve outcomes, and enhance the patient experience while maintaining strict compliance.",
+                  "bullets": ["Telemedicine", "HIPAA compliance"]
+                },
+                {
+                  "title": "Fintech Applications",
+                  "desc": "Secure, innovative financial technology solutions that transform banking, investment, and payment experiences with enhanced security and convenience.",
+                  "bullets": ["Banking & payment applications", "Biometric security"]
+                },
+                {
+                  "title": "On-Demand Service Apps",
+                  "desc": "Connect service providers with customers in real-time with location-based, on-demand service applications that streamline booking and fulfillment.",
+                  "bullets": ["Location-based matching", "Real-time tracking"]
+                },
+                {
+                  "title": "Social Networking",
+                  "desc": "Create vibrant mobile communities with feature-rich social networking applications that foster connection, engagement, and user-generated content.",
+                  "bullets": ["Community engagement", "Real-time messaging"]
+                },
+                {
+                  "title": "Enterprise Solutions",
+                  "desc": "Streamline internal operations with secure, feature-rich enterprise mobile apps that enhance communication, productivity, and data access.",
+                  "bullets": ["Process automation", "Secure data access"]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "ux-ui-design",
+          "title": "UX/UI DESIGN",
+          "hero": {
+            "tagline": "Crafting exceptional digital experiences",
+            "description": "Where human-centered design meets business objectives to create interfaces that delight users and drive results.",
+            "buttons": ["Let's Talk", "Explore Services"]
+          },
+          "intro": {
+            "heading": "Design That Drives Engagement",
+            "text": [
+              "We create intuitive, engaging, and aesthetically pleasing digital experiences that connect brands with their audiences. Our human-centered approach combines design thinking with business strategy to deliver interfaces that not only look stunning but also achieve measurable results."
+            ]
+          },
+          "tabs": {
+            "Our Services": {
+              "type": "grid",
+              "heading": "Comprehensive UX/UI Design Solutions",
+              "content": [
+                {
+                  "title": "User Experience (UX) Design",
+                  "desc": "Create seamless, intuitive experiences that guide users through your digital product with ease and delight.",
+                  "bullets": ["User research", "Information architecture", "Journey mapping"]
+                },
+                {
+                  "title": "User Interface (UI) Design",
+                  "desc": "Visually stunning, on-brand interfaces that captivate users while maintaining accessibility and usability.",
+                  "bullets": ["Visual design & branding", "Design systems", "Responsive design"]
+                },
+                {
+                  "title": "Interaction Design",
+                  "desc": "Dynamic, engaging interactions that respond to user behavior and create memorable, intuitive experiences.",
+                  "bullets": [
+                    "Micro-interactions & animations",
+                    "Gesture-based interactions",
+                    "Immersive experiences (AR/VR)"
+                  ]
+                }
+              ]
+            },
+            "Our Methodology": {
+              "type": "steps",
+              "heading": "Our Design Process",
+              "content": [
+                {
+                  "step": 1,
+                  "title": "Discovery",
+                  "desc": "We research your users, business goals, and industry to understand the problem space and identify opportunities."
+                },
+                {
+                  "step": 2,
+                  "title": "Define",
+                  "desc": "We define user personas, create journey maps, and establish information architecture to guide the design process."
+                },
+                {
+                  "step": 3,
+                  "title": "Ideate",
+                  "desc": "We create wireframes, sketches, and low-fidelity prototypes to explore multiple solutions and iterate quickly."
+                },
+                {
+                  "step": 4,
+                  "title": "Prototype",
+                  "desc": "We develop high-fidelity designs and interactive prototypes that bring your product to life before development."
+                },
+                {
+                  "step": 5,
+                  "title": "Test & Refine",
+                  "desc": "We validate designs with real users, gather feedback, and iterate to perfect the experience before handoff."
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

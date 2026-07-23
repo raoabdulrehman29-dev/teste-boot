@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "slug": "graduate-software-trainee",
+    "title": "Graduate Software Trainee Program",
+    "department": "Engineering",
+    "type": "Full-time",
+    "location": "Lahore",
+    "experience": "0 years",
+    "status": "Open",
+    "short_description": "Exciting opportunity for fresh Computer Science graduates to begin their careers in a structured, tech-focused training program.",
+    "long_description": "Our Graduate Software Trainee Program is designed to bridge the gap between academic learning and professional software engineering. You will work alongside senior developers to build scalable applications while mastering modern tech stacks.",
+    "technologies": ["JavaScript", "HTML/CSS", "React", "Vue", "Laravel"],
+    "requirements": [
+      "Bachelor’s degree in Computer Science or Software Engineering",
+      "Basic understanding of programming and OOP",
+      "Eagerness to explore modern technologies",
+      "Familiarity with any programming language (JavaScript, PHP, etc.)",
+      "Good communication and collaboration skills"
+    ],
+    "responsibilities": [
+      "Participate in mentorship and hands-on training",
+      "Assist in development tasks under supervision",
+      "Learn and apply best coding practices",
+      "Work collaboratively in an agile environment",
+      "Gain exposure to frontend and backend development"
+    ],
+    "benefits": [
+      "Structured training and mentorship",
+      "Career growth opportunities",
+      "Flexible work environment",
+      "Health benefits and paid leave",
+      "Exposure to real projects and modern tech stack"
+    ],
+    "application_details": {
+      "status": "Open for Applications",
+      "cta_text": "Ready to Apply?",
+      "instruction": "Submit your application and join our team."
+    }
+  },
+
+  {
+    "id": 2,
+    "slug": "associate-software-engineer-laravel",
+    "title": "Associate Software Engineer (Laravel)",
+    "department": "Engineering",
+    "type": "Full-time",
+    "location": "Lahore",
+    "experience": "1-2 years",
+    "status": "Open",
+    "short_description": "We are hiring an Associate Software Engineer with Laravel experience to build and maintain scalable backend systems.",
+    "long_description": "We are looking for a backend specialist to join our core engineering team. This role focuses on building robust server-side logic, managing database schemas, and ensuring high-performance API integration for our diverse product suite.",
+    "technologies": ["Laravel", "PHP", "MySQL", "REST APIs", "Git"],
+    "requirements": [
+      "1-2 years of experience in Laravel/PHP",
+      "Good knowledge of MVC and REST APIs",
+      "Understanding of MySQL and database design",
+      "Familiarity with Git and deployment workflows",
+      "Basic understanding of frontend integration"
+    ],
+    "responsibilities": [
+      "Develop and maintain Laravel applications",
+      "Collaborate with frontend and QA teams",
+      "Implement and test backend APIs",
+      "Participate in code reviews",
+      "Ensure secure and optimized backend performance"
+    ],
+    "benefits": [
+      "Competitive salary and bonus",
+      "Professional development support",
+      "Remote work flexibility",
+      "Health coverage and wellness benefits",
+      "Learning and training opportunities"
+    ],
+    "application_details": {
+      "status": "Open for Applications",
+      "cta_text": "Ready to Apply?",
+      "instruction": "Submit your application and join our team."
+    }
+  },
+
+  {
+    "id": 3,
+    "slug": "associate-software-engineer-vue-react",
+    "title": "Associate Software Engineer (Vue/React)",
+    "department": "Engineering",
+    "type": "Full-time",
+    "location": "Lahore",
+    "experience": "1-2 years",
+    "status": "Open",
+    "short_description": "Looking for a frontend-focused Associate Engineer with experience in Vue.js or React to build modern, interactive interfaces.",
+    "long_description": "We are seeking a talented Frontend Engineer to join our team. In this role, you will be responsible for translating design wireframes into high-quality code and building interactive user interfaces that provide a seamless experience across all devices.",
+    "technologies": ["Vue.js", "React.js", "JavaScript", "HTML/CSS", "Git"],
+    "requirements": [
+      "1-2 years of experience with Vue.js or React.js",
+      "Strong understanding of JavaScript (ES6+)",
+      "Experience with component-based development",
+      "Basic backend integration knowledge",
+      "Familiarity with Git and version control"
+    ],
+    "responsibilities": [
+      "Develop responsive user interfaces",
+      "Integrate frontend with APIs and backend systems",
+      "Collaborate with UI/UX designers and backend teams",
+      "Optimize code for performance and maintainability",
+      "Contribute to testing and documentation"
+    ],
+    "benefits": [
+      "Attractive salary and growth path",
+      "Remote and flexible working options",
+      "Health insurance and paid time off",
+      "Continuous learning support",
+      "Team-oriented and inclusive culture"
+    ],
+    "application_details": {
+      "status": "Open for Applications",
+      "cta_text": "Ready to Apply?",
+      "instruction": "Submit your application and join our team."
+    }
+  }
+]

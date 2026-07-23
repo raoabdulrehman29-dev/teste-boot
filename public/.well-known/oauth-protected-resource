@@ -1,0 +1,12 @@
+{
+  "resource": "https://company-website-three-opal.vercel.app",
+  "authorization_servers": [
+    "https://company-website-three-opal.vercel.app"
+  ],
+  "scopes_supported": [
+    "openid",
+    "profile",
+    "email"
+  ],
+  "bearer_methods_supported": ["header"]
+}

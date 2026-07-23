@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agentskills.io/schema/v0.2.0/skills.json",
+  "skills": [
+    {
+      "name": "invictus-hub-content",
+      "type": "web",
+      "description": "Access Invictus Hub company content and information",
+      "url": "https://invictushub.com",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

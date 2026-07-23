@@ -1,0 +1,39 @@
+# robots.txt
+# RFC 9309
+# https://www.rfc-editor.org/rfc/rfc9309
+
+User-agent: *
+Allow: /
+
+# AI Bot Rules
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Do not index application forms
+Disallow: /applyfor/
+
+# Reserved for future administration pages
+Disallow: /admin/
+
+# AI Content Preferences - CHANGED FROM no TO yes
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+
+Sitemap: https://invictushub.com/sitemap.xml
