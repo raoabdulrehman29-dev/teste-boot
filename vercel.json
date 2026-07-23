@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "middleware.js": {
+      "runtime": "edge"
+    }
+  },
   "headers": [
     {
       "source": "/.well-known/api-catalog",

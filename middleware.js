@@ -1,11 +1,14 @@
+// middleware.js
+// This runs on Vercel Edge Runtime
+
 export function middleware(request) {
-  const accept = request.headers.get("accept") || "";
+  const accept = request.headers.get('accept') || '';
   
   // Only intercept if the request wants markdown AND it's the homepage
-  if (accept.includes("text/markdown")) {
+  if (accept.includes('text/markdown')) {
     const url = new URL(request.url);
     
-    if (url.pathname === "/") {
+    if (url.pathname === '/') {
       const markdown = `# Invictus Hub
 
 Welcome to Invictus Hub - your trusted technology partner.
@@ -34,20 +37,14 @@ Invictus Hub is a software development and digital transformation company that h
 https://invictushub.com
 
 ## Contact Us
-https://invictushub.com/contact
-
-## Additional Resources
-- Sitemap: https://invictushub.com/sitemap.xml
-- Robots: https://invictushub.com/robots.txt
-- API Catalog: https://invictushub.com/.well-known/api-catalog
-- OAuth Server: https://invictushub.com/.well-known/oauth-authorization-server`;
+https://invictushub.com/contact`;
 
       return new Response(markdown, {
         headers: {
-          "Content-Type": "text/markdown; charset=utf-8",
-          "Cache-Control": "public, max-age=3600",
-          "Vary": "Accept",
-          "x-markdown-tokens": "150",
+          'Content-Type': 'text/markdown; charset=utf-8',
+          'Cache-Control': 'public, max-age=3600',
+          'Vary': 'Accept',
+          'x-markdown-tokens': '150',
         },
       });
     }
@@ -57,6 +54,7 @@ https://invictushub.com/contact
   return fetch(request);
 }
 
+// Run middleware only on the homepage
 export const config = {
   matcher: '/',
 };
