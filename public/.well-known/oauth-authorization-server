@@ -35,5 +35,6 @@
     "events_supported": [
       "https://schemas.workos.com/events/agent/auth/identity/assertion/revoked"
     ]
-  }
+  },
+  "_cache": "v2"
 }
