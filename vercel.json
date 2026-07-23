@@ -1,4 +1,17 @@
 {
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": "text/markdown"
+        }
+      ],
+      "destination": "/api/markdown"
+    }
+  ],
   "headers": [
     {
       "source": "/.well-known/api-catalog",
