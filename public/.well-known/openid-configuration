@@ -21,36 +21,5 @@
     "openid",
     "profile",
     "email"
-  ],
-  "agent_auth": {
-  "skill": "https://teste-boot.vercel.app/auth.md",
-
-  "register_uri": "https://teste-boot.vercel.app/contact",
-
-  "credential_types_supported": [
-    "oauth2"
-  ],
-
-  "identity_types_supported": [
-    "anonymous",
-    "identity_assertion",
-    "service_auth"
-  ],
-
-  "identity_assertion": {
-    "assertion_types_supported": [
-      "urn:ietf:params:oauth:token-type:id-jag"
-    ]
-  },
-
-  "claim_endpoint": "https://teste-boot.vercel.app/agent/identity/claim",
-
-  "revocation_endpoint": "https://teste-boot.vercel.app/agent/identity/revoke",
-
-  "events_endpoint": "https://teste-boot.vercel.app/agent/event/notify",
-
-  "events_supported": [
-    "https://schemas.workos.com/events/agent/auth/identity/assertion/revoked"
   ]
-}
 }

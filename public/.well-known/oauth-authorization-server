@@ -1,10 +1,7 @@
 {
   "issuer": "https://teste-boot.vercel.app",
-
   "authorization_endpoint": "https://teste-boot.vercel.app/oauth/authorize",
-
   "token_endpoint": "https://teste-boot.vercel.app/oauth/token",
-
   "jwks_uri": "https://teste-boot.vercel.app/.well-known/jwks.json",
 
   "grant_types_supported": [
@@ -23,8 +20,6 @@
   ],
 
   "agent_auth": {
-    "skill": "https://teste-boot.vercel.app/auth.md",
-
     "register_uri": "https://teste-boot.vercel.app/contact",
 
     "credential_types_supported": [
