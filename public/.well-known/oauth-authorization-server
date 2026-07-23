@@ -25,7 +25,15 @@
     "register_uri": "https://teste-boot.vercel.app/auth.md",
     "identity_endpoint": "https://teste-boot.vercel.app/agent/identity",
     "claim_endpoint": "https://teste-boot.vercel.app/agent/identity/claim",
-    "identity_types_supported": ["openid"],
-    "credential_types_supported": ["oauth2"]
+    "events_endpoint": "https://teste-boot.vercel.app/agent/event/notify",
+    "identity_types_supported": ["anonymous", "identity_assertion", "service_auth"],
+    "identity_assertion": {
+      "assertion_types_supported": [
+        "urn:ietf:params:oauth:token-type:id-jag"
+      ]
+    },
+    "events_supported": [
+      "https://schemas.workos.com/events/agent/auth/identity/assertion/revoked"
+    ]
   }
 }
