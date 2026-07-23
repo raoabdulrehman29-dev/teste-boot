@@ -1,46 +1,33 @@
-# Auth.md
-
 # Invictus Hub Agent Authentication
 
-This document describes how AI agents can discover authentication,
-request access, and interact with protected resources exposed by
-Invictus Hub.
+This document describes how AI agents discover authentication metadata,
+understand supported authentication methods, and access protected
+resources exposed by Invictus Hub.
 
 ---
 
 ## Website
 
-Test Deployment
-
-https://teste-boot.vercel.app
-
-Production Website
+Production
 
 https://invictushub.com
 
----
+Testing
 
-## Agent Registration
-
-AI agents requesting authenticated access should use the contact
-information below.
-
-Registration Contact
-
-https://teste-boot.vercel.app/contact
-
-Production Contact
-
-https://invictushub.com/contact
+https://teste-boot.vercel.app
 
 ---
 
-## Authentication
+## Authentication Standards
 
 Invictus Hub supports:
 
 - OAuth 2.0
 - OpenID Connect (OIDC)
+
+---
+
+## Authentication Metadata
 
 OAuth Authorization Server
 
@@ -60,6 +47,17 @@ https://teste-boot.vercel.app/.well-known/api-catalog
 
 ---
 
+## Agent Registration
+
+Agents requiring authenticated access should follow the authentication
+metadata published by this site.
+
+Registration URI
+
+https://teste-boot.vercel.app/contact
+
+---
+
 ## Supported Identity Types
 
 - anonymous
@@ -71,6 +69,13 @@ https://teste-boot.vercel.app/.well-known/api-catalog
 ## Supported Credential Types
 
 - oauth2
+
+---
+
+## Supported OAuth Grants
+
+- authorization_code
+- client_credentials
 
 ---
 
@@ -90,6 +95,10 @@ https://teste-boot.vercel.app/openapi.json
 
 ## Support
 
-For onboarding or authentication assistance, contact:
+General Contact
 
 https://teste-boot.vercel.app/contact
+
+Production Website
+
+https://invictushub.com
