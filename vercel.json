@@ -1,18 +1,19 @@
 {
-  "headers": [
+  "redirects": [
     {
       "source": "/",
-      "headers": [
+      "has": [
         {
-          "key": "WWW-Authenticate",
-          "value": "Bearer resource_metadata=\"https://teste-boot.vercel.app/.well-known/oauth-protected-resource\""
-        },
-        {
-          "key": "Link",
-          "value": "</.well-known/api-catalog>; rel=\"api-catalog\", </.well-known/openid-configuration>; rel=\"service-desc\", </auth.md>; rel=\"service-doc\", </openapi.json>; rel=\"describedby\""
+          "type": "header",
+          "key": "accept",
+          "value": "text/markdown"
         }
-      ]
-    },
+      ],
+      "destination": "/api/markdown",
+      "permanent": false
+    }
+  ],
+  "headers": [
     {
       "source": "/.well-known/api-catalog",
       "headers": [
@@ -55,6 +56,15 @@
         {
           "key": "Content-Type",
           "value": "text/markdown; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</.well-known/api-catalog>; rel=\"api-catalog\", </.well-known/openid-configuration>; rel=\"service-desc\", </auth.md>; rel=\"service-doc\", </openapi.json>; rel=\"describedby\""
         }
       ]
     }
