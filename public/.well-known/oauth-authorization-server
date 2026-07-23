@@ -18,9 +18,6 @@
   "agent_auth": {
     "skill": "https://teste-boot.vercel.app/auth.md",
     "register_uri": "https://teste-boot.vercel.app/auth.md",
-    "identity_endpoint": "https://teste-boot.vercel.app/agent/identity",
-    "claim_endpoint": "https://teste-boot.vercel.app/agent/identity/claim",
-    "identity_types_supported": ["openid"],
-    "credential_types_supported": ["oauth2"]
+    "identity_types_supported": ["openid"]
   }
 }
