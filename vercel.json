@@ -1,5 +1,5 @@
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/",
       "has": [
@@ -9,8 +9,7 @@
           "value": "text/markdown"
         }
       ],
-      "destination": "/api/markdown",
-      "permanent": false
+      "destination": "/api/markdown"
     }
   ],
   "headers": [
