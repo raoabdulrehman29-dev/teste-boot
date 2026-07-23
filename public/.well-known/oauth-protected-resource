@@ -2,13 +2,5 @@
   "resource": "https://teste-boot.vercel.app",
   "authorization_servers": [
     "https://teste-boot.vercel.app"
-  ],
-  "scopes_supported": [
-    "openid",
-    "profile",
-    "email"
-  ],
-  "bearer_methods_supported": [
-    "header"
   ]
 }
