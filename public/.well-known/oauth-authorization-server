@@ -1,22 +1,22 @@
 {
-  "resource": "https://api.service.example.com/",
-  "authorization_servers": ["https://auth.service.example.com/"],
+  "resource": "https://teste-boot.vercel.app",
+  "authorization_servers": ["https://teste-boot.vercel.app"],
   "scopes_supported": ["api.read", "api.write"],
   "bearer_methods_supported": ["header"],
 
-  "issuer": "https://auth.service.example.com",
-  "token_endpoint": "https://auth.service.example.com/oauth2/token",
-  "revocation_endpoint": "https://auth.service.example.com/oauth2/revoke",
+  "issuer": "https://teste-boot.vercel.app",
+  "token_endpoint": "https://teste-boot.vercel.app/oauth/token",
+  "revocation_endpoint": "https://teste-boot.vercel.app/oauth/revoke",
   "grant_types_supported": [
     "urn:ietf:params:oauth:grant-type:jwt-bearer",
     "urn:workos:agent-auth:grant-type:claim"
   ],
 
   "agent_auth": {
-    "skill": "https://service.example.com/auth.md",
-    "identity_endpoint": "https://auth.service.example.com/agent/identity",
-    "claim_endpoint": "https://auth.service.example.com/agent/identity/claim",
-    "events_endpoint": "https://auth.service.example.com/agent/event/notify",
+    "skill": "https://teste-boot.vercel.app/auth.md",
+    "identity_endpoint": "https://teste-boot.vercel.app/agent/identity",
+    "claim_endpoint": "https://teste-boot.vercel.app/agent/identity/claim",
+    "events_endpoint": "https://teste-boot.vercel.app/agent/event/notify",
     "identity_types_supported": ["anonymous", "identity_assertion", "service_auth"],
     "identity_assertion": {
       "assertion_types_supported": [
@@ -24,7 +24,7 @@
       ]
     },
     "events_supported": [
-      "https://schemas.workos.com/events/agent/auth/identity/assertion/revoked"
+      "https://teste-boot.vercel.app/events/agent/auth/identity/assertion/revoked"
     ]
   }
 }
