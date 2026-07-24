@@ -1,34 +1,118 @@
 # auth.md
 
-## Agent Registration
+## Invictus Hub — Agent Registration
 
-This service supports agent registration. Agents can register by following the instructions below.
+This file describes how an AI agent registers with Invictus Hub on behalf of a user. Resource server and authorization server are both hosted at `https://teste-boot.vercel.app`.
 
-### Registration Endpoint
+## Discover
 
-`https://teste-boot.vercel.app/agent/register`
+Before registering, fetch these two documents:
 
-### Supported Methods
+1. Protected Resource Metadata:
+```http
+GET /.well-known/oauth-protected-resource
+```
+Returns `resource`, `authorization_servers`, `scopes_supported`, `bearer_methods_supported`.
 
-- OAuth 2.0
-- OpenID Connect
+2. Authorization Server metadata:
+```http
+GET /.well-known/oauth-authorization-server
+```
+Returns `issuer`, `token_endpoint`, and an `agent_auth` block containing `skill`, `register_uri`, `identity_types_supported`, `identity_assertion`, `anonymous`, and `events_supported`.
 
-### How to Register
+## Pick a method
 
-1. Send a POST request to the registration endpoint
-2. Include your agent type and required scopes
-3. You will receive a client ID and secret
-4. Use these credentials to obtain an access token
+- If your agent provider can mint an ID-JAG identity assertion for this audience, use **identity_assertion**.
+- If you have no identity assertion available, use **anonymous** — you'll receive limited scopes until the user claims the registration.
 
-### Credential Usage
+Cross-check your chosen method against `identity_types_supported` in the Authorization Server metadata before sending a request.
 
-Tokens are issued via OAuth 2.0 and should be sent in the `Authorization: Bearer <token>` header.
+## Register
 
-### Discovery
+### identity_assertion
 
-- OAuth Server: `https://teste-boot.vercel.app/.well-known/oauth-authorization-server`
-- API Catalog: `https://teste-boot.vercel.app/.well-known/api-catalog`
+```http
+POST /agent/register
+Content-Type: application/json
 
-### Contact
+{
+  "type": "identity_assertion",
+  "assertion_type": "urn:ietf:params:oauth:token-type:id-jag",
+  "assertion": "<id-jag-token>"
+}
+```
 
-For assistance: `https://teste-boot.vercel.app/contact`
+Response:
+```json
+{
+  "credential_type": "access_token",
+  "access_token": "<token>",
+  "expires_in": 3600,
+  "scope": "openid profile email"
+}
+```
+
+### anonymous
+
+```http
+POST /agent/register
+Content-Type: application/json
+
+{
+  "type": "anonymous"
+}
+```
+
+Response:
+```json
+{
+  "credential_type": "api_key",
+  "api_key": "<key>",
+  "claim_token": "<claim_token>"
+}
+```
+
+## Claim ceremony (anonymous only)
+
+```http
+POST /agent/register/claim
+Content-Type: application/json
+
+{
+  "claim_token": "<claim_token>",
+  "email": "<user_email>"
+}
+```
+
+The user completes verification via the emailed link. Once claimed, the pre-claim `api_key` gains full scope.
+
+## Use your credentials
+
+Send the issued credential on every request:
+
+```http
+Authorization: Bearer <access_token or api_key>
+```
+
+## Errors
+
+| Code | Meaning |
+|---|---|
+| `invalid_request` | Malformed registration body |
+| `invalid_assertion` | ID-JAG failed verification |
+| `claim_expired` | Claim token window lapsed — re-register |
+
+## Revocation
+
+```http
+POST /agent/register/revoke
+Content-Type: application/json
+
+{ "token": "<access_token>" }
+```
+
+Revocation events are also published at the `events_supported` URL in the Authorization Server metadata.
+
+## Contact
+
+`https://teste-boot.vercel.app/contact`
