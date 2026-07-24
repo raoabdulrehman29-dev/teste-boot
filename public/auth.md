@@ -1,22 +1,32 @@
 # auth.md
 
-This document describes how AI agents discover authentication metadata and register to access protected resources for Invictus Hub.
+This document describes how AI agents discover authentication metadata and registration information for Invictus Hub.
+
+---
 
 ## Resource Server
 
 https://teste-boot.vercel.app
 
+---
+
 ## Authorization Server
 
 https://teste-boot.vercel.app
 
-## Discovery
+---
+
+# Discovery
+
+Agents should first retrieve the Protected Resource Metadata.
 
 Protected Resource Metadata
 
 https://teste-boot.vercel.app/.well-known/oauth-protected-resource
 
-OAuth Authorization Server Metadata
+From that document the authorization server can be discovered.
+
+Authorization Server Metadata
 
 https://teste-boot.vercel.app/.well-known/oauth-authorization-server
 
@@ -24,34 +34,62 @@ OpenID Configuration
 
 https://teste-boot.vercel.app/.well-known/openid-configuration
 
-## Registration
+---
 
-Agents should register using
+# Registration
+
+Agents may register or request access using the following endpoint.
+
+Registration URI
 
 https://teste-boot.vercel.app/contact
 
-Supported identity types
+---
+
+# Supported Registration Methods
+
+## identity_assertion
+
+Supported assertion types
+
+- urn:ietf:params:oauth:token-type:id-jag
+- verified_email
+
+Credential Type
+
+- oauth2
+
+---
+
+## anonymous
+
+Credential Type
+
+- oauth2
+
+Claim URI
+
+https://teste-boot.vercel.app/contact
+
+---
+
+## service_auth
+
+Claim URI
+
+https://teste-boot.vercel.app/contact
+
+---
+
+# Supported Identity Types
 
 - anonymous
 - identity_assertion
 - service_auth
 
-Supported credential types
+---
 
-- oauth2
-
-Supported scopes
-
-- openid
-- profile
-- email
-
-Supported grant types
-
-- authorization_code
-- client_credentials
-
-## OAuth Endpoints
+# OAuth
 
 Authorization Endpoint
 
@@ -65,10 +103,22 @@ JWKS
 
 https://teste-boot.vercel.app/.well-known/jwks.json
 
-## API Documentation
+---
 
-https://teste-boot.vercel.app/openapi.json
+# Scopes
 
-## Support
+- openid
+- profile
+- email
+
+---
+
+# API Catalog
+
+https://teste-boot.vercel.app/.well-known/api-catalog
+
+---
+
+# Support
 
 https://teste-boot.vercel.app/contact
