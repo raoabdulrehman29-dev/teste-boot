@@ -2,43 +2,40 @@
 
 ## Invictus Hub Agent Registration
 
-You are an agent. This service supports **agentic registration**:
+This document describes how AI agents can discover authentication and register for access to Invictus Hub services.
 
-1. **Discover** the registration endpoint
-2. **Register** your agent
-3. **Exchange** for an access token
-4. **Call** the API
+## Agent Audience
+
+This service is intended for AI agents that need to access Invictus Hub content and services on behalf of users.
 
 ## Registration
 
-**Registration Endpoint:** `https://teste-boot.vercel.app/agent/register`
+To register, agents should visit:
 
-**Registration URI:** `https://teste-boot.vercel.app/auth.md`
+**Registration URI:** https://teste-boot.vercel.app/contact
+
+For automated registration, agents can use the following endpoint:
+
+**Registration Endpoint:** https://teste-boot.vercel.app/agent/register
 
 ## Supported Methods
 
-- **OpenID Connect (OIDC)**
-- **OAuth 2.0**
-
-## How to Register
-
-1. Send a `POST` request to `https://teste-boot.vercel.app/agent/register`
-2. Include your agent type and scope requirements
-3. You will receive a client ID and secret
-4. Use these to obtain an access token
+- **OpenID Connect (OIDC)**: For agents that support OIDC
+- **OAuth 2.0**: For agents that support OAuth 2.0
+- **API Key**: For simple agent access
 
 ## Credential Usage
 
-- Use `Authorization: Bearer <token>` header
-- Tokens expire in 3600 seconds
-- Refresh tokens are available
+- Access tokens are issued via OAuth 2.0
+- Tokens are short-lived and should be refreshed
+- Tokens should be sent in the `Authorization: Bearer <token>` header
 
-## Discovery
+## Discovery Metadata
 
-- **OAuth Server:** `https://teste-boot.vercel.app/.well-known/oauth-authorization-server`
-- **API Catalog:** `https://teste-boot.vercel.app/.well-known/api-catalog`
-- **OpenAPI:** `https://teste-boot.vercel.app/openapi.json`
+- API Catalog: https://teste-boot.vercel.app/.well-known/api-catalog
+- OpenAPI Specification: https://teste-boot.vercel.app/openapi.json
+- OAuth Server: https://teste-boot.vercel.app/.well-known/oauth-authorization-server
 
 ## Contact
 
-For registration assistance: `https://teste-boot.vercel.app/contact`
+For registration assistance: https://teste-boot.vercel.app/contact
