@@ -11,6 +11,7 @@
   ],
   "agent_auth": {
     "skill": "https://teste-boot.vercel.app/auth.md",
+    "register_uri": "https://teste-boot.vercel.app/auth.md",
     "identity_endpoint": "https://teste-boot.vercel.app/agent/identity",
     "claim_endpoint": "https://teste-boot.vercel.app/agent/identity/claim",
     "events_endpoint": "https://teste-boot.vercel.app/agent/event/notify",
