@@ -1,10 +1,7 @@
 {
   "issuer": "https://teste-boot.vercel.app",
-
   "authorization_endpoint": "https://teste-boot.vercel.app/oauth/authorize",
-
   "token_endpoint": "https://teste-boot.vercel.app/oauth/token",
-
   "jwks_uri": "https://teste-boot.vercel.app/.well-known/jwks.json",
 
   "grant_types_supported": [
@@ -32,6 +29,8 @@
     "claim_endpoint": "https://teste-boot.vercel.app/contact",
 
     "events_endpoint": "https://teste-boot.vercel.app/contact",
+
+    "revocation_uri": "https://teste-boot.vercel.app/contact",
 
     "identity_types_supported": [
       "anonymous",
