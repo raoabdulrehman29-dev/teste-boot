@@ -21,7 +21,7 @@
     {
       "source": "/",
       "headers": [
-        { "key": "WWW-Authenticate", "value": "Bearer resource_metadata=\"https://teste-boot.vercel.app/.well-known/oauth-protected-resource\"" },
+        { "key": "WWW-Authenticate", "value": "Bearer resource_metadata=\"https://teste-bo.vercel.app/.well-known/oauth-protected-resource\"" },
         { "key": "Link", "value": "</.well-known/api-catalog>; rel=\"api-catalog\", </.well-known/openid-configuration>; rel=\"service-desc\", </auth.md>; rel=\"service-doc\", </openapi.json>; rel=\"describedby\"" }
       ]
     }
