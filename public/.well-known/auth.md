@@ -1,6 +1,6 @@
 # auth.md
 
-## Invictus Hub Agent Registration
+## Agent Registration
 
 This service supports agent registration. Agents can register by following the instructions below.
 
@@ -12,6 +12,13 @@ This service supports agent registration. Agents can register by following the i
 
 - OAuth 2.0
 - OpenID Connect
+
+### How to Register
+
+1. Send a POST request to the registration endpoint
+2. Include your agent type and required scopes
+3. You will receive a client ID and secret
+4. Use these credentials to obtain an access token
 
 ### Credential Usage
 

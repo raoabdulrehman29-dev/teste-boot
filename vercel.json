@@ -39,6 +39,15 @@
       ]
     },
     {
+  "source": "/.well-known/http-message-signatures-directory",
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/http-message-signatures-directory+json"
+    }
+  ]
+},
+    {
       "source": "/.well-known/openid-configuration",
       "headers": [
         {
