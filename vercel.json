@@ -17,6 +17,13 @@
     }
   ],
   "headers": [
-    { "source": "/.well-known/http-message-signatures-directory", "headers": [{ "key": "Content-Type", "value": "application/http-message-signatures-directory+json" }] }
+    { "source": "/.well-known/http-message-signatures-directory", "headers": [{ "key": "Content-Type", "value": "application/http-message-signatures-directory+json" }] },
+    {
+      "source": "/",
+      "headers": [
+        { "key": "WWW-Authenticate", "value": "Bearer resource_metadata=\"https://teste-boot.vercel.app/.well-known/oauth-protected-resource\"" },
+        { "key": "Link", "value": "</.well-known/api-catalog>; rel=\"api-catalog\", </.well-known/openid-configuration>; rel=\"service-desc\", </auth.md>; rel=\"service-doc\", </openapi.json>; rel=\"describedby\"" }
+      ]
+    }
   ]
 }
