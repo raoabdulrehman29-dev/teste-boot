@@ -1,41 +1,27 @@
-# Auth.md
+# auth.md
 
 ## Invictus Hub Agent Registration
 
-This document describes how AI agents can discover authentication and register for access to Invictus Hub services.
+This service supports agent registration. Agents can register by following the instructions below.
 
-## Agent Audience
+### Registration Endpoint
 
-This service is intended for AI agents that need to access Invictus Hub content and services on behalf of users.
+`https://teste-boot.vercel.app/agent/register`
 
-## Registration
+### Supported Methods
 
-To register, agents should visit:
+- OAuth 2.0
+- OpenID Connect
 
-**Registration URI:** https://teste-boot.vercel.app/contact
+### Credential Usage
 
-For automated registration, agents can use the following endpoint:
+Tokens are issued via OAuth 2.0 and should be sent in the `Authorization: Bearer <token>` header.
 
-**Registration Endpoint:** https://teste-boot.vercel.app/agent/register
+### Discovery
 
-## Supported Methods
+- OAuth Server: `https://teste-boot.vercel.app/.well-known/oauth-authorization-server`
+- API Catalog: `https://teste-boot.vercel.app/.well-known/api-catalog`
 
-- **OpenID Connect (OIDC)**: For agents that support OIDC
-- **OAuth 2.0**: For agents that support OAuth 2.0
-- **API Key**: For simple agent access
+### Contact
 
-## Credential Usage
-
-- Access tokens are issued via OAuth 2.0
-- Tokens are short-lived and should be refreshed
-- Tokens should be sent in the `Authorization: Bearer <token>` header
-
-## Discovery Metadata
-
-- API Catalog: https://teste-boot.vercel.app/.well-known/api-catalog
-- OpenAPI Specification: https://teste-boot.vercel.app/openapi.json
-- OAuth Server: https://teste-boot.vercel.app/.well-known/oauth-authorization-server
-
-## Contact
-
-For registration assistance: https://teste-boot.vercel.app/contact
+For assistance: `https://teste-boot.vercel.app/contact`
