@@ -1,13 +1,8 @@
 # auth.md
 
-This document describes authentication discovery for AI agents interacting with Invictus Hub.
+This document describes how AI agents discover authentication metadata and register to access protected resources for Invictus Hub.
 
-The authoritative machine-readable metadata is published through:
-
-- /.well-known/oauth-protected-resource
-- /.well-known/oauth-authorization-server
-
-## Resource
+## Resource Server
 
 https://teste-boot.vercel.app
 
@@ -15,40 +10,65 @@ https://teste-boot.vercel.app
 
 https://teste-boot.vercel.app
 
-## Registration
-
-Agents are not automatically provisioned.
-
-For access requests contact:
-
-https://invictushub.com/contact
-
 ## Discovery
 
 Protected Resource Metadata
 
 https://teste-boot.vercel.app/.well-known/oauth-protected-resource
 
-Authorization Server Metadata
+OAuth Authorization Server Metadata
 
 https://teste-boot.vercel.app/.well-known/oauth-authorization-server
-
-API Catalog
-
-https://teste-boot.vercel.app/.well-known/api-catalog
 
 OpenID Configuration
 
 https://teste-boot.vercel.app/.well-known/openid-configuration
 
-## Supported Identity Types
+## Registration
+
+Agents should register using
+
+https://teste-boot.vercel.app/contact
+
+Supported identity types
 
 - anonymous
+- identity_assertion
+- service_auth
 
-## Supported Credential Types
+Supported credential types
 
 - oauth2
 
-## Notes
+Supported scopes
 
-This website is primarily informational and currently exposes no protected public APIs requiring OAuth authentication.
+- openid
+- profile
+- email
+
+Supported grant types
+
+- authorization_code
+- client_credentials
+
+## OAuth Endpoints
+
+Authorization Endpoint
+
+https://teste-boot.vercel.app/oauth/authorize
+
+Token Endpoint
+
+https://teste-boot.vercel.app/oauth/token
+
+JWKS
+
+https://teste-boot.vercel.app/.well-known/jwks.json
+
+## API Documentation
+
+https://teste-boot.vercel.app/openapi.json
+
+## Support
+
+https://teste-boot.vercel.app/contact

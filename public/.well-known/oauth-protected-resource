@@ -1,18 +1,18 @@
 {
   "resource": "https://teste-boot.vercel.app",
+  "resource_name": "Invictus Hub",
+
   "authorization_servers": [
     "https://teste-boot.vercel.app"
   ],
+
+  "scopes_supported": [
+    "openid",
+    "profile",
+    "email"
+  ],
+
   "bearer_methods_supported": [
     "header"
-  ],
-  "agent_auth": {
-    "register_uri": "https://invictushub.com/contact",
-    "identity_types_supported": [
-      "anonymous"
-    ],
-    "credential_types_supported": [
-      "oauth2"
-    ]
-  }
+  ]
 }
