@@ -16,13 +16,29 @@
     "email"
   ],
   "agent_auth": {
+  "issuer": "https://teste-boot.vercel.app",
+  "authorization_endpoint": "https://teste-boot.vercel.app/oauth/authorize",
+  "token_endpoint": "https://teste-boot.vercel.app/oauth/token",
+  "jwks_uri": "https://teste-boot.vercel.app/.well-known/jwks.json",
+  "grant_types_supported": ["authorization_code", "client_credentials"],
+  "response_types_supported": ["code"],
+  "scopes_supported": ["openid", "profile", "email"],
+  "agent_auth": {
     "skill": "https://teste-boot.vercel.app/.well-known/auth.md",
-    "register_uri": "https://teste-boot.vercel.app/.well-known/auth.md",
-    "identity_types_supported": ["openid"],
+    "register_uri": "https://teste-boot.vercel.app/agent/register",
+    "claim_uri": "https://teste-boot.vercel.app/agent/register/claim",
+    "revocation_uri": "https://teste-boot.vercel.app/agent/register/revoke",
+    "identity_types_supported": ["identity_assertion", "anonymous"],
     "identity_assertion": {
-      "assertion_types_supported": [
-        "urn:ietf:params:oauth:token-type:id-jag"
-      ]
-    }
+      "assertion_types_supported": ["urn:ietf:params:oauth:token-type:id-jag"],
+      "credential_types_supported": ["access_token"]
+    },
+    "anonymous": {
+      "credential_types_supported": ["api_key"]
+    },
+    "events_supported": [
+      "https://schemas.workos.com/events/agent/auth/identity/assertion/revoked"
+    ]
   }
+}
 }
