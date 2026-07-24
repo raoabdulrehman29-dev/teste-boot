@@ -1,46 +1,27 @@
-{
-  "issuer": "https://teste-boot.vercel.app",
+"agent_auth": {
+  "skill": "https://teste-boot.vercel.app/auth.md",
 
-  "authorization_endpoint": "https://teste-boot.vercel.app/oauth/authorize",
+  "register_uri": "https://teste-boot.vercel.app/contact",
 
-  "token_endpoint": "https://teste-boot.vercel.app/oauth/token",
-
-  "jwks_uri": "https://teste-boot.vercel.app/.well-known/jwks.json",
-
-  "grant_types_supported": [
-    "authorization_code",
-    "client_credentials"
+  "identity_types_supported": [
+    "anonymous",
+    "identity_assertion"
   ],
 
-  "response_types_supported": [
-    "code"
+  "credential_types_supported": [
+    "oauth2"
   ],
 
-  "scopes_supported": [
-    "openid",
-    "profile",
-    "email"
-  ],
+  "identity_assertion": {
+    "assertion_types_supported": [
+      "urn:ietf:params:oauth:token-type:id-jag"
+    ]
+  },
 
-  "agent_auth": {
-    "skill": "https://teste-boot.vercel.app/auth.md",
-
-    "register_uri": "https://teste-boot.vercel.app/contact",
-
+  "anonymous": {
     "credential_types_supported": [
       "oauth2"
     ],
-
-    "identity_types_supported": [
-      "anonymous",
-      "identity_assertion",
-      "service_auth"
-    ],
-
-    "identity_assertion": {
-      "assertion_types_supported": [
-        "urn:ietf:params:oauth:token-type:id-jag"
-      ]
-    }
+    "claim_uri": "https://teste-boot.vercel.app/contact"
   }
 }

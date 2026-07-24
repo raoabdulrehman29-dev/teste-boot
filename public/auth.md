@@ -1,4 +1,4 @@
-# Auth.md
+# auth.md
 
 ## Invictus Hub Agent Authentication
 

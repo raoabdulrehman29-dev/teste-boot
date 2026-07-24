@@ -1,31 +1,14 @@
 {
   "resource": "https://teste-boot.vercel.app",
-
   "authorization_servers": [
     "https://teste-boot.vercel.app"
   ],
-
-  "bearer_methods_supported": [
-    "header"
-  ],
-
   "scopes_supported": [
     "openid",
     "profile",
     "email"
   ],
-
-  "agent_auth": {
-    "register_uri": "https://teste-boot.vercel.app/contact",
-
-    "credential_types_supported": [
-      "oauth2"
-    ],
-
-    "identity_types_supported": [
-      "anonymous",
-      "identity_assertion",
-      "service_auth"
-    ]
-  }
+  "bearer_methods_supported": [
+    "header"
+  ]
 }
