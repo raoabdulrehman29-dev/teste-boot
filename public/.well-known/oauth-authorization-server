@@ -17,7 +17,7 @@
   ],
   "agent_auth": {
     "skill": "https://teste-boot.vercel.app/.well-known/auth.md",
-    "register_uri": "https://teste-boot.vercel.app/contact",
+    "register_uri": "https://teste-boot.vercel.app/.well-known/auth.md",
     "identity_types_supported": ["openid"],
     "identity_assertion": {
       "assertion_types_supported": [
