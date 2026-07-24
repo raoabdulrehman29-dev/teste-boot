@@ -1,91 +1,22 @@
 {
-   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+  "rewrites": [
+    { "source": "/.well-known/oauth-authorization-server", "destination": "/api/oauth-authorization-server" },
+    { "source": "/.well-known/openid-configuration", "destination": "/api/openid-configuration" },
+    { "source": "/.well-known/oauth-protected-resource", "destination": "/api/oauth-protected-resource" },
+    { "source": "/.well-known/api-catalog", "destination": "/api/api-catalog" },
+    { "source": "/auth.md", "destination": "/api/auth-md" },
+    { "source": "/.well-known/auth.md", "destination": "/api/auth-md" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "redirects": [
     {
       "source": "/",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept",
-          "value": "text/markdown"
-        }
-      ],
+      "has": [{ "type": "header", "key": "accept", "value": "text/markdown" }],
       "destination": "/api/markdown",
       "permanent": false
     }
   ],
   "headers": [
-    {
-      "source": "/.well-known/api-catalog",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/linkset+json"
-        }
-      ]
-    },
-    {
-      "source": "/.well-known/oauth-authorization-server",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/json"
-        }
-      ]
-    },
-    {
-  "source": "/.well-known/http-message-signatures-directory",
-  "headers": [
-    {
-      "key": "Content-Type",
-      "value": "application/http-message-signatures-directory+json"
-    }
-  ]
-},
-    {
-      "source": "/.well-known/openid-configuration",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/json"
-        }
-      ]
-    },
-    {
-      "source": "/.well-known/oauth-protected-resource",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/json"
-        }
-      ]
-    },
-    {
-      "source": "/auth.md",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/markdown; charset=utf-8"
-        }
-      ]
-    },
-    {
-      "source": "/",
-      "headers": [
-        {
-          "key": "WWW-Authenticate",
-          "value": "Bearer resource_metadata=\"https://teste-boot.vercel.app/.well-known/oauth-protected-resource\""
-        },
-        {
-          "key": "Link",
-          "value": "</.well-known/api-catalog>; rel=\"api-catalog\", </.well-known/openid-configuration>; rel=\"service-desc\", </auth.md>; rel=\"service-doc\", </openapi.json>; rel=\"describedby\""
-        }
-      ]
-    }
+    { "source": "/.well-known/http-message-signatures-directory", "headers": [{ "key": "Content-Type", "value": "application/http-message-signatures-directory+json" }] }
   ]
 }
