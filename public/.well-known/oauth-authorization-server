@@ -1,17 +1,14 @@
 {
   "resource": "https://teste-boot.vercel.app",
   "authorization_servers": ["https://teste-boot.vercel.app"],
-  "scopes_supported": ["api.read", "api.write"],
+  "scopes_supported": ["openid", "profile", "email"],
   "bearer_methods_supported": ["header"],
-
   "issuer": "https://teste-boot.vercel.app",
   "token_endpoint": "https://teste-boot.vercel.app/oauth/token",
-  "revocation_endpoint": "https://teste-boot.vercel.app/oauth/revoke",
   "grant_types_supported": [
     "urn:ietf:params:oauth:grant-type:jwt-bearer",
     "urn:workos:agent-auth:grant-type:claim"
   ],
-
   "agent_auth": {
     "skill": "https://teste-boot.vercel.app/auth.md",
     "identity_endpoint": "https://teste-boot.vercel.app/agent/identity",
@@ -24,7 +21,7 @@
       ]
     },
     "events_supported": [
-      "https://teste-boot.vercel.app/events/agent/auth/identity/assertion/revoked"
+      "https://schemas.workos.com/events/agent/auth/identity/assertion/revoked"
     ]
   }
 }

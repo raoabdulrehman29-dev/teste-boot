@@ -13,7 +13,6 @@
       "permanent": false
     }
   ],
-
   "headers": [
     {
       "source": "/.well-known/api-catalog",
@@ -21,86 +20,45 @@
         {
           "key": "Content-Type",
           "value": "application/linkset+json"
-        },
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
         }
       ]
     },
-
-    {
-      "source": "/.well-known/oauth-protected-resource",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/json"
-        },
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        }
-      ]
-    },
-
     {
       "source": "/.well-known/oauth-authorization-server",
       "headers": [
         {
           "key": "Content-Type",
           "value": "application/json"
-        },
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
         }
       ]
     },
-
     {
       "source": "/.well-known/openid-configuration",
       "headers": [
         {
           "key": "Content-Type",
           "value": "application/json"
-        },
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
         }
       ]
     },
-
+    {
+      "source": "/.well-known/oauth-protected-resource",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    },
     {
       "source": "/auth.md",
       "headers": [
         {
           "key": "Content-Type",
           "value": "text/markdown; charset=utf-8"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
         }
       ]
     },
-
     {
       "source": "/",
       "headers": [
@@ -110,7 +68,7 @@
         },
         {
           "key": "Link",
-          "value": "</.well-known/api-catalog>; rel=\"api-catalog\", </.well-known/oauth-protected-resource>; rel=\"describedby\", </auth.md>; rel=\"service-doc\", </openapi.json>; rel=\"service-desc\""
+          "value": "</.well-known/api-catalog>; rel=\"api-catalog\", </.well-known/openid-configuration>; rel=\"service-desc\", </auth.md>; rel=\"service-doc\", </openapi.json>; rel=\"describedby\""
         }
       ]
     }
