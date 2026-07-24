@@ -1,24 +1,3 @@
 {
-  "issuer": "https://teste-boot.vercel.app",
-
-  "authorization_endpoint": "https://teste-boot.vercel.app/oauth/authorize",
-
-  "token_endpoint": "https://teste-boot.vercel.app/oauth/token",
-
-  "jwks_uri": "https://teste-boot.vercel.app/.well-known/jwks.json",
-
-  "response_types_supported": [
-    "code"
-  ],
-
-  "grant_types_supported": [
-    "authorization_code",
-    "client_credentials"
-  ],
-
-  "scopes_supported": [
-    "openid",
-    "profile",
-    "email"
-  ]
+  "issuer": "https://teste-boot.vercel.app"
 }

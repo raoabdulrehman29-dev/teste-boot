@@ -1,84 +1,54 @@
 # auth.md
 
-## Invictus Hub Agent Authentication
+This document describes authentication discovery for AI agents interacting with Invictus Hub.
 
-This document describes how AI agents discover authentication metadata and register to access protected resources exposed by Invictus Hub.
+The authoritative machine-readable metadata is published through:
 
----
+- /.well-known/oauth-protected-resource
+- /.well-known/oauth-authorization-server
 
-## Production Website
-
-https://invictushub.com
-
-## Test Deployment
+## Resource
 
 https://teste-boot.vercel.app
 
----
+## Authorization Server
 
-## Agent Registration
+https://teste-boot.vercel.app
 
-Registration URI
+## Registration
 
-https://teste-boot.vercel.app/contact
+Agents are not automatically provisioned.
 
----
+For access requests contact:
 
-## Authentication
+https://invictushub.com/contact
 
-OAuth Authorization Server
+## Discovery
 
-https://teste-boot.vercel.app/.well-known/oauth-authorization-server
-
-OAuth Protected Resource
+Protected Resource Metadata
 
 https://teste-boot.vercel.app/.well-known/oauth-protected-resource
 
-OpenID Configuration
+Authorization Server Metadata
 
-https://teste-boot.vercel.app/.well-known/openid-configuration
+https://teste-boot.vercel.app/.well-known/oauth-authorization-server
 
 API Catalog
 
 https://teste-boot.vercel.app/.well-known/api-catalog
 
----
+OpenID Configuration
+
+https://teste-boot.vercel.app/.well-known/openid-configuration
 
 ## Supported Identity Types
 
 - anonymous
-- identity_assertion
-- service_auth
-
----
 
 ## Supported Credential Types
 
 - oauth2
 
----
+## Notes
 
-## Supported OAuth Grants
-
-- authorization_code
-- client_credentials
-
----
-
-## Supported Scopes
-
-- openid
-- profile
-- email
-
----
-
-## API Documentation
-
-https://teste-boot.vercel.app/openapi.json
-
----
-
-## Support
-
-https://teste-boot.vercel.app/contact
+This website is primarily informational and currently exposes no protected public APIs requiring OAuth authentication.
