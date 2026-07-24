@@ -16,7 +16,7 @@
     "email"
   ],
   "agent_auth": {
-    "skill": "https://teste-boot.vercel.app/auth.md",
+    "skill": "https://teste-boot.vercel.app/.well-known/auth.md",
     "register_uri": "https://teste-boot.vercel.app/auth.md",
     "identity_types_supported": ["openid"]
   }
