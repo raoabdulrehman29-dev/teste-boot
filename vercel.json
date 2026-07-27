@@ -25,5 +25,11 @@
         { "key": "Link", "value": "</.well-known/api-catalog>; rel=\"api-catalog\", </.well-known/openid-configuration>; rel=\"service-desc\", </auth.md>; rel=\"service-doc\", </openapi.json>; rel=\"describedby\"" }
       ]
     }
+  ],
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
+    }
   ]
 }

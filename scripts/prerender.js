@@ -1,19 +1,6 @@
 import puppeteer from "puppeteer";
-import fs from "fs";
-
-console.log("========== PUPPETEER DEBUG ==========");
-console.log("Puppeteer version:", puppeteer.version);
-
-try {
-  console.log("Executable:", puppeteer.executablePath());
-} catch (e) {
-  console.log("Executable error:", e.message);
-}
-
-console.log("Cache exists:", fs.existsSync("/vercel/.cache/puppeteer"));
-console.log("=====================================");
 import http from "http";
-
+import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -71,10 +58,7 @@ async function prerender() {
   const baseUrl = `http://localhost:${PORT}`;
   console.log(`Static server confirmed running at: ${baseUrl}`);
 
-  const browser = await puppeteer.launch({
-    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
-    headless: true
-})
+  const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
   let failures = 0;

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-     "build": "npx puppeteer browsers install chrome && vite build && node scripts/prerender.js",
+    "vercel-build": "apt-get update && apt-get install -y libnspr4 libnss3 && npm run build",
     "preview": "vite preview",
     "format": "prettier --write src/",
     "format:check": "prettier --check src/",
