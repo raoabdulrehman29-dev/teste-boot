@@ -58,7 +58,10 @@ async function prerender() {
   const baseUrl = `http://localhost:${PORT}`;
   console.log(`Static server confirmed running at: ${baseUrl}`);
 
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
+    headless: true
+})
   const page = await browser.newPage();
 
   let failures = 0;
