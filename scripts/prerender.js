@@ -1,4 +1,3 @@
-import puppeteer from "puppeteer";
 import http from "http";
 import fs from "fs";
 import path from "path";
@@ -51,6 +50,30 @@ function startServer() {
   });
 }
 
+// NEW: launches a Vercel-compatible Chromium when running on Vercel's
+// build servers, and falls back to your normal local Chrome install
+// everywhere else (your machine, other CI, etc.)
+async function getBrowser() {
+  const isVercel = !!process.env.VERCEL;
+
+  if (isVercel) {
+    console.log("Detected Vercel build environment — using @sparticuz/chromium");
+    const chromium = (await import("@sparticuz/chromium")).default;
+    const puppeteerCore = (await import("puppeteer-core")).default;
+
+    return puppeteerCore.launch({
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath(),
+      headless: chromium.headless,
+    });
+  }
+
+  console.log("Local environment — using full puppeteer install");
+  const puppeteer = (await import("puppeteer")).default;
+  return puppeteer.launch();
+}
+
 async function prerender() {
   console.log(`Prerendering ${allRoutes.length} routes...`);
 
@@ -58,7 +81,7 @@ async function prerender() {
   const baseUrl = `http://localhost:${PORT}`;
   console.log(`Static server confirmed running at: ${baseUrl}`);
 
-  const browser = await puppeteer.launch();
+  const browser = await getBrowser();
   const page = await browser.newPage();
 
   let failures = 0;
@@ -71,7 +94,7 @@ async function prerender() {
       await page.goto(url, { waitUntil: "networkidle0", timeout: 30000 });
       await new Promise((resolve) => setTimeout(resolve, 300));
 
-      // Critical new check: confirm Vue Router actually landed on the right route
+      // Critical check: confirm Vue Router actually landed on the right route
       const actualPath = await page.evaluate(() => window.location.pathname);
       if (actualPath !== route) {
         throw new Error(`Router mismatch — requested ${route} but ended up on ${actualPath}`);
