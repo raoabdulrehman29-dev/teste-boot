@@ -1,6 +1,19 @@
-import puppeteer from 'puppeteer-core';
-import http from "http";
+import puppeteer from "puppeteer";
 import fs from "fs";
+
+console.log("========== PUPPETEER DEBUG ==========");
+console.log("Puppeteer version:", puppeteer.version);
+
+try {
+  console.log("Executable:", puppeteer.executablePath());
+} catch (e) {
+  console.log("Executable error:", e.message);
+}
+
+console.log("Cache exists:", fs.existsSync("/vercel/.cache/puppeteer"));
+console.log("=====================================");
+import http from "http";
+
 import path from "path";
 import { fileURLToPath } from "url";
 
