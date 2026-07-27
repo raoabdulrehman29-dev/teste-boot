@@ -1,4 +1,4 @@
-import puppeteer from "puppeteer";
+import puppeteer from 'puppeteer-core';
 import http from "http";
 import fs from "fs";
 import path from "path";
