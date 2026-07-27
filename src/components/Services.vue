@@ -15,9 +15,9 @@
         "
         class="mx-auto mt-14 w-full text-center lg:mt-24 max-w-[1450px]"
       >
-        <h1 class="mb-4 text-xl font-bold leading-tight text-black lg:text-3xl xl:text-4xl">
+        <h2 class="mb-4 text-xl font-bold leading-tight text-black lg:text-3xl xl:text-4xl">
           {{ selectedService.intro.heading }}
-        </h1>
+        </h2>
         <p class="mx-auto mb-6 max-w-3xl leading-7 text-gray-500 md:text-base">
           {{ selectedService.intro.text[0] }}
         </p>
@@ -113,16 +113,16 @@
       class="mx-auto mt-8 overflow-hidden rounded-3xl bg-gradient-to-r from-white via-[#A9C8DA]/50 to-white sm:py-12 md:mt-10 md:px-12 lg:mt-20 xl:mt-20 2xl:py-24 max-w-[1450px]"
     >
       <div class="flex flex-col items-center text-center">
-        <h1
+        <h2
           class="mx-4 my-4 text-[33px] font-bold leading-tight text-gray-900 md:text-[35px] lg:text-[44px] xl:text-[55px] 2xl:text-[55px]"
         >
           {{ selectedService.hero.tagline }}
-        </h1>
-        <h3
+        </h2>
+        <p
           class="max-w-3xl mx-4 my-2 text-base font-medium leading-7 text-gray-700 md:text-lg md:leading-8"
         >
           {{ selectedService.hero.description }}
-        </h3>
+      </p>
       </div>
 
       <div class="flex flex-col items-stretch justify-center gap-2 mt-8 md:flex-row lg:gap-4 py-2">

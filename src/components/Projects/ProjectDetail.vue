@@ -343,9 +343,9 @@
       "
       class="mx-auto my-10 mt-14 w-full lg:mt-24 text-center max-w-[1450px]"
     >
-      <h1 class="mb-4 text-xl font-bold leading-tight text-black lg:text-3xl xl:text-4xl">
+      <h2 class="mb-4 text-xl font-bold leading-tight text-black lg:text-3xl xl:text-4xl">
         Key Results Achieved
-      </h1>
+      </h2>
       <p class="max-w-2xl mx-auto mb-12 text-gray-700">
         Measurable outcomes that demonstrate the success and impact of our solution.
       </p>
@@ -364,9 +364,9 @@
             <span v-else-if="index === 2">🎯</span>
             <span v-else>✨</span>
           </div>
-          <h2 class="mb-2 text-3xl font-bold text-[#185464]">
+          <h3 class="mb-2 text-3xl font-bold text-[#185464]">
             {{ result.split(" ").slice(0, 1).join("") }}
-          </h2>
+          </h3>
           <p class="font-medium leading-tight text-gray-700">
             {{ result.split(" ").slice(1).join(" ") }}
           </p>
@@ -457,18 +457,18 @@
       >
         <!-- Overview Tab -->
         <div v-if="currentTab === 'Overview'" class="tab-fade-in">
-          <h2 class="mb-6 text-2xl font-bold text-gray-900 md:text-3xl">Project Overview</h2>
+          <h3 class="mb-6 text-2xl font-bold text-gray-900 md:text-3xl">Project Overview</h3>
           <p class="mb-12 text-base md:text-lg leading-relaxed text-gray-700">
             {{ project.overview }}
           </p>
 
           <div class="grid gap-8 md:gap-16 md:grid-cols-2">
             <div>
-              <h3
+              <h4
                 class="mb-6 border-l-4 border-[#185464] pl-4 text-lg font-bold text-gray-900 md:text-xl"
               >
                 Project Scope
-              </h3>
+              </h4>
               <ul class="space-y-4">
                 <li
                   v-for="item in project.scope"
@@ -483,11 +483,11 @@
               </ul>
             </div>
             <div>
-              <h3
+              <h4
                 class="mb-6 border-l-4 border-[#185464] pl-4 text-lg font-bold text-gray-900 md:text-xl"
               >
                 Key Features
-              </h3>
+              </h4>
               <ul class="space-y-4">
                 <li
                   v-for="feat in project.features"
@@ -503,17 +503,17 @@
 
         <!-- Challenge Tab -->
         <div v-if="currentTab === 'Challenge'" class="tab-fade-in">
-          <h2 class="mb-6 text-2xl font-bold text-gray-900 md:text-3xl">The Challenge</h2>
+          <h3 class="mb-6 text-2xl font-bold text-gray-900 md:text-3xl">The Challenge</h3>
           <p class="mb-10 text-base md:text-lg leading-relaxed text-gray-700">
             {{ project.challenge }}
           </p>
 
           <div class="bg-gray-50 rounded-[2rem] p-6 md:p-12 border border-gray-100">
-            <h3
+            <h4
               class="mb-6 border-l-4 border-[#185464] pl-4 text-lg font-bold text-gray-900 md:text-xl"
             >
               Key Challenges Addressed:
-            </h3>
+            </h4>
 
             <div class="grid md:grid-cols-2 gap-y-4 gap-x-12">
               <div
@@ -530,7 +530,7 @@
 
         <!-- Solution Tab -->
         <div v-if="currentTab === 'Solution'" class="tab-fade-in">
-          <h2 class="mb-6 text-2xl font-bold text-gray-900 md:text-3xl">Our Solution</h2>
+          <h3 class="mb-6 text-2xl font-bold text-gray-900 md:text-3xl">Our Solution</h3>
           <p class="mb-12 text-base md:text-lg leading-relaxed text-gray-700">
             {{ project.solution }}
           </p>
@@ -539,10 +539,10 @@
             <div
               class="flex-1 bg-gray-50 rounded-[2.5rem] p-6 md:p-10 border border-gray-100 shadow-sm"
             >
-              <h3 class="mb-6 flex items-center gap-3 text-lg font-bold text-gray-900 md:text-xl">
+              <h4 class="mb-6 flex items-center gap-3 text-lg font-bold text-gray-900 md:text-xl">
                 <span class="w-2 h-8 bg-[#185464] rounded-full"></span>
                 Technical Approach
-              </h3>
+              </h4>
               <ul class="space-y-4">
                 <li
                   v-for="item in project.technical_approach"
@@ -563,10 +563,10 @@
             <div
               class="flex-1 bg-gray-50 rounded-[2.5rem] p-6 md:p-10 border border-gray-100 shadow-sm"
             >
-              <h3 class="mb-6 flex items-center gap-3 text-lg font-bold text-gray-900 md:text-xl">
+              <h4 class="mb-6 flex items-center gap-3 text-lg font-bold text-gray-900 md:text-xl">
                 <span class="w-2 h-8 bg-[#185464] rounded-full"></span>
                 Implementation Strategy
-              </h3>
+              </h4>
               <ul class="space-y-4">
                 <li
                   v-for="item in project.implementation_strategy"
@@ -588,9 +588,9 @@
 
         <!-- Results Tab -->
         <div v-if="currentTab === 'Results'" class="tab-fade-in">
-          <h2 class="mb-10 text-center text-2xl font-bold text-gray-900 md:text-3xl">
+          <h3 class="mb-10 text-center text-2xl font-bold text-gray-900 md:text-3xl">
             Impact & Results
-          </h2>
+          </h3>
 
           <div class="space-y-8">
             <!-- Key Results Grid -->
@@ -611,10 +611,10 @@
 
             <!-- Long Term Benefits -->
             <div class="bg-gray-50 rounded-[2.5rem] p-6 md:p-10 border border-gray-100 shadow-sm">
-              <h3 class="mb-6 flex items-center gap-3 text-lg font-bold text-gray-900 md:text-xl">
+              <h4 class="mb-6 flex items-center gap-3 text-lg font-bold text-gray-900 md:text-xl">
                 <span class="w-2 h-8 bg-[#185464] rounded-full"></span>
                 Long Term Benefits
-              </h3>
+              </h4>
               <ul class="mt-10 space-y-4">
                 <li
                   v-for="item in project.longterm_benefits"

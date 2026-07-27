@@ -19,34 +19,34 @@
       >
         <img
           src="../assets/mapbg.webp"
-          alt=""
+          alt="map image"
           class="h-1/2 w-full object-cover md:h-3/4 md:w-3/4"
         />
       </div>
 
       <div data-reveal class="relative z-10 w-full lg:w-[50%]">
         <div class="mb-10">
-          <h3 class="mb-2 font-semibold">[ Get In Touch ]</h3>
+          <p class="mb-2 font-semibold">[ Get In Touch ]</p>
           <div class="flex flex-col">
             <div>
-              <h1
+              <h2
                 class="inline-block text-[28px] font-semibold capitalize leading-tight text-gray-900 md:text-[35px] lg:text-[45px] xl:text-[60px]"
               >
                 Awesome things in working with us
-              </h1>
-              <h2
+              </h2>
+              <p
                 class="mt-4 max-w-[650px] text-base font-medium leading-4 text-gray-700 md:text-lg md:leading-8"
               >
                 Speak with our consultants today and discover how to take your business to the next
                 level.
-              </h2>
+            </p>
             </div>
           </div>
         </div>
         <div class="w-full space-y-10">
           <div class="flex flex-col gap-8 md:flex-row md:justify-between">
             <div class="md:w-[45%]">
-              <h2 class="text-[18px] font-semibold">Call Us</h2>
+              <h3 class="text-[18px] font-semibold">Call Us</h3>
               <a
                 href="https://wa.me/923394025020"
                 target="_blank"
@@ -57,7 +57,7 @@
               </a>
             </div>
             <div class="md:w-[45%]">
-              <h2 class="text-[18px] font-semibold">Our Location</h2>
+              <h3 class="text-[18px] font-semibold">Our Location</h3>
               <p class="mt-2 text-base md:text-lg">
                 Plaza no 5, Block D Commercial Basement, Architects Engineers Housing Society,
                 Lahore, 54000
@@ -66,7 +66,7 @@
           </div>
           <div class="flex flex-col gap-8 md:flex-row md:justify-between">
             <div class="md:w-[45%]">
-              <h2 class="text-[18px] font-semibold">Email</h2>
+              <h3 class="text-[18px] font-semibold">Email</h3>
               <a
                 href="mailto:info@invictushub.com"
                 class="inline-block mt-2 text-base underline md:text-lg hover:text-[#0A66C2] hover:scale-105"
@@ -75,7 +75,7 @@
               </a>
             </div>
             <div class="md:w-[45%]">
-              <h2 class="text-[18px] font-semibold">Follow Us</h2>
+              <h3 class="text-[18px] font-semibold">Follow Us</h3>
               <div class="flex gap-4 mt-3">
                 <a
                   href="https://www.linkedin.com/company/invictus-hub/"

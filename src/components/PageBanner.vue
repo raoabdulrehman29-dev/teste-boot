@@ -30,11 +30,11 @@
       </div>
 
       <!-- Side Text -->
-      <h1
+      <span
         class="banner-side hidden xl:block absolute top-1/2 -right-10 -translate-y-1/2 -rotate-90 font-extrabold capitalize text-transparent [-webkit-text-stroke:1px_white] text-[60px] 2xl:text-[70px]"
       >
         {{ sideText }}
-      </h1>
+    </span>
 
       <!-- Bottom Left Breadcrumb -->
       <div class="absolute left-0 bottom-0 z-20">

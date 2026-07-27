@@ -9,13 +9,13 @@
       class="mx-auto my-10 mt-14 w-full md:my-2 lg:my-8 lg:mt-24"
     >
       <div class="text-center">
-        <h3 data-reveal class="mb-2 font-semibold">[ Our Services ]</h3>
-        <h1
+        <p data-reveal class="mb-2 font-semibold">[ Our Services ]</p>
+        <h2
           data-split
           class="text-[28px] font-semibold capitalize text-black sm:text-[30px] md:text-[35px] lg:text-[46px] xl:text-[60px]"
         >
           What We Offer
-        </h1>
+        </h2>
         <p data-reveal class="mx-auto mt-4 max-w-2xl text-gray-500">
           We provide comprehensive digital solutions to help your business grow and succeed in the
           modern world.
@@ -97,9 +97,9 @@
       "
       class="mx-auto my-10 mt-14 w-full lg:mt-24 text-center max-w-[1450px]"
     >
-      <h1 data-reveal class="mb-4 text-3xl font-bold text-black lg:text-5xl">
+      <h2 data-reveal class="mb-4 text-3xl font-bold text-black lg:text-5xl">
         Performance Metrics
-      </h1>
+      </h2>
       <p data-reveal class="max-w-2xl mx-auto mb-12 text-gray-500">
         Numbers that speak for our commitment to delivering exceptional results.
       </p>
@@ -117,12 +117,12 @@
       class="mx-auto my-10 flex w-full flex-wrap items-center justify-center px-4 py-2 md:justify-start md:px-6 lg:px-8 lg:mb-14 max-w-[1450px]"
     >
       <div class="w-1/2 md:w-1/3 lg:w-1/4">
-        <h1
+        <h3
           class="my-4 text-4xl font-bold text-transparent md:text-6xl bg-gradient-to-b from-blue-400 to-emerald-400 bg-clip-text"
         >
           {{ completedProjectsCount }}+
-        </h1>
-        <h2 class="text-xl font-semibold">
+        </h3>
+        <h4 class="text-xl font-semibold">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="inline-block w-auto h-4 mx-2"
@@ -133,15 +133,15 @@
             />
           </svg>
           Projects Completed
-        </h2>
+        </h4>
       </div>
       <div class="w-1/2 md:w-1/3 lg:w-1/4">
-        <h1
+        <h3
           class="my-4 text-4xl font-bold text-transparent md:text-6xl bg-gradient-to-b from-blue-400 to-emerald-400 bg-clip-text"
         >
           {{ clientSatisfiedCount }}%
-        </h1>
-        <h2 class="text-xl font-semibold">
+        </h3>
+        <h4 class="text-xl font-semibold">
           <svg
             class="inline-block w-auto h-4 mx-2"
             xmlns="http://www.w3.org/2000/svg"
@@ -152,15 +152,15 @@
             />
           </svg>
           Client Satisfaction
-        </h2>
+        </h4>
       </div>
       <div class="w-1/2 md:w-1/3 lg:w-1/4">
-        <h1
+        <h3
           class="my-4 text-4xl font-bold text-transparent md:text-6xl bg-gradient-to-b from-blue-400 to-emerald-400 bg-clip-text"
         >
           {{ happyClientsCount }}+
-        </h1>
-        <h2 class="text-xl font-semibold">
+        </h3>
+        <h4 class="text-xl font-semibold">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="inline-block w-auto h-4 mx-2"
@@ -171,15 +171,15 @@
             />
           </svg>
           Happy Clients
-        </h2>
+        </h4>
       </div>
       <div class="w-1/2 md:w-1/3 lg:w-1/4">
-        <h1
+        <h3
           class="my-4 text-4xl font-bold text-transparent md:text-6xl bg-gradient-to-b from-blue-400 to-emerald-400 bg-clip-text"
         >
           {{ yearsExperienceCount }}+
-        </h1>
-        <h2 class="text-xl font-semibold">
+        </h3>
+        <h4 class="text-xl font-semibold">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="inline-block w-auto h-4 mx-2"
@@ -190,7 +190,7 @@
             />
           </svg>
           Years' Experience
-        </h2>
+        </h4>
       </div>
     </div>
   </div>
@@ -211,7 +211,7 @@ import designDevImg from "@/assets/Services/design-development.jpg";
 import maintenanceImg from "@/assets/it2.jpg";
 import automationImg from "@/assets/Services/automation-apps.jpg";
 import webDevImg from "@/assets/techsolution.webp";
-import appDevImg from "@/assets/it1.jpg";
+import appDevImg from "@/assets/it1.png";
 import uxUiImg from "@/assets/Services/ux-design.jpg";
 
 const store = userSearchStore();

@@ -100,7 +100,7 @@
               <div
                 class="relative w-full max-w-md rounded-[2.5rem] border border-white/20 bg-white/10 p-8 text-white backdrop-blur-md"
               >
-                <h4 class="mb-4 text-xl font-bold leading-tight">Application Summary</h4>
+                <h3 class="mb-4 text-xl font-bold leading-tight">Application Summary</h3>
                 <p class="mb-6 text-sm leading-7 text-white/70">
                   Make sure your details are complete before you submit your application.
                 </p>
@@ -410,12 +410,12 @@
                   />
                 </svg>
               </div>
-              <h1
+              <h2
                 class="mb-4 text-2xl font-bold leading-tight text-green-700 md:text-3xl lg:text-4xl"
               >
                 Your Application Was
                 <span class="block text-green-600 md:inline">Submitted Successfully</span>
-              </h1>
+              </h2>
               <p class="max-w-md leading-relaxed text-gray-500">
                 We've received your details and our recruitment team will review your CV. Check your
                 email for a confirmation receipt.
@@ -453,12 +453,12 @@
                   />
                 </svg>
               </div>
-              <h1
+              <h2
                 class="mb-4 text-2xl font-bold leading-tight text-yellow-700 md:text-3xl lg:text-4xl"
               >
                 You've Already Applied for
                 <span class="block text-yellow-600 md:inline">{{ job.title }}</span>
-              </h1>
+              </h2>
               <p class="max-w-md leading-relaxed text-gray-500">
                 You've already submitted an application for this position. Our recruitment team will
                 review your application and contact you soon.

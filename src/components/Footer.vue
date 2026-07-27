@@ -9,17 +9,17 @@
             class="flex w-full flex-col items-start justify-between gap-10 px-4 py-6 md:pt-[80px] md:pb-[25px] md:px-0 lg:flex-row lg:px-8 min-[1500px]:py-[2rem] 2xl:py-[2rem]"
           >
             <div class="w-full lg:w-1/2">
-              <h3 class="mb-1 text-lg font-semibold sm:mb-2">[ Get In Touch ]</h3>
-              <h1
+              <p class="mb-1 text-lg font-semibold sm:mb-2">[ Get In Touch ]</p>
+              <h2
                 class="text-[28px] font-semibold leading-tight md:text-[35px] lg:text-[45px] xl:text-[60px]"
               >
                 Reliable Digital Solutions
-              </h1>
+              </h2>
             </div>
 
             <div class="grid w-full gap-6 md:grid-cols-2 lg:w-1/2">
               <div>
-                <h2 class="font-semibold text-base sm:text-lg xl:my-2">Call Us</h2>
+                <h3 class="font-semibold text-base sm:text-lg xl:my-2">Call Us</h3>
                 <a
                   href="https://wa.me/923394025020"
                   target="_blank"
@@ -31,7 +31,7 @@
               </div>
 
               <div>
-                <h2 class="font-semibold text-base sm:text-lg xl:my-2">Our Location</h2>
+                <h3 class="font-semibold text-base sm:text-lg xl:my-2">Our Location</h3>
                 <p class="text-lg">
                   Plaza no 5, Block D Commercial Basement, Architects, Engineers Housing Society,
                   Lahore, 54000
@@ -39,7 +39,7 @@
               </div>
 
               <div>
-                <h2 class="font-semibold text-base sm:text-lg xl:my-2">Email</h2>
+                <h3 class="font-semibold text-base sm:text-lg xl:my-2">Email</h3>
                 <a
                   href="mailto:info@invictushub.com"
                   class="text-lg underline transition-all duration-300 hover:text-[#2bb6c4] hover:scale-105 inline-block"
@@ -49,7 +49,7 @@
               </div>
 
               <div>
-                <h2 class="font-semibold text-base sm:text-lg xl:my-2">Follow Us</h2>
+                <h3 class="font-semibold text-base sm:text-lg xl:my-2">Follow Us</h3>
                 <div class="flex gap-4 mt-2">
                   <a
                     href="https://www.linkedin.com/company/invictus-hub/"
@@ -109,7 +109,7 @@
 
             <div class="grid w-full grid-cols-2 gap-0 sm:gap-6 lg:w-1/2 lg:items-start">
               <div class="my-1">
-                <h1 class="my-2 text-xl lg:text-2xl">Company</h1>
+                <h3 class="my-2 text-xl lg:text-2xl">Company</h3>
                 <router-link class="md:my-1 block" to="/about">
                   <p
                     class="md:my-1 transition-all duration-300 hover:text-[#2bb6c4] hover:scale-105 hover:translate-x-1 inline-block"
@@ -148,7 +148,7 @@
               </div>
 
               <div class="my-1">
-                <h1 class="my-2 text-xl lg:text-2xl">Services</h1>
+                <h3 class="my-2 text-xl lg:text-2xl">Services</h3>
                 <router-link class="my-1 block" to="/services/web-development">
                   <p
                     class="md:my-1 transition-all duration-300 hover:text-[#2bb6c4] hover:scale-105 hover:translate-x-1 inline-block"
@@ -192,9 +192,9 @@
             class="flex flex-col items-center justify-center w-full gap-2 px-4 py-3 sm:py-4 text-center text-gray-200 md:px-6 md:flex-row md:justify-between lg:px-8 2xl:py-1"
           >
             <div>
-              <h3 class="py-2">Copyright © 2026 Invictus Hub. All rights reserved.</h3>
+              <p class="py-2">Copyright © 2026 Invictus Hub. All rights reserved.</p>
             </div>
-            <div><h3>Powered by Invictus Hub.</h3></div>
+            <div><p>Powered by Invictus Hub.</p></div>
           </div>
         </div>
       </div>

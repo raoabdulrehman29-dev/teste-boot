@@ -11,19 +11,19 @@
       class="mx-2 mt-8 overflow-hidden rounded-3xl py-2 bg-gradient-to-r from-white via-[#A9C8DA]/50 to-white sm:py-12 md:mt-10 md:px-12 lg:mt-20 xl:mt-20 2xl:py-24 max-w-[1450px] lg:mx-auto"
     >
       <div class="flex flex-col items-center text-center">
-        <h1
+        <h2
           data-split
           class="mx-4 my-4 text-[33px] font-bold leading-tight text-gray-900 md:text-[35px] lg:text-[44px] xl:text-[55px] 2xl:text-[60px]"
         >
           Join Our Innovative Team
-        </h1>
-        <h3
+        </h2>
+        <p
           data-reveal
           class="max-w-3xl mx-4 my-2 text-base font-medium leading-7 text-gray-700 md:text-lg md:leading-8"
         >
           Build the future of technology with passionate professionals who are shaping tomorrow's
           digital landscape.
-        </h3>
+      </p>
       </div>
 
       <div
@@ -86,12 +86,12 @@
       :class="store.isSearchEmpty ? '' : 'mb-12 lg:mb-20'"
       class="mx-auto mt-14 w-full px-4 text-center md:px-6 lg:mt-24 lg:px-8 max-w-[1450px]"
     >
-      <h1
+      <h2
         data-reveal
         class="mb-4 text-xl font-bold leading-tight text-black lg:text-3xl xl:text-4xl"
       >
         Our Core Values
-      </h1>
+      </h2>
       <p data-reveal class="max-w-2xl mx-auto mb-12 text-sm leading-7 text-gray-500 md:text-base">
         Explore opportunities to grow with us
       </p>
@@ -110,11 +110,11 @@
             <span v-else-if="index === 2" class="w-full">🎯</span>
             <span v-else>✨</span>
           </div>
-          <h2
+          <h3
             class="mb-2 bg-gradient-to-b from-[#185464] to-[#2a8ba3] bg-clip-text text-3xl font-bold leading-none text-transparent"
           >
             {{ value.split(" ")[0] }}
-          </h2>
+          </h3>
           <p class="text-sm font-medium leading-7 text-gray-500 md:text-[15px]">
             {{ value.split(" ").slice(1).join(" ") }}
           </p>
@@ -261,12 +261,12 @@
       :class="store.isSearchEmpty ? '' : 'mb-12 lg:mb-20'"
       class="mx-auto mt-14 w-full px-4 text-center md:px-6 lg:mt-24 lg:px-8 max-w-[1450px]"
     >
-      <h1
+      <h2
         data-reveal
         class="mb-4 text-xl font-bold leading-tight text-black lg:text-3xl xl:text-4xl"
       >
         Why Work With Us?
-      </h1>
+      </h2>
       <p data-reveal class="max-w-2xl mx-auto mb-12 text-sm leading-7 text-gray-500 md:text-base">
         We offer comprehensive benefits and a supportive environment to help you thrive both
         personally and professionally.
@@ -285,6 +285,8 @@
                 src="../assets/career6.png"
                 alt="Competitive Compensation"
                 class="w-8 h-8 transition-transform duration-300 group-hover:-translate-x-2"
+                loading="lazy"
+               decoding="async"
               />
               <div
                 class="h-[2px] w-0 bg-[#185464] opacity-0 transition-all duration-300 group-hover:w-6 group-hover:opacity-100"
@@ -292,11 +294,11 @@
             </div>
 
             <div class="flex flex-col items-start justify-start mt-6">
-              <h1
+              <h3
                 class="mb-2 bg-gradient-to-b from-[#185464] to-[#2a8ba3] bg-clip-text text-xl font-bold leading-tight text-transparent md:text-2xl"
               >
                 Competitive Compensation
-              </h1>
+              </h3>
               <p class="text-sm font-medium leading-7 text-gray-500 md:text-[15px]">
                 Attractive salary packages with performance-based bonuses and equity options.
               </p>
@@ -313,6 +315,8 @@
                 src="../assets/career1.png"
                 alt="Flexible Work"
                 class="w-8 h-8 transition-transform duration-300 group-hover:-translate-x-2"
+                loading="lazy"
+                decoding="async"
               />
               <div
                 class="h-[2px] w-0 bg-[#185464] opacity-0 transition-all duration-300 group-hover:w-6 group-hover:opacity-100"
@@ -320,11 +324,11 @@
             </div>
 
             <div class="flex flex-col items-start justify-start mt-6">
-              <h1
+              <h3
                 class="mb-2 bg-gradient-to-b from-[#185464] to-[#2a8ba3] bg-clip-text text-xl font-bold leading-tight text-transparent md:text-2xl"
               >
                 Flexible Work
-              </h1>
+              </h3>
               <p class="text-sm font-medium leading-7 text-gray-500 md:text-[15px]">
                 Remote work options and flexible hours to maintain work-life balance.
               </p>
@@ -342,6 +346,8 @@
                 src="../assets/career2.png"
                 alt="Learning & Development"
                 class="w-8 h-8 transition-transform duration-300 group-hover:-translate-x-2"
+                loading="lazy"
+                decoding="async"
               />
               <div
                 class="h-[2px] w-0 bg-[#185464] opacity-0 transition-all duration-300 group-hover:w-6 group-hover:opacity-100"
@@ -349,11 +355,11 @@
             </div>
 
             <div class="flex flex-col items-start justify-start mt-6">
-              <h1
+              <h3
                 class="mb-2 bg-gradient-to-b from-[#185464] to-[#2a8ba3] bg-clip-text text-xl font-bold leading-tight text-transparent md:text-2xl"
               >
                 Learning & Development
-              </h1>
+              </h3>
               <p class="text-sm font-medium leading-7 text-gray-500 md:text-[15px]">
                 Professional development budget, training programs, and conference attendance.
               </p>
@@ -370,6 +376,8 @@
                 src="../assets/career3.png"
                 alt="Health & Wellness"
                 class="w-8 h-8 transition-transform duration-300 group-hover:-translate-x-2"
+                loading="lazy"
+                decoding="async"
               />
               <div
                 class="h-[2px] w-0 bg-[#185464] opacity-0 transition-all duration-300 group-hover:w-6 group-hover:opacity-100"
@@ -377,11 +385,11 @@
             </div>
 
             <div class="flex flex-col items-start justify-start mt-6">
-              <h1
+              <h3
                 class="mb-2 bg-gradient-to-b from-[#185464] to-[#2a8ba3] bg-clip-text text-xl font-bold leading-tight text-transparent md:text-2xl"
               >
                 Health & Wellness
-              </h1>
+              </h3>
               <p class="text-sm font-medium leading-7 text-gray-500 md:text-[15px]">
                 Comprehensive health insurance and wellness programs for you and your family.
               </p>
@@ -398,6 +406,8 @@
                 src="../assets/career4.png"
                 alt="Time Off"
                 class="w-8 h-8 transition-transform duration-300 group-hover:-translate-x-2"
+                loading="lazy"
+                decoding="async"
               />
               <div
                 class="h-[2px] w-0 bg-[#185464] opacity-0 transition-all duration-300 group-hover:w-6 group-hover:opacity-100"
@@ -405,11 +415,11 @@
             </div>
 
             <div class="flex flex-col items-start justify-start mt-6">
-              <h1
+              <h3
                 class="mb-2 bg-gradient-to-b from-[#185464] to-[#2a8ba3] bg-clip-text text-xl font-bold leading-tight text-transparent md:text-2xl"
               >
                 Time Off
-              </h1>
+              </h3>
               <p class="text-sm font-medium leading-7 text-gray-500 md:text-[15px]">
                 Generous vacation policy and paid time off for personal and family needs.
               </p>
@@ -426,6 +436,8 @@
                 src="../assets/career5.png"
                 alt="Team Culture"
                 class="w-8 h-8 transition-transform duration-300 group-hover:-translate-x-2"
+                loading="lazy"
+                decoding="async"
               />
               <div
                 class="h-[2px] w-0 bg-[#185464] opacity-0 transition-all duration-300 group-hover:w-6 group-hover:opacity-100"
@@ -433,11 +445,11 @@
             </div>
 
             <div class="flex flex-col items-start justify-start mt-6">
-              <h1
+              <h3
                 class="mb-2 bg-gradient-to-b from-[#185464] to-[#2a8ba3] bg-clip-text text-xl font-bold leading-tight text-transparent md:text-2xl"
               >
                 Team Culture
-              </h1>
+              </h3>
               <p class="text-sm font-medium leading-7 text-gray-500 md:text-[15px]">
                 Regular team events, celebrations, and a collaborative work environment.
               </p>

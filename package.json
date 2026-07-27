@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender.js",
     "preview": "vite preview",
     "format": "prettier --write src/",
     "format:check": "prettier --check src/",
@@ -32,6 +32,7 @@
     "globals": "^17.7.0",
     "postcss": "^8.4.31",
     "prettier": "^3.9.5",
+    "puppeteer": "^25.3.0",
     "tailwindcss": "^3.4.17",
     "vite": "^7.3.1",
     "vite-plugin-vue-devtools": "^8.0.7"

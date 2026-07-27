@@ -86,11 +86,11 @@
             </router-link>
           </div>
 
-          <h1
+          <h2
             class="mt-6 text-2xl font-semibold text-white md:text-3xl lg:text-4xl xl:text-5xl lg:my-10"
           >
             Driving Your Growth with Smart Solutions
-          </h1>
+          </h2>
 
           <p
             class="my-4 text-base font-semibold text-white lg:leading-relaxed xl:leading-8 xl:mb-24"
@@ -125,14 +125,14 @@
           <div
             class="flex flex-col justify-left items-left w-[55%] xl:w-[30%] 2xl:w-[50%] md:w-[45%] mb-10 md:mb-8 xl:mx-12 2xl:mx-20 xl:mt-14"
           >
-            <h1
+            <h3
               ref="counterElement"
               class="text-[60px] lg:text-[108px] lg:mx-8 xl:mx-0 font-extrabold"
             >
               {{ count }}+
-            </h1>
+            </h3>
 
-            <h6 class="text-xl font-semibold lg:mx-8 xl:mx-0">countries served</h6>
+            <h3 class="text-xl font-semibold lg:mx-8 xl:mx-0">countries served</h3>
 
             <h2 class="mt-4 text-3xl font-medium md:text-4xl lg:text-5xl lg:mt-32 xl:mt-8">
               Trusted by 120+ clients around the world
@@ -147,7 +147,9 @@
             <img
               class="w-[10rem] sm:w-[10rem] md:w-[12rem] lg:w-[14rem] xl:w-[16rem] 2xl:w-[17rem] object-contain max-h-full opacity-[80%]"
               src="../assets/logoji.png"
-              alt=""
+              alt="Invictus Hub Logo"
+              loading="lazy"
+              fetchpriority="high"
             />
           </div>
 
@@ -194,16 +196,16 @@
     >
       <!-- Content Section -->
       <div class="relative z-20 mt-10 min-h-[220px] md:min-h-[320px] lg:min-h-[420px] 2xl:h-full">
-        <h1
+        <h2
           data-reveal
           class="text-[40px] md:text-[60px] w-full text-left my-2 sm:my-6 px-3 md:my-10 md:pl-28 lg:my-4 lg:pl-36 lg:text-[85px] xl:my-16 2xl-[my-18] xl:pl-44 xl:text-[95px] min-[1500px]:pl-[clamp(10rem,14vw,24rem)] min-[1800px]:pl-[clamp(14rem,18vw,30rem)] min-[2000px]:text-[100px] min-[2000px]:w-[90%] xl:font-semibold inline-block text-6xl font-semibold bg-gradient-to-r from-[#0c405a] from-[35%] via-[#2BB6C4] to-[#0c405a] to-[60%] bg-clip-text text-transparent 2xl:w-[80%]"
         >
           Experience real-time innovation—seamless, reliable, and stress-free.
-        </h1>
+        </h2>
         <img
           data-parallax
           src="../assets/sidebannerlogo.png"
-          alt=""
+          alt="banner image"
           class="absolute top-0 left-0 object-contain w-20 h-full md:opacity-40 opacity-5 md:w-16 lg:w-24"
         />
       </div>
@@ -219,15 +221,15 @@
       "
       class="my-6 lg:my-8 mx-1 md:mx-16 min-[1500px]:mx-[10%] xl:my-10 2xl:my-16 max-w-[1450px]"
     >
-      <h3 data-reveal class="mb-2 font-semibold lg:mx-2 xl:mx-0">[ services ]</h3>
+      <h2 data-reveal class="mb-2 font-semibold lg:mx-2 xl:mx-0">[ services ]</h2>
       <div class="flex flex-col lg:flex-row lg:justify-between lg:mx-2">
         <div>
-          <h1
+          <h2
             data-split
             class="text-[30px] md:text-[35px] lg:text-[50px] text-gray-900 xl:text-[70px] xl:font-semibold inline-block text-6xl font-semibold"
           >
             Services and solutions we provide.
-          </h1>
+          </h2>
         </div>
         <div data-reveal class="flex justify-start lg:justify-end lg:items-end lg:w-[30%]">
           <router-link to="/services" class="group">
@@ -271,17 +273,19 @@
         class="card1 bg-gray-900 p-5 rounded-3xl rounded-br-[2rem] text-white flex flex-col justify-between relative isolate md:flex-1"
       >
         <div class="flex flex-col justify-left items-left w-[60%] 2xl:w-[55%]">
-          <h1 class="mt-6 text-lg font-semibold 2xl:text-[25px] 2xl:my-10">Website Development</h1>
-          <h2 class="mt-4 text-base lg:w-[90%] xl:w-[80%] leading-normal lg:leading-loose 2xl:mb-8">
+          <h3 class="mt-6 text-lg font-semibold 2xl:text-[25px] 2xl:my-10">Website Development</h3>
+          <p class="mt-4 text-base lg:w-[90%] xl:w-[80%] leading-normal lg:leading-loose 2xl:mb-8">
             We build professional responsive websites optimized for the most popular search engines
-          </h2>
+          </p>
         </div>
         <div>
           <div>
             <img
               class="w-[105px] xl:w-[138px] object-right relative top-[10px] left-[1px] inset-0 overflow-hidden z-10 opacity-[80%]"
               src="../assets/logoji.png"
-              alt=""
+              alt="Website Development"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
@@ -325,18 +329,20 @@
         class="card2 bg-gray-500 p-5 rounded-3xl rounded-br-[2rem] text-white flex flex-col justify-between relative isolate md:flex-1"
       >
         <div class="flex flex-col justify-left items-left w-[60%] 2xl:w-[55%]">
-          <h1 class="mt-6 text-lg font-semibold 2xl:text-[25px] 2xl:my-10">Mobile Applications</h1>
-          <h2 class="mt-4 text-base lg:w-[90%] xl:w-[80%] leading-normal lg:leading-loose 2xl:mb-8">
+          <h3 class="mt-6 text-lg font-semibold 2xl:text-[25px] 2xl:my-10">Mobile Applications</h3>
+          <p class="mt-4 text-base lg:w-[90%] xl:w-[80%] leading-normal lg:leading-loose 2xl:mb-8">
             Follow the global trend and create your revolutionary mobile app built with the best
             technologies
-          </h2>
+          </p>
         </div>
         <div>
           <div>
             <img
               class="w-[105px] xl:w-[138px] object-right relative top-[10px] left-[1px] inset-0 overflow-hidden z-10 opacity-[80%]"
               src="../assets/logoji.png"
-              alt=""
+              alt="Mobile Applications"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
@@ -380,17 +386,19 @@
         class="card3 bg-gray-500 p-5 rounded-3xl rounded-br-[2rem] text-white flex flex-col justify-between relative isolate md:flex-1"
       >
         <div class="flex flex-col justify-left items-left w-[60%] 2xl:w-[55%]">
-          <h1 class="mt-6 text-lg font-semibold 2xl:text-[25px] 2xl:my-10">E-Commerce Solutions</h1>
-          <h2 class="mt-4 text-base lg:w-[90%] xl:w-[80%] leading-normal lg:leading-loose 2xl:mb-8">
+          <h3 class="mt-6 text-lg font-semibold 2xl:text-[25px] 2xl:my-10">E-Commerce Solutions</h3>
+          <p class="mt-4 text-base lg:w-[90%] xl:w-[80%] leading-normal lg:leading-loose 2xl:mb-8">
             Increase your sales with an incredible online store, full of features and functionality
-          </h2>
+          </p>
         </div>
         <div>
           <div>
             <img
               class="w-[105px] xl:w-[138px] object-right relative top-[10px] left-[1px] inset-0 overflow-hidden z-10 opacity-[80%]"
               src="../assets/logoji.png"
-              alt=""
+              alt="E-Commerce Solutions"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
@@ -444,11 +452,11 @@
       class="flex flex-col lg:flex-row justify-center items-center bg-gradient-to-br from-[#050a14] via-[#0a1a3a] to-[#0a0a1a] rounded-3xl my-6 px-2 text-white md:mt-20"
     >
       <div class="w-full my-2 lg:w-1/5 lg:my-4 lg:py-4 md:mx-4 lg:mx-8">
-        <h1
+        <h2
           class="text-center text-[26px] md:text-[30px] lg:text-[35px] lg:text-start 2xl:text-[41px] font-semibold"
         >
           Tech We Use
-        </h1>
+        </h2>
       </div>
 
       <div class="w-full overflow-hidden md:w-4/5">
@@ -459,7 +467,9 @@
             <img
               class="h-[6rem] w-full object-contain md:h-[6rem] lg:h-[7rem] xl:h-[6rem]"
               src="../assets/stripe.png"
-              alt=""
+              alt="Stripe Logo"
+              loading="lazy"
+              decoding="async"
             />
             <p class="py-2 text-sm font-bold md:text-base">Stripe</p>
           </div>
@@ -469,7 +479,9 @@
             <img
               class="h-[6rem] w-full object-contain md:h-[6rem] lg:h-[7rem] xl:h-[6rem]"
               src="../assets/react.png"
-              alt=""
+              alt="React Logo"
+              loading="lazy"
+              decoding="async"
             />
             <p class="py-2 text-sm font-bold md:text-base">React</p>
           </div>
@@ -479,7 +491,9 @@
             <img
               class="h-[6rem] w-full object-contain md:h-[6rem] lg:h-[7rem] xl:h-[6rem]"
               src="../assets/flutter-icon.png"
-              alt=""
+              alt="Flutter Logo"
+              loading="lazy"
+              decoding="async"
             />
             <p class="py-2 text-sm font-bold md:text-base">Flutter</p>
           </div>
@@ -489,7 +503,9 @@
             <img
               class="h-[6rem] w-full object-contain md:h-[6rem] lg:h-[7rem] xl:h-[6rem]"
               src="../assets/digital-ocean.png"
-              alt=""
+              alt="Ocean Logo"
+              loading="lazy"
+              decoding="async"
             />
             <p class="py-2 text-sm font-bold md:text-base">Ocean</p>
           </div>
@@ -499,7 +515,9 @@
             <img
               class="h-14 w-full object-contain md:h-[6rem] lg:h-[7rem] xl:h-[6rem]"
               src="../assets/twitter.png"
-              alt=""
+              alt="Twitter Logo"
+              loading="lazy"
+              decoding="async"
             />
             <p class="py-2 text-sm font-bold md:text-base">Twitter</p>
           </div>
@@ -510,7 +528,9 @@
             <img
               class="h-14 w-full object-contain md:h-[6rem] lg:h-[7rem] xl:h-[6rem]"
               src="../assets/slack.png"
-              alt=""
+              alt="Slack Logo"
+              loading="lazy"
+              decoding="async"
             />
             <p class="py-2 text-sm font-bold md:text-base">Slack</p>
           </div>
@@ -520,7 +540,9 @@
             <img
               class="h-14 w-full object-contain md:h-[6rem] lg:h-[7rem] xl:h-[6rem]"
               src="../assets/stripe.png"
-              alt=""
+              alt="Stripe Logo"
+              loading="lazy"
+              decoding="async"
             />
             <p class="py-2 text-sm font-bold md:text-base">Stripe</p>
           </div>
@@ -530,7 +552,9 @@
             <img
               class="h-14 w-full object-contain md:h-[6rem] lg:h-[7rem] xl:h-[6rem]"
               src="../assets/react.png"
-              alt=""
+              alt="React Logo"
+              loading="lazy"
+              decoding="async"
             />
             <p class="py-2 text-sm font-bold md:text-base">React</p>
           </div>
@@ -540,7 +564,9 @@
             <img
               class="h-14 w-full object-contain md:h-[6rem] lg:h-[7rem] xl:h-[6rem]"
               src="../assets/flutter-icon.png"
-              alt=""
+              alt="Flutter Logo"
+              loading="lazy"
+              decoding="async"
             />
             <p class="py-2 text-sm font-bold md:text-base">Flutter</p>
           </div>
@@ -550,7 +576,9 @@
             <img
               class="h-14 w-full object-contain md:h-[6rem] lg:h-[7rem] xl:h-[6rem]"
               src="../assets/digital-ocean.png"
-              alt=""
+              alt="Ocean Logo"
+              loading="lazy"
+              decoding="async"
             />
             <p class="py-2 text-sm font-bold md:text-base">Ocean</p>
           </div>
@@ -560,7 +588,9 @@
             <img
               class="h-14 w-full object-contain md:h-[6rem] lg:h-[7rem] xl:h-[6rem]"
               src="../assets/twitter.png"
-              alt=""
+              alt="Twitter Logo"
+              loading="lazy"
+              decoding="async"
             />
             <p class="py-2 text-sm font-bold md:text-base">Twitter</p>
           </div>
@@ -570,7 +600,9 @@
             <img
               class="h-[6rem] w-full object-contain md:h-[6rem] lg:h-[7rem] xl:h-[6rem]"
               src="../assets/stripe.png"
-              alt=""
+              alt="Stripe Logo"
+              loading="lazy"
+              decoding="async"
             />
             <p class="py-2 text-sm font-bold md:text-base">Stripe</p>
           </div>
@@ -580,7 +612,9 @@
             <img
               class="h-[6rem] w-full object-contain md:h-[6rem] lg:h-[7rem] xl:h-[6rem]"
               src="../assets/react.png"
-              alt=""
+              alt="React Logo"
+              loading="lazy"
+              decoding="async"
             />
             <p class="py-2 text-sm font-bold md:text-base">React</p>
           </div>
@@ -590,7 +624,9 @@
             <img
               class="h-[6rem] w-full object-contain md:h-[6rem] lg:h-[7rem] xl:h-[6rem]"
               src="../assets/flutter-icon.png"
-              alt=""
+              alt="Flutter Logo"
+              loading="lazy"
+              decoding="async"
             />
             <p class="py-2 text-sm font-bold md:text-base">Flutter</p>
           </div>
@@ -608,21 +644,21 @@
       data-reveal
       class="mt-20 mb-10 rounded-3xl bg-gradient-to-r from-gray-50 via-[#A9C8DA] to-gray-200 px-8 py-6 relative md:mx-2 lg:mb-20 lg:pl-[16rem] xl:pl-[18rem] min-[1500px]:mx-[10%] min-[1500px]:py-6 max-w-[1450px]"
     >
-      <h3 class="font-semibold md:my-2 xl:mx-16">[ About ]</h3>
+      <h2 class="font-semibold md:my-2 xl:mx-16">[ About ]</h2>
 
-      <h1
+      <h2
         class="text-[29px] md:text-[35px] text-gray-900 font-semibold lg:text-[60px] xl:text-[65px] 2xl:text-[60px] xl:font-semibold inline-block text-6xl my-2 md:my-4 xl:my-2 xl:mx-16"
       >
         Bringing Your Business to Life Through Innovation
-      </h1>
-      <h6
+      </h2>
+      <p
         class="inline-block mt-6 text-base text-left text-gray-900 lg:leading-loose lg:text-lg xl:mx-16"
       >
         For over 10 years, we have been developing digital solutions for companies looking to scale
         up their business and gain greater visibility online. <br />Our priority is to understand
         your specific needs and help you improve your competitiveness and efficiency. Offering
         innovative solutions requires sophisticated knowledge and technological advancement.
-      </h6>
+    </p>
       <div
         class="flex flex-col lg:flex-row lg:justify-between items-start lg:items-center xl:mt-10 xl:mx-16 gap-6 my-6"
       >
@@ -655,17 +691,17 @@
           class="flex flex-col items-start sm:items-center justify-between gap-2 md:gap-4 md:items-center md:flex-row md:w-full lg:w-auto"
         >
           <div>
-            <h1
+            <h2
               ref="counterElement1"
               class="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent md:text-[70px] xl:text-[90px] 2xl:text-[80px] xl:font-normal inline-block text-6xl my-2"
             >
               {{ count1 }}+
-            </h1>
+            </h2>
           </div>
           <div class="md:w-[60%] lg:w-full">
-            <h4 class="text-[16px] font-semibold md:text-end">
+            <h3 class="text-[16px] font-semibold md:text-end">
               Successfully completed great projects
-            </h4>
+            </h3>
           </div>
         </div>
       </div>
@@ -675,8 +711,10 @@
         <div class="relative w-full h-full overflow-hidden rounded-3xl">
           <img
             src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=600&h=800&fit=crop"
-            alt=""
+            alt="banner image"
             class="w-full h-full object-cover opacity-50"
+            loading="lazy"
+            decoding="async"
           />
           <div
             class="absolute inset-0 bg-gradient-to-r from-[#185464]/30 via-transparent to-transparent"
@@ -700,14 +738,14 @@
         class="flex flex-col items-start justify-between gap-6 mx-4 md:flex-row xl:justify-around lg:items-end lg:mx-auto max-w-[1450px] lg:px-16"
       >
         <div class="w-full sm:w-[78%] lg:w-[70%] mx-2">
-          <h3 data-reveal class="my-2 font-semibold">[ Projects ]</h3>
+          <h2 data-reveal class="my-2 font-semibold">[ Projects ]</h2>
 
-          <h1
+          <h2
             data-split
             class="text-[29px] md:text-[40px] lg:text-[50px] xl:text-[58px] xl:font-semibold inline-block text-6xl font-bold my-2"
           >
             We have already built amazing things for our customers.
-          </h1>
+          </h2>
         </div>
         <div data-reveal class="flex justify-end xl:justify-center lg:w-[30%] my-4">
           <router-link to="/projects" class="group">
@@ -963,9 +1001,9 @@
               </div>
 
               <div>
-                <h1 class="my-8 text-lg lg:text-xl font-semibold text-center text-black">
+                <h3 class="my-8 text-lg lg:text-xl font-semibold text-center text-black">
                   {{ project.title }}
-                </h1>
+                </h3>
               </div>
             </div>
           </router-link>
@@ -985,16 +1023,16 @@
       class="md:px-12 overflow-hidden mt-8 md:mt-10 bg-gradient-to-r from-white via-[#A9C8DA]/50 to-white rounded-3xl xl:mt-20 md:mx-2 lg:mt-20 sm:py-12 xl:py-18 2xl:py-24 max-w-[1450px] lg:mx-auto"
     >
       <div class="flex flex-col items-center text-center flex-center">
-        <h1
+        <h2
           data-split
           class="text-[33px] md:text-[35px] text-gray-900 xl:text-[55px] 2xl:text-[60px] xl:font-semibold inline-block text-6xl font-bold my-4 mx-4 lg:text-[44px]"
         >
           Ready to Transform Your Business?
-        </h1>
-        <h3 data-reveal class="mx-4 my-2 font-semibold md:text-lg">
+        </h2>
+        <p data-reveal class="mx-4 my-2 font-semibold md:text-lg">
           Let's discuss how our innovative solutions can help you achieve your goals and drive your
           business forward with cutting-edge technology.
-        </h3>
+        </p>
       </div>
 
       <div
@@ -1164,7 +1202,7 @@ useScrollReveal(pageRoot, { rebuildOn: [() => store.searchQuery] });
 }
 .card3 {
   background-image:
-    linear-gradient(to right, rgba(24, 84, 100, 0.6), rgba(19, 64, 76, 0.6)), url(../assets/it1.jpg);
+    linear-gradient(to right, rgba(24, 84, 100, 0.6), rgba(19, 64, 76, 0.6)), url(../assets/it1.png);
   background-size: cover;
   background-repeat: no-repeat;
 }

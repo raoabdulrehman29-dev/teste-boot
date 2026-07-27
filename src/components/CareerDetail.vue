@@ -77,7 +77,7 @@
               <div
                 class="relative bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-[2.5rem] border border-white/20 text-white w-full max-w-md"
               >
-                <h4 class="mb-3 md:mb-4 text-lg md:text-xl font-bold">Required Technologies</h4>
+                <h3 class="mb-3 md:mb-4 text-lg md:text-xl font-bold">Required Technologies</h3>
                 <div class="flex flex-wrap gap-2">
                   <span
                     v-for="tech in job.technologies"
@@ -193,7 +193,7 @@
 
   <div v-else class="flex items-center justify-center min-h-screen px-6 text-center">
     <div>
-      <h1 class="mb-3 text-3xl font-bold text-[#185464]">Job Not Found</h1>
+      <h2 class="mb-3 text-3xl font-bold text-[#185464]">Job Not Found</h2>
       <p class="mb-6 text-gray-500">
         The job you're looking for doesn't exist or has been removed.
       </p>

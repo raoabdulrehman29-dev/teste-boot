@@ -95,11 +95,11 @@
           <div
             class="flex flex-col gap-4 mx-10 font-semibold text-white items-start justify-center"
           >
-            <h1 class="text-lg">Contact</h1>
-            <h1>
+            <p class="text-lg font-semibold">Contact</p>
+            <p>
               Plaza no 5, Block D Commercial Basement, Architects Engineers Housing Society, Lahore,
               54000
-            </h1>
+            </p>
             <a
               href="https://wa.me/923394025020"
               target="_blank"
@@ -165,7 +165,7 @@
         class="flex items-start justify-center w-[3%] h-full bg-gradient-to-r from-[#185464] to-[#13404c] rounded-2xl"
       >
         <button @click="sidenavopen = !sidenavopen">
-          <h1 class="w-full my-16 text-lg font-semibold text-white rotate-90">Close</h1>
+          <span class="w-full my-16 text-lg font-semibold text-white rotate-90 block">Close</span>
         </button>
       </div>
     </div>
@@ -279,9 +279,9 @@
                     <p class="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#2bb6c4]">
                       Our Services
                     </p>
-                    <h2 class="mt-1.5 text-lg font-bold leading-tight text-slate-900">
+                    <h3 class="mt-1.5 text-lg font-bold leading-tight text-slate-900">
                       Comprehensive Digital Solutions
-                    </h2>
+                    </h3>
                     <p class="mt-1.5 max-w-xl text-sm leading-6 text-slate-500">
                       Innovative technology that helps businesses grow, automate and scale for the
                       future.
@@ -343,9 +343,9 @@
                           </svg>
                         </div>
                         <div class="min-w-0">
-                          <h3 class="text-sm font-bold leading-tight text-slate-900">
+                          <h4 class="text-sm font-bold leading-tight text-slate-900">
                             {{ category.title }}
-                          </h3>
+                          </h4>
                           <p class="text-[11px] text-slate-400">{{ category.subtitle }}</p>
                         </div>
                       </div>

@@ -7,10 +7,10 @@
       v-if="isVisible('About working  awesome things in with us')"
       class="mx-auto my-6 md:mt-10 w-full lg:my-8 px-4 max-w-[1450px]"
     >
-      <h3 data-reveal class="mb-2 font-semibold md:ml-8 lg:ml-10">[ About ]</h3>
+      <p data-reveal class="mb-2 font-semibold md:ml-8 lg:ml-10">[ About ]</p>
       <div class="flex flex-col lg:flex-row lg:justify-between">
         <div class="w-full xl:h-full">
-          <h1
+          <h2
             data-reveal
             class="inline-block text-[28px] font-semibold capitalize text-black leading-tight sm:text-[30px] md:ml-8 md:w-[58%] md:text-[35px] min-[1226px]:text-[48px] lg:ml-10 lg:text-[46px] min-[1500px]:ml-10 min-[1500px]:w-[62%] xl:w-[58%] xl:text-[52px] xl:leading-14 2xl:ml-12 2xl:w-[64%] 2xl:text-[60px]"
           >
@@ -19,7 +19,7 @@
             <br class="hidden min-[1600px]:block" />
             <br class="min-[1600px]:hidden" />
             <span class="min-[1600px]:hidden">working </span>with us
-          </h1>
+          </h2>
         </div>
       </div>
     </div>
@@ -33,11 +33,11 @@
       class="mx-auto my-10 flex w-full max-w-[1920px] flex-col items-center justify-center gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-4 lg:my-16 2xl:my-20 xl:gap-2 px-4"
     >
       <div data-reveal class="w-full lg:w-[50%]">
-        <h1
+        <h2
           class="inline-block text-[37px] font-extrabold capitalize text-gray-100 drop-shadow-[0_0_2px_#2f758a] md:text-[70px] lg:text-[70px] xl:text-[100px]"
         >
           Invictus Hub
-        </h1>
+        </h2>
       </div>
       <div data-reveal class="w-full lg:w-[40%]">
         <p class="text-base leading-7 text-black md:text-lg md:leading-7 lg:text-base lg:leading-7">
@@ -64,11 +64,11 @@
         data-reveal
         class="rounded-3xl bg-gradient-to-b from-gray-900 via-gray-800 to-[#185464] px-4 pb-6 pt-12 md:rounded-3xl lg:w-[40%] xl:w-[35%] lg:px-8"
       >
-        <h1
+        <h2
           class="mt-6 text-2xl font-semibold text-white md:text-3xl lg:my-10 xl:my-6 lg:text-4xl xl:text-4xl"
         >
           Mission
-        </h1>
+        </h2>
         <p
           class="my-6 text-lg font-semibold text-white md:text-lg lg:text-2xl lg:leading-relaxed xl:mb-32 xl:text-2xl lg:font-normal"
         >
@@ -94,17 +94,17 @@
         <div
           class="mb-6 flex w-full flex-col items-start justify-center gap-1 md:mb-10 md:w-[30%] md:flex-col md:items-end md:gap-4 lg:ml-auto lg:mb-10 lg:flex-col lg:justify-start lg:items-center lg:gap-6 lg:pb-12 lg:text-right xl:mx-10 xl:mb-0 xl:w-[20%] xl:gap-2 xl:pb-0 xl:text-center 2xl:pt-12"
         >
-          <h1
+          <h3
             ref="counterElement"
             class="my-2 text-[55px] font-extrabold leading-none md:my-0 md:text-[72px] md:rotate-90 lg:text-[120px] xl:text-[120px] 2xl:text-[110px]"
           >
             {{ missionCount }}+
-          </h1>
-          <h6
+          </h3>
+          <h4
             class="text-lg lg:text-2xl xl:text-2xl font-semibold md:text-xl lg:mx-0 md:mt-[5rem] lg:mb-[9.5rem] xl:mb-[5.5rem]"
           >
             Great Projects
-          </h6>
+          </h4>
         </div>
 
         <div class="absolute bottom-0 right-0 z-20 overflow-visible">
@@ -137,11 +137,11 @@
       v-if="isVisible('Customer Satisfaction and Business ')"
       class="px-2 my-6 overflow-hidden whitespace-nowrap"
     >
-      <h1
+      <h2
         class="inline-block text-4xl font-semibold leading-tight text-gray-900 min-w-max animate-text-scroll md:my-8 md:text-6xl lg:my-10 lg:text-7xl xl:text-8xl"
       >
         /Customer Satisfaction and Business are always at the center of our attention.
-      </h1>
+      </h2>
     </div>
 
     <!-- Content Section -->
@@ -159,7 +159,7 @@
           class="relative z-10 py-8 md:py-10 pl-6 md:pl-28 lg:pl-36 xl:pl-40 min-[1500px]:pl-[clamp(12rem,15vw,20rem)] min-[1800px]:pl-[clamp(14rem,20vw,22rem)] 2xl:mr-10 mb-6"
         >
           <div class="flex flex-col gap-8">
-            <h1
+            <blockquote
               class="text-[28px] text-left font-semibold md:text-[35px] lg:text-[48px] xl:text-[55px] 2xl:text-[60px] leading-[1.15] md:leading-[1.12] max-w-[95%] min-[1500px]:max-w-[97%] min-[1800px]:max-w-[97%]"
             >
               “Not everyone is aware of the technological assets their company lacks in order to
@@ -171,7 +171,7 @@
               </span>
               to decipher them and provide you with customized solutions for all your business
               processes.”
-            </h1>
+            </blockquote>
           </div>
         </div>
       </div>
@@ -179,7 +179,7 @@
       <img
         data-parallax
         src="../assets/sidebannerlogo.png"
-        alt=""
+        alt="Banner image"
         class="absolute top-0 left-0 object-contain w-20 h-full md:w-24 lg:w-28 xl:w-32 2xl:w-36 md:opacity-40 opacity-5"
       />
     </div>
@@ -195,16 +195,16 @@
     >
       <div class="mb-2 mt-20 rounded-3xl px-4 py-2 lg:mb-2 xl:pl-[1rem]">
         <div class="flex flex-col lg:flex-row lg:justify-between">
-          <h3 data-reveal class="mb-1 font-semibold">[ What You'll Get ]</h3>
+          <p data-reveal class="mb-1 font-semibold">[ What You'll Get ]</p>
         </div>
         <div class="flex flex-col my-2 lg:flex-row lg:justify-between">
           <div class="md:w-[70%]">
-            <h1
+            <h2
               data-split
               class="inline-block text-[30px] font-semibold capitalize text-gray-900 md:text-[35px] lg:text-[45px] xl:text-[60px] xl:w-[75%] leading-tight xl:leading-none"
             >
               Designed to Help You Succeed
-            </h1>
+            </h2>
           </div>
         </div>
       </div>
@@ -217,11 +217,11 @@
           class="flex flex-row items-start justify-between gap-2 my-8 md:items-start lg:items-start md:w-1/2 lg:w-1/3 xl:w-1/4"
         >
           <div class="-rotate-90">
-            <h1
+            <h2
               class="text-4xl font-bold text-transparent md:text-6xl bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text md:my-2 lg:my-4"
             >
               01
-            </h1>
+            </h2>
           </div>
           <div>
             <h2 class="text-[1.25rem] font-semibold lg:text-[25px]">A head start</h2>
@@ -234,11 +234,11 @@
           class="flex flex-row items-start justify-between gap-2 my-8 md:items-center lg:items-start md:w-1/2 lg:w-1/3 xl:w-1/4"
         >
           <div class="-rotate-90">
-            <h1
+            <h2
               class="text-4xl font-bold text-transparent md:text-6xl bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text md:my-2 lg:my-4"
             >
               02
-            </h1>
+            </h2>
           </div>
           <div>
             <h2 class="text-[1.25rem] font-semibold lg:text-[25px]">A focused consultation</h2>
@@ -251,11 +251,11 @@
           class="flex flex-row items-start justify-between gap-2 my-8 md:items-center lg:items-start md:w-1/2 lg:w-1/3 xl:w-1/4"
         >
           <div class="-rotate-90">
-            <h1
+            <h2
               class="text-4xl font-bold text-transparent md:text-6xl bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text md:my-2 lg:my-4"
             >
               03
-            </h1>
+            </h2>
           </div>
           <div>
             <h2 class="text-[1.25rem] font-semibold lg:text-[25px]">Cross-linked action</h2>
@@ -268,11 +268,11 @@
           class="flex flex-row items-start justify-between gap-2 my-8 md:items-center lg:items-start md:w-1/2 lg:w-1/3 xl:w-1/4"
         >
           <div class="-rotate-90">
-            <h1
+            <h2
               class="text-4xl font-bold text-transparent md:text-6xl bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text md:my-2 lg:my-4"
             >
               04
-            </h1>
+            </h2>
           </div>
           <div>
             <h2 class="text-[1.25rem] font-semibold lg:text-[25px]">Assistance</h2>
@@ -297,7 +297,7 @@
         data-reveal
         class="w-full rounded-3xl bg-gradient-to-r from-[#185464] to-[#13404c] md:w-[45%] px-8 py-8 flex-1 xl:py-4"
       >
-        <h1 class="my-6 text-base font-semibold text-white xl:my-2">/ Vision /</h1>
+        <h2 class="my-6 text-base font-semibold text-white xl:my-2">/ Vision /</h2>
         <p
           class="my-2 text-lg font-normal text-white md:text-lg lg:leading-tight lg:text-[25px] xl:mb-18"
         >
@@ -311,7 +311,7 @@
         data-reveal
         class="w-full rounded-3xl bg-[#f0f2f4] px-8 py-8 xl:py-6 flex-1 text-lg text-gray-800 md:w-[45%]"
       >
-        <h1 class="my-2 font-semibold xl:my-2">[Core Value]</h1>
+        <p class="my-2 font-semibold xl:my-2">[Core Value]</p>
         <ul class="space-y-1 md:space-y-3">
           <li class="flex items-center gap-3 text-base">
             <svg
@@ -438,16 +438,16 @@
       "
       class="mx-auto my-10 mt-14 w-full px-4 md:my-2 md:px-12 lg:my-8 lg:mt-24 lg:px-16 max-w-[1450px]"
     >
-      <h3 data-reveal class="mb-2 font-semibold">[Fun Facts]</h3>
+      <p data-reveal class="mb-2 font-semibold">[Fun Facts]</p>
       <div class="flex flex-col lg:flex-row lg:justify-between">
         <div>
-          <h1
+          <p
             data-reveal
             class="inline-block text-[27px] font-semibold capitalize text-black md:text-[32px] lg:text-[42px] xl:text-[57px] leading-tight"
           >
             Over the years, we have done many things that we are proud of. This motivates us to
             continue looking for new challenges in order to improve our services.
-          </h1>
+        </p>
         </div>
       </div>
     </div>
@@ -458,11 +458,11 @@
       class="mx-auto my-10 flex w-full flex-wrap items-center justify-center px-4 py-2 md:justify-start md:px-12 lg:px-16 lg:pb-6 max-w-[1450px]"
     >
       <div class="w-1/2 md:w-1/3 lg:w-1/4">
-        <h1
+        <h3
           class="my-4 text-4xl font-bold text-transparent md:text-6xl bg-gradient-to-b from-blue-400 to-emerald-400 bg-clip-text"
         >
           {{ projectCount }}+
-        </h1>
+        </h3>
         <h2 class="text-xl font-semibold flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -477,11 +477,11 @@
         </h2>
       </div>
       <div class="w-1/2 md:w-1/3 lg:w-1/4">
-        <h1
+        <h3
           class="my-4 text-4xl font-bold text-transparent md:text-6xl bg-gradient-to-b from-blue-400 to-emerald-400 bg-clip-text"
         >
           {{ productCount }}%
-        </h1>
+        </h3>
         <h2 class="text-xl font-semibold flex items-center">
           <svg
             class="inline-block w-auto h-4 mx-2"
@@ -496,11 +496,11 @@
         </h2>
       </div>
       <div class="w-1/2 md:w-1/3 lg:w-1/4">
-        <h1
+        <h3
           class="my-4 text-4xl font-bold text-transparent md:text-6xl bg-gradient-to-b from-blue-400 to-emerald-400 bg-clip-text"
         >
           {{ happyClientsCount }}+
-        </h1>
+        </h3>
         <h2 class="text-xl font-semibold flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -515,11 +515,11 @@
         </h2>
       </div>
       <div class="w-1/2 md:w-1/3 lg:w-1/4">
-        <h1
+        <h3
           class="my-4 text-4xl font-bold text-transparent md:text-6xl bg-gradient-to-b from-blue-400 to-emerald-400 bg-clip-text"
         >
           {{ yearsExperienceCount }}+
-        </h1>
+        </h3>
         <h2 class="text-xl font-semibold flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
