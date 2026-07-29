@@ -41,7 +41,8 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted, watch } from "vue";
+import { useRoute } from "vue-router";
 import router from "./router";
 
 import NavBar from "./components/NavBar.vue";
@@ -51,8 +52,82 @@ import ScrollButton from "./components/ScrollButton.vue";
 import { isPageLoading } from "./router/pageLoader";
 import { ScrollSmoother } from "@/lib/gsap";
 import { Analytics } from "@vercel/analytics/vue";
+import { useSchema } from "@/composables/useSchema";
 
 let smoother;
+const route = useRoute();
+const { generatePageSchema, siteUrl, siteName } = useSchema();
+
+const getSchemaForRoute = () => {
+  const routeMeta = route.meta;
+  const path = route.path;
+
+  const breadcrumbItems = routeMeta.schema?.breadcrumb || [];
+  const breadcrumbList = breadcrumbItems.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.name,
+    item: `${siteUrl}${item.path}`
+  }));
+
+  const fullSchema = {
+    '@context': 'https://schema.org',
+    '@type': routeMeta.schema?.type || 'WebPage',
+    name: routeMeta.title || siteName,
+    description: routeMeta.description || 'Professional digital solutions company in Pakistan.',
+    url: `${siteUrl}${path}`,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: siteName,
+      url: siteUrl
+    }
+  };
+
+  if (breadcrumbList.length > 0) {
+    fullSchema.breadcrumb = {
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbList
+    };
+  }
+
+  return fullSchema;
+};
+
+const injectSchema = () => {
+  // Remove existing schema script
+  const existingScript = document.querySelector('#schema-json');
+  if (existingScript) {
+    existingScript.remove();
+  }
+
+  const schema = getSchemaForRoute();
+  const script = document.createElement('script');
+  script.id = 'schema-json';
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
+};
+
+const injectCanonical = () => {
+  const canonicalUrl = `${siteUrl}${route.path}`;
+
+  let link = document.querySelector('link[rel="canonical"]');
+  if (!link) {
+    link = document.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    document.head.appendChild(link);
+  }
+  link.setAttribute('href', canonicalUrl);
+};
+
+watch(
+  () => route.path,
+  () => {
+    injectSchema();
+    injectCanonical();
+  },
+  { immediate: true }
+);
 
 onMounted(async () => {
   await router.isReady();
@@ -65,10 +140,19 @@ onMounted(async () => {
     smooth: 1.2,
     effects: true,
   });
+
+  injectSchema();
+  injectCanonical();
 });
 
 onUnmounted(() => {
   smoother?.kill();
+
+  const existingScript = document.querySelector('#schema-json');
+  if (existingScript) {
+    existingScript.remove();
+  }
+
 });
 </script>
 
