@@ -202,20 +202,8 @@ function handleResize() {
 }
 
 onMounted(() => {
-    const el = container.value; // or canvasHost.value, whichever the file uses
-  const width = el.clientWidth;
-  const height = el.clientHeight;
-
-  // Guard against environments with no WebGL (e.g. some headless/CI
-  // browsers used for prerendering) - fail silently instead of
-  // throwing and crashing the whole page render
-  try {
-    renderer = new WebGLRenderer({ antialias: true, alpha: true });
-  } catch (err) {
-    console.warn("WebGL unavailable, skipping 3D background:", err.message);
-    return;
-  }
-
+  const width = canvasHost.value.clientWidth;
+  const height = canvasHost.value.clientHeight;
   buildScene(width, height);
   animate();
 
@@ -224,7 +212,6 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-  
   cancelAnimationFrame(animationId);
   window.removeEventListener("mousemove", handleMouseMove);
   window.removeEventListener("resize", handleResize);

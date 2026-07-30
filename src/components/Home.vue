@@ -201,12 +201,12 @@
         @mouseenter="playVideo('video-website')"
         @mouseleave="pauseVideo('video-website')"
       >
-        <video id="video-website" class="absolute rounded-br-[2rem] inset-0 w-full h-full object-cover z-0" muted playsinline preload="metadata" loop aria-label="Website development showcase video" style="aspect-ratio: 16/9; width: 100%; height: auto;">
+        <video id="video-website" class="absolute rounded-br-[2rem] inset-0 w-full h-full object-cover z-0" muted playsinline preload="metadata" loop aria-label="Website development showcase video">
           <source src="../assets/videos/website.mp4" type="video/mp4" />
           <track kind="captions" srclang="en" label="English" default />
           
         </video>
-        <div class="absolute inset-0 bg-gradient-to-r from-[#185464]/80 via-[#13404c]/60 to-transparent z-10 transition-opacity duration-500 group-hover/video:opacity-60"></div>
+        <div class="absolute  inset-0 bg-gradient-to-r from-[#185464]/80 via-[#13404c]/60 to-transparent z-10 transition-opacity duration-500 group-hover/video:opacity-60"></div>
 
         <div class="flex flex-col justify-left items-left w-[60%] 2xl:w-[55%] relative z-20">
           <h3 class="mt-6 text-lg font-semibold 2xl:text-[25px] 2xl:my-10">Website Development</h3>
@@ -241,7 +241,7 @@
         @mouseenter="playVideo('video-app')"
         @mouseleave="pauseVideo('video-app')"
       >
-        <video id="video-app" class="absolute inset-0 w-full h-full object-cover z-0" muted playsinline preload="metadata" loop aria-label="Mobile applications showcase video" style="aspect-ratio: 16/9; width: 100%; height: auto;">
+        <video id="video-app" class="absolute inset-0 w-full h-full object-cover z-0" muted playsinline preload="metadata" loop aria-label="Mobile applications showcase video" >
           <source src="../assets/videos/app.mp4" type="video/mp4" />
           <track kind="captions" srclang="en" label="English" default />
         </video>
@@ -280,7 +280,7 @@
         @mouseenter="playVideo('video-ecommerce')"
         @mouseleave="pauseVideo('video-ecommerce')"
       >
-        <video id="video-ecommerce" class="absolute inset-0 w-full h-full object-cover z-0" muted playsinline preload="metadata" loop aria-label="E-commerce solutions showcase video" style="aspect-ratio: 16/9; width: 100%; height: auto;">
+        <video id="video-ecommerce" class="absolute inset-0 w-full h-full object-cover z-0" muted playsinline preload="metadata" loop aria-label="E-commerce solutions showcase video" >
           <source src="../assets/videos/design.mp4" type="video/mp4" />
           <track kind="captions" srclang="en" label="English" default />
         </video>
