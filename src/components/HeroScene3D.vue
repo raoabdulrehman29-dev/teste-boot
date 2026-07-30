@@ -5,16 +5,17 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 import { SVGLoader } from "three/examples/jsm/loaders/SVGLoader.js";
-import reactSvg from "@/assets/logos/react.svg";
-import vueSvg from "@/assets/logos/vuedotjs.svg";
-import htmlSvg from "@/assets/logos/html5.svg";
-import cssSvg from "@/assets/logos/css.svg";
-import tailwindSvg from "@/assets/logos/tailwindcss.svg";
-import tsSvg from "@/assets/logos/typescript.svg";
-import nodeSvg from "@/assets/logos/nodedotjs.svg";
-import gitSvg from "@/assets/logos/git.svg";
-import dockerSvg from "@/assets/logos/docker.svg";
-import vscodeSvg from "@/assets/logos/vscodium.svg";
+import reactLogo from "@/assets/logos/react.svg?raw";
+import vueLogo from "@/assets/logos/vuedotjs.svg?raw";
+import htmlLogo from "@/assets/logos/html5.svg?raw";
+import cssLogo from "@/assets/logos/css.svg?raw";
+import tsLogo from "@/assets/logos/typescript.svg?raw";
+import gitLogo from "@/assets/logos/git.svg?raw";
+import dockerLogo from "@/assets/logos/docker.svg?raw";
+import vscodeLogo from "@/assets/logos/vscodium.svg?raw";
+import nodeLogo from "@/assets/logos/nodedotjs.svg?raw";
+import tailwindLogo from "@/assets/logos/tailwindcss.svg?raw";
+
 import * as THREE from "three";
 
 const canvasHost = ref(null);
@@ -37,16 +38,16 @@ const COLORS = {
   slateMuted: 0x1f2937,
 };
 const SVG_LOGOS = {
-  react: reactSvg,
-  vue: vueSvg,
-  html5: htmlSvg,
-  css3: cssSvg,
-  tailwind: tailwindSvg,
-  typescript: tsSvg,
-  nodejs: nodeSvg,
-  git: gitSvg,
-  docker: dockerSvg,
-  vscode: vscodeSvg,
+  react: reactLogo,
+  vue: vueLogo,
+  html5: htmlLogo,
+  css3: cssLogo,
+  tailwind: tailwindLogo,
+  typescript: tsLogo,
+  nodejs: nodeLogo,
+  git: gitLogo,
+  docker: dockerLogo,
+  vscode: vscodeLogo,
 };
 
 const svgLoader = new SVGLoader();
@@ -70,80 +71,77 @@ function extrudeShape(shape, depth, refRadius) {
   geo.computeVertexNormals();
   return geo;
 }
-function buildMeshFromSVG(svgUrl, color, depth) {
+function buildMeshFromSVG(svgText, color, depth) {
   return new Promise((resolve, reject) => {
-    svgLoader.load(
-      svgUrl,
-      (data) => {
-        const group = new THREE.Group();
+    try {
+      const data = svgLoader.parse(svgText);
 
-        data.paths.forEach((path) => {
-          const shapes = SVGLoader.createShapes(path);
+      const group = new THREE.Group();
 
-          shapes.forEach((shape) => {
-            const geometry = new THREE.ExtrudeGeometry(shape, {
-              depth:1.15,
-              bevelEnabled: true,
-              bevelSize: 0.32,
-              bevelThickness: 0.32,
-              bevelSegments: 20,
-              curveSegments: 32,
-            });
+      data.paths.forEach((path) => {
+        const shapes = SVGLoader.createShapes(path);
 
-            geometry.center();
-            geometry.computeVertexNormals();
-
-            const material = new THREE.MeshPhysicalMaterial({
-              color,
-              roughness: 0.22,
-              metalness: 0.15,
-              clearcoat: 0.9,
-              clearcoatRoughness: 0.1,
-              emissive: color,
-              emissiveIntensity: 0.2,
-            });
-
-            const mesh = new THREE.Mesh(geometry, material);
-
-            mesh.castShadow = true;
-
-            const border = createBlurredBorderOutline(geometry);
-            mesh.add(border);
-
-            group.add(mesh);
+        shapes.forEach((shape) => {
+          const geometry = new THREE.ExtrudeGeometry(shape, {
+            depth: 1.15,
+            bevelEnabled: true,
+            bevelSize: 0.32,
+            bevelThickness: 0.32,
+            bevelSegments: 20,
+            curveSegments: 32,
           });
+
+          geometry.center();
+          geometry.computeVertexNormals();
+
+          const material = new THREE.MeshPhysicalMaterial({
+            color,
+            roughness: 0.22,
+            metalness: 0.15,
+            clearcoat: 0.9,
+            clearcoatRoughness: 0.1,
+            emissive: color,
+            emissiveIntensity: 0.2,
+          });
+
+          const mesh = new THREE.Mesh(geometry, material);
+
+          mesh.castShadow = true;
+
+          const border = createBlurredBorderOutline(geometry);
+          mesh.add(border);
+
+          group.add(mesh);
         });
+      });
 
-        const box = new THREE.Box3().setFromObject(group);
-        const bounds = new THREE.Vector3();
-        box.getSize(bounds);
+      const box = new THREE.Box3().setFromObject(group);
+      const bounds = new THREE.Vector3();
+      box.getSize(bounds);
 
-        const TARGET_SIZE = 2.35;
+      const TARGET_SIZE = 2.35;
 
-        const scale =
-          TARGET_SIZE /
-          Math.max(bounds.x, bounds.y, bounds.z);
+      const scale =
+        TARGET_SIZE /
+        Math.max(bounds.x, bounds.y, bounds.z);
 
-        group.scale.setScalar(scale);
+      group.scale.setScalar(scale);
 
-        // Recalculate after scaling
-        box.setFromObject(group);
+      box.setFromObject(group);
 
-        const center = new THREE.Vector3();
-        box.getCenter(center);
+      const center = new THREE.Vector3();
+      box.getCenter(center);
 
-        // Center the logo
-        group.position.x -= center.x;
-        group.position.y -= center.y;
-        group.position.z -= center.z;
+      group.position.sub(center);
 
-        resolve(group);
-        group.rotation.x = Math.PI;
-        group.rotation.z = Math.PI;
-      },
-      undefined,
-      reject
-    );
+      group.rotation.x = Math.PI;
+      group.rotation.z = Math.PI;
+
+      resolve(group);
+
+    } catch (err) {
+      reject(err);
+    }
   });
 }
 
