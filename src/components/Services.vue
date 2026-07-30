@@ -98,6 +98,27 @@
         </div>
       </div>
     </div>
+    <div
+  v-if="relatedProjects.length"
+  class="mx-auto mt-14 w-full max-w-[1450px] lg:mt-20"
+>
+  <h2 class="mb-8 text-center text-xl font-bold leading-tight text-black lg:text-3xl xl:text-4xl">
+    Related Case Studies
+  </h2>
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <router-link
+      v-for="proj in relatedProjects"
+      :key="proj.slug"
+      :to="`/project-details/${proj.slug}`"
+      class="rounded-[2rem] border border-slate-200 bg-white p-8 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+    >
+      <p class="mb-2 text-xs uppercase tracking-wider text-cyan-600">{{ proj.industry }}</p>
+      <h3 class="mb-3 text-xl font-semibold text-slate-900">{{ proj.title }}</h3>
+      <p class="leading-7 text-slate-600 md:text-base">{{ proj.description }}</p>
+      <span class="mt-4 inline-block font-semibold text-[#185464]">View Case Study →</span>
+    </router-link>
+  </div>
+</div>
 
     <div
       v-else
@@ -176,6 +197,7 @@
 import { computed, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import servicesData from "@/stores/Services.json";
+import projectsData from "@/stores/projects.json";
 import PageBanner from "@/components/PageBanner.vue";
 
 const route = useRoute();
@@ -236,6 +258,12 @@ const isVisible = (tags) => {
 
   return keywords.every((word) => content.includes(word));
 };
+const relatedProjects = computed(() => {
+  if (!selectedService.value?.relatedProjects) return [hello];
+  return selectedService.value.relatedProjects
+    .map((slug) => projectsData.find((p) => p.slug === slug))
+    .filter(Boolean);
+});
 </script>
 
 <style scoped></style>

@@ -3,8 +3,9 @@
     <div class="mx-auto mb-2 w-full px-2 md:px-8">
  <!-- Footer Shell Container -->
 <div 
-     class="footer-shell relative overflow-hidden rounded-2xl bg-gradient-to-tr from-[#507c9e] to-[#4a3a7e] text-white md:px-10 2xl:pt-10"
-    style="min-height: 400px;" <!-- Add fixed min-height -->
+  class="footer-shell relative overflow-hidden rounded-2xl bg-gradient-to-tr from-[#507c9e] to-[#4a3a7e] text-white md:px-10 2xl:pt-10"
+  @mousemove="handleCanvasMouseMove"
+  @mouseleave="handleCanvasMouseLeave"
 >
   <!-- Interactive Canvas Background -->
   <canvas ref="bgCanvas" class="pointer-events-none absolute inset-0 z-0 h-full w-full opacity-80"></canvas>
@@ -139,8 +140,10 @@
                 <img
                   ref="footerLogo"
                   class="footer-logo-img relative mx-auto h-[5rem] w-auto md:h-[7rem] lg:h-[8rem] xl:mx-2 cursor-pointer"
-                  src="../assets/image (2).png"
+                  src="../assets/image (2).webp"
                   alt="Invictus Hub"
+                   width="200"
+  height="80"
                 />
               </router-link>
             </div>
@@ -517,28 +520,5 @@ onUnmounted(() => {
 
 .magnet-icon {
   transition: transform 0.15s ease-out;
-}
-.footer-shell {
-  min-height: 400px;
-  contain: layout style paint;
-}
-
-/* Reserve space for footer images */
-.footer-logo-img {
-  width: auto;
-  height: 5rem;
-  aspect-ratio: auto;
-}
-
-@media (min-width: 768px) {
-  .footer-logo-img {
-    height: 7rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .footer-logo-img {
-    height: 8rem;
-  }
 }
 </style>

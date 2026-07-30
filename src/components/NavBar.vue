@@ -15,7 +15,7 @@
           <div>
             <img
               class="h-12 md:h-[4rem] lg:h-[6rem]"
-              src="../assets/logoji.png"
+              src="../assets/logoji.webp"
               alt="Invictus Hub"
             />
           </div>
@@ -87,7 +87,7 @@
         <div class="mx-4 my-12">
           <img
             class="md:h-[10rem] w-auto mx-auto opacity-[90%]"
-            src="../assets/logoji.png"
+            src="../assets/logoji.webp"
             alt="Invictus Hub"
           />
         </div>
@@ -164,7 +164,7 @@
       <div
         class="flex items-start justify-center w-[3%] h-full bg-gradient-to-r from-[#185464] to-[#13404c] rounded-2xl"
       >
-        <button @click="sidenavopen = !sidenavopen">
+        <button @click="sidenavopen = !sidenavopen"  class="group"  aria-label="Toggle navigation menu" :aria-expanded="sidenavopen ? 'true' : 'false'">
           <span class="w-full my-16 text-lg font-semibold text-white rotate-90 block">Close</span>
         </button>
       </div>
@@ -187,7 +187,7 @@
         >
           <div class="flex items-start justify-start gap-2 xl:flex-1">
             <div class="relative">
-              <button @click="sidenavopen = !sidenavopen" class="group">
+              <button @click="sidenavopen = !sidenavopen" class="group"  aria-label="Toggle navigation menu"  :aria-expanded="ismenuopen ? 'true' : 'false'" >
                 <div class="hidden xl:grid grid-cols-2 gap-[3px]">
                   <div
                     class="h-3 w-3 border-2 border-gray-900 rounded-[4px] transition-all duration-300 group-hover:bg-gray-900"
@@ -207,16 +207,15 @@
             <router-link to="/" aria-label="Go to home page">
               <img
                 class="h-8 md:h-[2.5rem] p-0 mx-[3px] my-auto cursor-pointer"
-                src="../assets/Logo.png"
+                src="../assets/Logo.webp"
                 alt="Invictus Hub"
-                width="187"
-  height="40"
+                width="187" height="40"
               />
             </router-link>
           </div>
 
           <!-- mobile view -->
-          <button @click="ismenuopen = !ismenuopen" class="my-auto xl:hidden">
+          <button @click="ismenuopen = !ismenuopen" class="my-auto xl:hidden" aria-label="Toggle navigation menu">
             <div class="relative">
               <div class="h-[3px] rounded-full w-8 bg-gray-900 my-[6px]"></div>
               <div class="h-[3px] rounded-full w-8 bg-gray-900 my-[6px]"></div>

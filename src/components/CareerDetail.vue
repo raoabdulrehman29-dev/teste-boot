@@ -186,6 +186,12 @@
               Apply For This Position
             </button>
           </router-link>
+          <router-link
+  to="/about"
+  class="mt-4 block text-center text-sm font-medium text-[#185464] underline hover:text-[#2bb6c4]"
+>
+  Curious what it's like to work here? Learn more about Invictus Hub →
+</router-link>
         </div>
       </div>
     </div>

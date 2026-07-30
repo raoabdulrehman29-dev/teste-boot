@@ -211,7 +211,7 @@ import designDevImg from "@/assets/Services/design-development.jpg";
 import maintenanceImg from "@/assets/it2.jpg";
 import automationImg from "@/assets/Services/automation-apps.jpg";
 import webDevImg from "@/assets/techsolution.webp";
-import appDevImg from "@/assets/it1.png";
+import appDevImg from "@/assets/it1.webp";
 import uxUiImg from "@/assets/Services/ux-design.jpg";
 
 const store = userSearchStore();

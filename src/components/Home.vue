@@ -99,7 +99,7 @@
           <div class="absolute right-2 bottom-8 sm:right-6 md:right-10 lg:right-8 lg:top-1/2 xl:top-[45%] lg:-translate-y-1/2 flex items-center justify-center h-[70%] lg:max-h-[70%] xl:max-h-[80%] 2xl:max-w-[90%] w-auto overflow-visible">
             <img
               class="w-[10rem] sm:w-[10rem] md:w-[12rem] lg:w-[14rem] xl:w-[16rem] 2xl:w-[17rem] object-contain max-h-full opacity-[80%]"
-              src="../assets/logoji.png"
+              src="../assets/logoji.webp"
               alt="Invictus Hub Logo"
               loading="lazy"
               width="170"
@@ -154,7 +154,7 @@
         </h2>
         <img
           data-parallax
-          src="../assets/sidebannerlogo.png"
+          src="../assets/sidebannerlogo.webp"
           alt="banner image"
           class="absolute top-0 left-0 object-contain w-20 h-full md:opacity-40 opacity-5 md:w-16 lg:w-24"
           width="96"
@@ -216,7 +216,7 @@
         </div>
         <div>
           <div>
-            <img class="w-[105px] xl:w-[138px] object-right relative top-[10px] left-[1px] inset-0 overflow-hidden z-10 opacity-[80%]" src="../assets/logoji.png" alt="Website Development" loading="lazy" width="138" height="138" />
+            <img class="w-[105px] xl:w-[138px] object-right relative top-[10px] left-[1px] inset-0 overflow-hidden z-10 opacity-[80%]" src="../assets/logoji.webp" alt="Website Development" loading="lazy" width="138" height="138" />
           </div>
           <div class="absolute bottom-0 right-0 z-20 overflow-visible">
             <div class="relative inline-block overflow-visible">
@@ -255,7 +255,7 @@
         </div>
         <div>
           <div>
-            <img class="w-[105px] xl:w-[138px] object-right relative top-[10px] left-[1px] inset-0 overflow-hidden z-10 opacity-[80%]" src="../assets/logoji.png" alt="Mobile Applications" loading="lazy" width="138" height="138" />
+            <img class="w-[105px] xl:w-[138px] object-right relative top-[10px] left-[1px] inset-0 overflow-hidden z-10 opacity-[80%]" src="../assets/logoji.webp" alt="Mobile Applications" loading="lazy" width="138" height="138" />
           </div>
           <div class="absolute bottom-0 right-0 z-20 overflow-visible">
             <div class="relative inline-block overflow-visible">
@@ -294,7 +294,7 @@
         </div>
         <div>
           <div>
-            <img class="w-[105px] xl:w-[138px] object-right relative top-[10px] left-[1px] inset-0 overflow-hidden z-10 opacity-[80%]" src="../assets/logoji.png" alt="E-Commerce Solutions" loading="lazy" width="138" height="138" />
+            <img class="w-[105px] xl:w-[138px] object-right relative top-[10px] left-[1px] inset-0 overflow-hidden z-10 opacity-[80%]" src="../assets/logoji.webp" alt="E-Commerce Solutions" loading="lazy" width="138" height="138" />
           </div>
           <div class="absolute bottom-0 right-0 z-20 overflow-visible">
             <div class="relative inline-block overflow-visible">
@@ -687,12 +687,12 @@ import { gsap, ScrollTrigger } from "@/lib/gsap";
 // ============================================ -->
 // TECH STACK IMAGES - All WebP for performance
 // ============================================ -->
-import stripeImg from "../assets/stripe.png";
-import reactImg from "../assets/react.png";
-import flutterImg from "../assets/flutter-icon.png";
-import oceanImg from "../assets/digital-ocean.png";
-import twitterImg from "../assets/twitter.png";
-import slackImg from "../assets/slack.png";
+import stripeImg from "../assets/stripe.webp";
+import reactImg from "../assets/react.webp";
+import flutterImg from "../assets/flutter-icon.webp";
+import oceanImg from "../assets/digital-ocean.webp";
+import twitterImg from "../assets/twitter.webp";
+import slackImg from "../assets/slack.webp";
 
 const techStack = [
   { name: "Stripe", img: stripeImg },
@@ -924,7 +924,7 @@ const setupTestiEntrance = () => {
   background-repeat: no-repeat;
 }
 .card3 {
-  background-image: linear-gradient(to right, rgba(24, 84, 100, 0.6), rgba(19, 64, 76, 0.6)), url(../assets/it1.jpg);
+  background-image: linear-gradient(to right, rgba(24, 84, 100, 0.6), rgba(19, 64, 76, 0.6)), url(../assets/it1.webp);
   background-size: cover;
   background-repeat: no-repeat;
 }

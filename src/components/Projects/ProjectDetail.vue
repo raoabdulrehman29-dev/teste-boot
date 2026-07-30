@@ -407,6 +407,24 @@
         </div>
       </div>
     </div>
+    <div
+  v-if="relatedServices.length"
+  class="mx-auto mt-14 mb-10 w-full max-w-[1450px] text-center"
+>
+  <h2 class="mb-8 text-xl font-bold leading-tight text-black lg:text-3xl xl:text-4xl">
+    Services Used
+  </h2>
+  <div class="flex flex-wrap justify-center gap-4 px-4">
+    <router-link
+      v-for="service in relatedServices"
+      :key="service.id"
+      :to="`/services/${service.id}`"
+      class="rounded-full border border-gray-100 bg-gray-50 px-6 py-3 font-medium text-[#185464] shadow-sm transition-all hover:border-[#185464] hover:bg-white"
+    >
+      {{ service.title }}
+    </router-link>
+  </div>
+</div>
 
     <!-- Tabs Section -->
     <div
@@ -639,10 +657,11 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from "vue";
+import { ref, onMounted, watch, computed } from "vue";
 import { useRoute } from "vue-router";
 import { userSearchStore } from "@/stores/SearchStore";
 import projectsData from "@/stores/projects.json";
+import servicesData from "@/stores/Services.json";
 
 const route = useRoute();
 const project = ref(null);
@@ -673,6 +692,14 @@ const loadProject = async () => {
     console.error("Error fetching project:", error);
   }
 };
+const allServices = servicesData.categories.flatMap((cat) => cat.services);
+
+const relatedServices = computed(() => {
+  if (!project.value?.servicesUsed) return [];
+  return project.value.servicesUsed
+    .map((id) => allServices.find((s) => s.id === id))
+    .filter(Boolean);
+});
 
 onMounted(loadProject);
 watch(() => route.params.slug, loadProject);

@@ -178,7 +178,7 @@
 
       <img
         data-parallax
-        src="../assets/sidebannerlogo.png"
+        src="../assets/sidebannerlogo.webp"
         alt="Banner image"
         class="absolute top-0 left-0 object-contain w-20 h-full md:w-24 lg:w-28 xl:w-32 2xl:w-36 md:opacity-40 opacity-5"
       />

@@ -8,6 +8,7 @@
     <button
       @click="ScrollTotop"
       class="flex h-full w-full items-center justify-center focus:outline-none"
+       aria-label="Scroll to top"
     >
       <svg
         class="h-8 w-8 md:h-12 md:w-12 text-white"
