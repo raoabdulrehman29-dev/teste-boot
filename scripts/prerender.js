@@ -130,7 +130,7 @@ page.on("requestfailed", (request) => {
 
       fs.mkdirSync(path.dirname(outputPath), { recursive: true });
       fs.writeFileSync(outputPath, html);
-    } } catch (err) {
+ } catch (err) {
   failures++;
 
   console.error("====================================");
