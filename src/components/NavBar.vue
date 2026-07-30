@@ -209,6 +209,8 @@
                 class="h-8 md:h-[2.5rem] p-0 mx-[3px] my-auto cursor-pointer"
                 src="../assets/Logo.png"
                 alt="Invictus Hub"
+                width="187"
+  height="40"
               />
             </router-link>
           </div>
