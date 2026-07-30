@@ -51,7 +51,7 @@
         class="flex flex-col items-stretch justify-center w-full gap-2 mt-10 Main lg:flex-row lg:items-stretch lg:gap-1 xl:mt-10"
       >
         <!-- Left Card -->
-        <div data-reveal class="relative bg-gradient-to-b from-gray-900 via-gray-800 to-[#185464] lg:mx-1 rounded-3xl md:rounded-3xl px-4 lg:px-8 xl:px-10 pt-6 xl:pt-12 pb-4 xl:pb-8 w-full lg:flex-[30%] lg:w-0">
+        <div data-reveal class="relative bg-gradient-to-b from-gray-900 via-gray-800 to-[#082b35] lg:mx-1 rounded-3xl md:rounded-3xl px-4 lg:px-8 xl:px-10 pt-6 xl:pt-12 pb-4 xl:pb-8 w-full lg:flex-[30%] lg:w-0">
           <CardAnimationOne />
           <div class="flex justify-start gap-2 mb-4">
             <router-link to="/projects" class="inline-flex items-center rounded-full bg-white px-3 lg:px-4 py-1 lg:py-2 text-black text-base h-6 lg:h-10 hover:bg-gradient-to-r hover:from-[#185464] hover:to-[#2bb6c4] hover:text-white transition-all duration-300">

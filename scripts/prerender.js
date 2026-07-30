@@ -83,6 +83,22 @@ async function prerender() {
 
   const browser = await getBrowser();
   const page = await browser.newPage();
+  page.on("console", (msg) => {
+  console.log("[Browser]", msg.type(), msg.text());
+});
+
+page.on("pageerror", (err) => {
+  console.error("[Browser Error]");
+  console.error(err);
+});
+
+page.on("requestfailed", (request) => {
+  console.error(
+    "[Request Failed]",
+    request.url(),
+    request.failure()?.errorText
+  );
+});
 
   let failures = 0;
 
@@ -92,6 +108,11 @@ async function prerender() {
 
     try {
       await page.goto(url, { waitUntil: "networkidle0", timeout: 30000 });
+      console.log(
+  "Loaded:",
+  await page.title(),
+  await page.url()
+);
       await new Promise((resolve) => setTimeout(resolve, 300));
 
       // Critical check: confirm Vue Router actually landed on the right route
@@ -109,10 +130,15 @@ async function prerender() {
 
       fs.mkdirSync(path.dirname(outputPath), { recursive: true });
       fs.writeFileSync(outputPath, html);
-    } catch (err) {
-      failures++;
-      console.error(`FAILED to render ${route}: ${err.message}`);
-    }
+    } } catch (err) {
+  failures++;
+
+  console.error("====================================");
+  console.error("FAILED ROUTE:", route);
+  console.error(err);
+  console.error(err.stack);
+  console.error("====================================");
+}
   }
 
   await browser.close();

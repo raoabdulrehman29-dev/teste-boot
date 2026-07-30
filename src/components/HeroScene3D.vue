@@ -27,16 +27,6 @@ let skyParticles;
 const meshes = [];
 const tempVec = new THREE.Vector3();
 
-// EXACT ORIGINAL COLOR PALETTE
-const COLORS = {
-  tealDark: 0x185464,
-  tealBright: 0x2bb6c4,
-  tealSoft: 0x1a7182,
-  tealDeep: 0x135561,
-  cyanGlow: 0x60a5fa,
-  emeraldAccent: 0x34d399,
-  slateMuted: 0x1f2937,
-};
 const SVG_LOGOS = {
   react: reactLogo,
   vue: vueLogo,
@@ -210,14 +200,6 @@ const SHAPE_LAYOUT = [
     colorKey: "git",
   },
 
-  {
-    kind: "javascript",
-    x: 15,
-    y: -4,
-    z: -1,
-    depth: 0.3,
-    colorKey: "javascript",
-  },
 
   {
     kind: "typescript",
