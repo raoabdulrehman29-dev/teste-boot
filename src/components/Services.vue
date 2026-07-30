@@ -259,7 +259,7 @@ const isVisible = (tags) => {
   return keywords.every((word) => content.includes(word));
 };
 const relatedProjects = computed(() => {
-  if (!selectedService.value?.relatedProjects) return [hello];
+  if (!selectedService.value?.relatedProjects) return [];
   return selectedService.value.relatedProjects
     .map((slug) => projectsData.find((p) => p.slug === slug))
     .filter(Boolean);
