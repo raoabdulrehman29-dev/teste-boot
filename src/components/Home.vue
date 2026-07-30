@@ -43,7 +43,7 @@
             </router-link>
           </div>
         </div>
-        <!-- <HeroScene3D /> -->
+        <HeroScene3D />
       </div>
 
       <!-- Hero Info Cards -->

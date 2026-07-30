@@ -509,11 +509,15 @@ function handleResize() {
 }
 
 onMounted(async () => {
-  
+  if (typeof window === "undefined") return;
+
   const width = canvasHost.value.clientWidth;
   const height = canvasHost.value.clientHeight;
+
   await buildScene(width, height);
+
   animate();
+
   window.addEventListener("mousemove", handleMouseMove);
   window.addEventListener("resize", handleResize);
 });
