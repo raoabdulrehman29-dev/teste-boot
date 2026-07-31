@@ -93,6 +93,15 @@ async function prerender() {
   const browser = await getBrowser();
   const page = await browser.newPage();
 
+
+  // Flag this as a prerender pass before any page JS runs, so
+  // WebGL-based components can skip themselves entirely - avoids
+  // hangs/timeouts from WebGL context creation in headless
+  // environments with no real GPU (like Vercel's build sandbox)
+  await page.evaluateOnNewDocument(() => {
+    window.__IS_PRERENDER__ = true;
+  });
+
   page.on("console", (msg) => {
     if (msg.type() === "error") {
       console.log("[Browser Error]");

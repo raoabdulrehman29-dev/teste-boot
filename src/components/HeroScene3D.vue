@@ -501,6 +501,9 @@ function handleResize() {
 }
 
 onMounted(() => {
+    if (typeof window !== "undefined" && window.__IS_PRERENDER__) {
+    return;
+  }
   const width = canvasHost.value.clientWidth;
   const height = canvasHost.value.clientHeight;
 

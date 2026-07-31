@@ -22,6 +22,9 @@ const handleMouseMove = (event) => {
 };
 
 onMounted(() => {
+    if (typeof window !== "undefined" && window.__IS_PRERENDER__) {
+    return;
+  }
   const el = container.value;
   const width = el.clientWidth;
   const height = el.clientHeight;
