@@ -1,3 +1,4 @@
+import puppeteer from "puppeteer";
 import http from "http";
 import fs from "fs";
 import path from "path";
@@ -25,18 +26,30 @@ const mimeTypes = {
   ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
   ".webp": "image/webp", ".svg": "image/svg+xml", ".json": "application/json",
   ".woff": "font/woff", ".woff2": "font/woff2", ".ico": "image/x-icon",
+  ".mp4": "video/mp4",
 };
 
-// A minimal static file server with SPA fallback that NEVER redirects —
-// it always returns 200 and serves either the real asset or index.html,
-// while leaving the requested URL untouched. This is what fixes the bug.
+// A minimal static file server with SPA fallback that NEVER redirects.
+// Real routes (no file extension) fall back to index.html for SPA
+// navigation. Real ASSETS (js/css/images/video - anything with a file
+// extension) that are genuinely missing return an honest 404 instead
+// of silently serving index.html - that silent fallback was masking
+// broken import paths behind a confusing "Unexpected token '<'" error,
+// since the browser would try to parse HTML as JavaScript.
 function startServer() {
   const server = http.createServer((req, res) => {
     const reqPath = decodeURIComponent(req.url.split("?")[0]);
     let filePath = path.join(distDir, reqPath);
 
+    const looksLikeAsset = path.extname(reqPath) !== "";
+
     if (!fs.existsSync(filePath) || !fs.statSync(filePath).isFile()) {
-      filePath = path.join(distDir, "index.html"); // SPA fallback, no redirect
+      if (looksLikeAsset) {
+        res.statusCode = 404;
+        res.end(`Not found: ${reqPath}`);
+        return;
+      }
+      filePath = path.join(distDir, "index.html"); // SPA fallback, real routes only
     }
 
     const ext = path.extname(filePath);
@@ -50,9 +63,6 @@ function startServer() {
   });
 }
 
-// NEW: launches a Vercel-compatible Chromium when running on Vercel's
-// build servers, and falls back to your normal local Chrome install
-// everywhere else (your machine, other CI, etc.)
 async function getBrowser() {
   const isVercel = !!process.env.VERCEL;
 
@@ -70,7 +80,6 @@ async function getBrowser() {
   }
 
   console.log("Local environment — using full puppeteer install");
-  const puppeteer = (await import("puppeteer")).default;
   return puppeteer.launch();
 }
 
@@ -83,21 +92,20 @@ async function prerender() {
 
   const browser = await getBrowser();
   const page = await browser.newPage();
+
   page.on("console", (msg) => {
-  console.log("[Browser]", msg.type(), msg.text());
-});
-
-page.on("pageerror", (err) => {
-  console.error("[Browser Error]");
-  console.error(err);
-});
-
-page.on("requestfailed", (request) => {
-  console.error(
-    "[Request Failed]",
-    request.url(),
-    request.failure()?.errorText
-  );
+    if (msg.type() === "error") {
+      console.log("[Browser Error]");
+      console.log(msg.text());
+    }
+  });
+  page.on("pageerror", (err) => {
+    console.log("[Browser pageerror]", err.message);
+  });
+  page.on("response", (response) => {
+  if (response.status() === 404) {
+    console.log("[404]", response.url());
+  }
 });
 
   let failures = 0;
@@ -108,14 +116,8 @@ page.on("requestfailed", (request) => {
 
     try {
       await page.goto(url, { waitUntil: "networkidle0", timeout: 30000 });
-      console.log(
-  "Loaded:",
-  await page.title(),
-  await page.url()
-);
       await new Promise((resolve) => setTimeout(resolve, 300));
 
-      // Critical check: confirm Vue Router actually landed on the right route
       const actualPath = await page.evaluate(() => window.location.pathname);
       if (actualPath !== route) {
         throw new Error(`Router mismatch — requested ${route} but ended up on ${actualPath}`);
@@ -130,15 +132,10 @@ page.on("requestfailed", (request) => {
 
       fs.mkdirSync(path.dirname(outputPath), { recursive: true });
       fs.writeFileSync(outputPath, html);
- } catch (err) {
-  failures++;
-
-  console.error("====================================");
-  console.error("FAILED ROUTE:", route);
-  console.error(err);
-  console.error(err.stack);
-  console.error("====================================");
-}
+    } catch (err) {
+      failures++;
+      console.error(`FAILED to render ${route}: ${err.message}`);
+    }
   }
 
   await browser.close();
