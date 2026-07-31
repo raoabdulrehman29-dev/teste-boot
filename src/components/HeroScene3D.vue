@@ -105,6 +105,8 @@ function buildMeshFromSVG(svgText, color, depth) {
 
           const mesh = new THREE.Mesh(geometry, material);
 
+          mesh.castShadow = true;
+
           const border = createBlurredBorderOutline(geometry);
           mesh.add(border);
 
@@ -341,7 +343,10 @@ async function buildScene(width, height) {
   rimLight2.position.set(16, -6, 8);
   scene.add(rimLight2);
 
-
+  const shadowCatcher = new THREE.Mesh(
+    new THREE.PlaneGeometry(100, 60),
+    new THREE.ShadowMaterial({ opacity: 0.35 })
+  );
   shadowCatcher.position.set(0, -3.5, -12);
   shadowCatcher.receiveShadow = true;
   scene.add(shadowCatcher);
