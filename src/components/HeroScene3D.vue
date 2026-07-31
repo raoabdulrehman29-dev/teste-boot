@@ -316,8 +316,8 @@ async function buildScene(width, height) {
   renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
   renderer.setSize(width, height);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  // renderer.shadowMap.enabled = true;
-  // renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   canvasHost.value.appendChild(renderer.domElement);
 
   // Lighting
