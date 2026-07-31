@@ -633,6 +633,130 @@
     </div>
 
     <!-- ============================================ -->
+<!-- SECTION 9 : FAQ                             -->
+<!-- ============================================ -->
+
+<section
+  ref="faqSection"
+  class="relative my-16 overflow-hidden rounded-3xl bg-gradient-to-br from-[#050a14] via-[#0b1732] to-[#050914] px-5 py-16 md:px-12"
+>
+
+  <!-- Background Glow -->
+  <div class="absolute -left-24 top-10 h-72 w-72 rounded-full bg-[#2bb6c4]/10 blur-[120px]"></div>
+
+  <div class="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-[#185464]/20 blur-[120px]"></div>
+
+  <div class="relative z-10 max-w-[1200px] mx-auto">
+
+    <!-- Heading -->
+
+    <div data-reveal class="text-center mb-14">
+
+      <p
+        class="uppercase tracking-[0.35em] text-[#2bb6c4] text-xs font-semibold"
+      >
+        [ FAQ ]
+      </p>
+
+      <h2
+        class="mt-4 text-4xl md:text-6xl font-semibold bg-gradient-to-r from-blue-300 via-cyan-300 to-emerald-300 bg-clip-text text-transparent"
+      >
+        Frequently Asked Questions
+      </h2>
+
+      <p
+        class="mt-6 text-gray-300 max-w-2xl mx-auto leading-8"
+      >
+        Everything you need to know before starting your project with
+        Invictus Hub.
+      </p>
+
+    </div>
+
+    <!-- FAQ -->
+
+    <div class="space-y-5">
+
+      <div
+        v-for="(faq,index) in faqs"
+        :key="index"
+        class="faq-card group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl transition-all duration-500 hover:border-[#2bb6c4]/40 hover:bg-white/[0.05]"
+      >
+
+        <button
+          @click="toggleFaq(index)"
+          class="flex w-full items-center justify-between px-7 py-6 text-left"
+        >
+
+          <h3
+            class="text-lg md:text-xl font-semibold text-white transition-colors duration-300 group-hover:text-[#2bb6c4]"
+          >
+            {{ faq.question }}
+          </h3>
+
+          <div
+            class="flex h-11 w-11 items-center justify-center rounded-full border border-[#2bb6c4]/40 bg-[#2bb6c4]/10 transition-all duration-500"
+            :class="{ 'rotate-45 bg-[#2bb6c4] text-white': faq.open }"
+          >
+
+            <svg
+              class="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 5v14M5 12h14"
+              />
+
+            </svg>
+
+          </div>
+
+        </button>
+
+        <transition
+          enter-active-class="transition-all duration-500"
+          leave-active-class="transition-all duration-300"
+          enter-from-class="max-h-0 opacity-0"
+          enter-to-class="max-h-[500px] opacity-100"
+          leave-from-class="max-h-[500px] opacity-100"
+          leave-to-class="max-h-0 opacity-0"
+        >
+
+          <div
+            v-show="faq.open"
+            class="overflow-hidden"
+          >
+
+            <div
+              class="border-t border-white/10 px-7 pb-7 pt-5"
+            >
+
+              <p
+                class="leading-8 text-gray-300"
+              >
+                {{ faq.answer }}
+              </p>
+
+            </div>
+
+          </div>
+
+        </transition>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+    <!-- ============================================ -->
     <!-- SECTION 9: CALL TO ACTION                    -->
     <!-- ============================================ -->
     <div class="md:px-12 overflow-hidden mt-8 md:mt-10 bg-gradient-to-r from-white via-[#A9C8DA]/50 to-white rounded-3xl xl:mt-20 md:mx-2 lg:mt-20 sm:py-12 xl:py-18 2xl:py-24 max-w-[1450px] lg:mx-auto">
@@ -741,7 +865,28 @@ const startCounter = (counterRef, targetNumber, duration = 1000) => {
   }, 16);
 };
 
-const getImage = (imgName) => new URL(`../assets/${imgName}`, import.meta.url).href;
+// Build-time asset maps — resolved once when Vite compiles, not at runtime.
+// This is what fixes the localhost:4174 leak: these URLs are correct
+// no matter what server context the code executes in later (build,
+// preview, or production).
+const imageModules = import.meta.glob(
+  "../assets/**/*.{png,jpg,jpeg,webp,svg}",
+  { eager: true, import: "default" }
+);
+const videoModules = import.meta.glob(
+  "../assets/videos/*.mp4",
+  { eager: true, import: "default" }
+);
+
+const getImage = (imgName) => {
+  const entry = Object.entries(imageModules).find(([path]) => path.endsWith(`/${imgName}`));
+  return entry ? entry[1] : "/images/placeholder.jpg";
+};
+
+const getVideoUrl = (slug) => {
+  const entry = Object.entries(videoModules).find(([path]) => path.endsWith(`/${slug}.mp4`));
+  return entry ? entry[1] : "";
+};
 
 const handleHeroMouseMove = () => {};
 const resetHeroTilt = () => {};
@@ -756,7 +901,7 @@ const pauseVideo = (videoId) => {
   video?.pause();
 };
 
-const getVideoUrl = (slug) => new URL(`../assets/videos/${slug}.mp4`, import.meta.url).href;
+
 
 const playProjectVideo = (videoId) => {
   const video = document.getElementById(videoId);
@@ -907,6 +1052,40 @@ const setupTestiEntrance = () => {
     },
   );
 };
+
+// FAQ Script 
+const faqs = ref([
+{
+question:"How long does a software project usually take?",
+answer:"Project timelines depend on the scope and complexity. Small business websites usually take 2–4 weeks, while enterprise platforms and custom applications may require several months. We provide a detailed roadmap before development begins.",
+open:true
+},
+{
+question:"Do you develop both websites and mobile applications?",
+answer:"Yes. We design and develop responsive websites, enterprise web applications, iOS and Android apps, SaaS platforms, and complete digital ecosystems tailored to your business.",
+open:false
+},
+{
+question:"Can you redesign our existing website?",
+answer:"Absolutely. We modernize outdated websites by improving UI/UX, performance, SEO, accessibility, animations, and overall user experience while preserving your business goals.",
+open:false
+},
+{
+question:"Do you provide support after project delivery?",
+answer:"Yes. Every project includes post-launch support, bug fixes, performance monitoring, maintenance, and optional long-term support plans to ensure your product continues to perform at its best.",
+open:false
+},
+{
+question:"How do we start working together?",
+answer:"Simply contact our team through the Contact page. We'll schedule a discovery meeting, understand your goals, prepare a proposal, and begin development after approval.",
+open:false
+}])
+
+const toggleFaq = (index)=>{
+faqs.value.forEach((faq,i)=>{
+faq.open=i===index?!faq.open:false
+})
+}
 </script>
 
 <style scoped>

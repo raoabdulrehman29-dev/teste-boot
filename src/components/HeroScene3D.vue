@@ -64,8 +64,8 @@ function extrudeShape(shape, depth, refRadius) {
     bevelEnabled: true,
     bevelThickness: bevelSize,
     bevelSize,
-    bevelSegments: 4,   // was 8
-    curveSegments: 12,  // was 24
+    bevelSegments: 2,   // was 8
+    curveSegments: 6,  // was 24
   });
   geo.center();
   return geo;
