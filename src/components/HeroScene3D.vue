@@ -59,18 +59,15 @@ const svgLoader = new SVGLoader();
 
 function extrudeShape(shape, depth, refRadius) {
   const bevelSize = Math.min(refRadius * 0.16, depth * 0.4, 0.22);
-  const bevelThickness = bevelSize;
-
-  const geo = new THREE.ExtrudeGeometry(shape, {
+  const geo = new ExtrudeGeometry(shape, {
     depth,
     bevelEnabled: true,
-    bevelThickness,
+    bevelThickness: bevelSize,
     bevelSize,
-    bevelSegments: 8,
-    curveSegments: 24,
+    bevelSegments: 4,   // was 8
+    curveSegments: 12,  // was 24
   });
   geo.center();
-  geo.computeVertexNormals();
   return geo;
 }
 function buildMeshFromSVG(svgText, color, depth) {
@@ -107,8 +104,6 @@ function buildMeshFromSVG(svgText, color, depth) {
           });
 
           const mesh = new THREE.Mesh(geometry, material);
-
-          mesh.castShadow = true;
 
           const border = createBlurredBorderOutline(geometry);
           mesh.add(border);
@@ -319,8 +314,8 @@ async function buildScene(width, height) {
   renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
   renderer.setSize(width, height);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  // renderer.shadowMap.enabled = true;
+  // renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   canvasHost.value.appendChild(renderer.domElement);
 
   // Lighting
@@ -329,7 +324,6 @@ async function buildScene(width, height) {
 
   const keyLight = new THREE.DirectionalLight(0xffffff, 1.6);
   keyLight.position.set(6, 14, 16);
-  keyLight.castShadow = true;
   keyLight.shadow.mapSize.set(1024, 1024);
   keyLight.shadow.camera.left = -30;
   keyLight.shadow.camera.right = 30;
@@ -347,10 +341,7 @@ async function buildScene(width, height) {
   rimLight2.position.set(16, -6, 8);
   scene.add(rimLight2);
 
-  const shadowCatcher = new THREE.Mesh(
-    new THREE.PlaneGeometry(100, 60),
-    new THREE.ShadowMaterial({ opacity: 0.35 })
-  );
+
   shadowCatcher.position.set(0, -3.5, -12);
   shadowCatcher.receiveShadow = true;
   scene.add(shadowCatcher);
@@ -500,27 +491,15 @@ function handleResize() {
   camera.updateProjectionMatrix();
 }
 
-onMounted(() => {
-    if (typeof window !== "undefined" && window.__IS_PRERENDER__) {
-    return;
-  }
-  const width = canvasHost.value.clientWidth;
-  const height = canvasHost.value.clientHeight;
+const initScene = () => {
+  const width = canvasHost.value?.clientWidth;
+  const height = canvasHost.value?.clientHeight;
 
-  // Guard: if the container has no real size yet (can happen in
-  // headless/prerender environments before layout fully settles),
-  // skip the 3D scene entirely rather than building a broken camera
-  // and renderer with 0/Infinity dimensions - this is the most likely
-  // cause of the Vercel-only prerender crash
   if (!width || !height) {
     console.warn("HeroScene3D: container has no size yet, skipping 3D scene");
     return;
   }
 
-  // Wrap the ENTIRE setup in try/catch, not just renderer creation -
-  // any failure anywhere in scene/geometry/shadow setup gets caught
-  // safely instead of throwing and crashing the whole page's JS,
-  // which is what breaks Puppeteer's prerender for this route
   try {
     buildScene(width, height);
     animate();
@@ -531,6 +510,23 @@ onMounted(() => {
 
   window.addEventListener("mousemove", handleMouseMove);
   window.addEventListener("resize", handleResize);
+};
+
+onMounted(() => {
+  if (typeof window !== "undefined" && window.__IS_PRERENDER__) {
+    return;
+  }
+
+  // Defer the heavy 3D setup until the browser has finished its
+  // critical initial work (painting text, becoming interactive).
+  // This is what was blocking the main thread for 3.7s and tanking
+  // TBT - the scene now builds a moment later, after the page
+  // already feels responsive to the user.
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(initScene, { timeout: 2000 });
+  } else {
+    setTimeout(initScene, 200);
+  }
 });
 
 onUnmounted(() => {
