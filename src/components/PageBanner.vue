@@ -1,8 +1,9 @@
 <template>
-  <div ref="bannerRoot" class="overflow-hidden">
+  <div  class="overflow-hidden">
     <div
       class="banner relative isolate rounded-3xl rounded-bl-[2rem] rounded-br-[2rem] mt-3 mb-10 xl:mb-10 h-[280px] md:h-[400px] lg:h-[540px] lg:w-full"
     >
+    <HeroScene3D />
       <!-- Top Left Decoration -->
       <div class="absolute left-0 top-0 z-20 hidden lg:block rounded-3xl">
         <div class="relative">
@@ -86,8 +87,11 @@
 </template>
 
 <script setup>
+
 import { ref, onMounted, onUnmounted } from "vue";
 import { gsap } from "@/lib/gsap";
+import { defineAsyncComponent } from "vue";
+const HeroScene3D = defineAsyncComponent(() => import("@/components/HeroScene3D.vue"));
 
 defineProps({
   title: {

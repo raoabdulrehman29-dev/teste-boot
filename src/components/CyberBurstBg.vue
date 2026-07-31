@@ -18,10 +18,9 @@ let burstGroup;
 let targetRotationX = 0;
 let targetRotationY = 0;
 
-// Updated palette matching from-[#507c9e] to-[#4a3a7e]
-const COLOR_START = new Color("#507c9e"); // Steel / Slate Blue origin
-const COLOR_END = new Color("#4a3a7e");   // Deep Violet / Purple body
-const COLOR_TIP = new Color("#8a74ce");   // Vibrant lavender tip highlight
+const COLOR_START = new Color("#edf7ff");
+const COLOR_END = new Color("#ede9fe");
+const COLOR_TIP = new Color("#faf5ff");   // Vibrant lavender tip highlight
 
 const TOTAL_LINES = 320;
 

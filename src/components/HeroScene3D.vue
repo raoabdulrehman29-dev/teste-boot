@@ -39,6 +39,18 @@ const SVG_LOGOS = {
   docker: dockerLogo,
   vscode: vscodeLogo,
 };
+const COLORS = {
+  react: 0x61dafb,
+  vue: 0x42b883,
+  html5: 0xe34f26,
+  css3: 0x1572b6,
+  tailwind: 0x38bdf8,
+  typescript: 0x3178c6,
+  nodejs: 0x5fa04e,
+  git: 0xf05032,
+  docker: 0x2496ed,
+  vscode: 0x007acc,
+};
 
 const svgLoader = new SVGLoader();
 
@@ -69,7 +81,7 @@ function buildMeshFromSVG(svgText, color, depth) {
       const group = new THREE.Group();
 
       data.paths.forEach((path) => {
-        const shapes = SVGLoader.createShapes(path);
+        const shapes = path.toShapes(true);
 
         shapes.forEach((shape) => {
           const geometry = new THREE.ExtrudeGeometry(shape, {
@@ -488,15 +500,31 @@ function handleResize() {
   camera.updateProjectionMatrix();
 }
 
-onMounted(async () => {
-  if (typeof window === "undefined") return;
-
+onMounted(() => {
   const width = canvasHost.value.clientWidth;
   const height = canvasHost.value.clientHeight;
 
-  await buildScene(width, height);
+  // Guard: if the container has no real size yet (can happen in
+  // headless/prerender environments before layout fully settles),
+  // skip the 3D scene entirely rather than building a broken camera
+  // and renderer with 0/Infinity dimensions - this is the most likely
+  // cause of the Vercel-only prerender crash
+  if (!width || !height) {
+    console.warn("HeroScene3D: container has no size yet, skipping 3D scene");
+    return;
+  }
 
-  animate();
+  // Wrap the ENTIRE setup in try/catch, not just renderer creation -
+  // any failure anywhere in scene/geometry/shadow setup gets caught
+  // safely instead of throwing and crashing the whole page's JS,
+  // which is what breaks Puppeteer's prerender for this route
+  try {
+    buildScene(width, height);
+    animate();
+  } catch (err) {
+    console.warn("HeroScene3D: failed to initialize 3D scene, skipping:", err.message);
+    return;
+  }
 
   window.addEventListener("mousemove", handleMouseMove);
   window.addEventListener("resize", handleResize);

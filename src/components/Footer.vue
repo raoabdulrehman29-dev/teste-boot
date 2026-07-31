@@ -111,24 +111,7 @@
 
           <div class="mx-auto my-1 h-[2px] w-full rounded-full bg-gray-400"></div>
 
-          <div class="footer-marquee" data-reveal>
-            <div class="footer-marquee__track">
-              <span v-for="n in 2" :key="n" class="footer-marquee__group">
-                <span class="footer-marquee__item">Let's Build Something Great</span>
-                <span class="footer-marquee__dot">•</span>
-                <span class="footer-marquee__item">Web Development</span>
-                <span class="footer-marquee__dot">•</span>
-                <span class="footer-marquee__item">Mobile Apps</span>
-                <span class="footer-marquee__dot">•</span>
-                <span class="footer-marquee__item">E-Commerce</span>
-                <span class="footer-marquee__dot">•</span>
-                <span class="footer-marquee__item">UX/UI Design</span>
-                <span class="footer-marquee__dot">•</span>
-                <span class="footer-marquee__item">Automation</span>
-                <span class="footer-marquee__dot">•</span>
-              </span>
-            </div>
-          </div>
+        
 
           <div
             data-reveal
@@ -433,48 +416,11 @@ onUnmounted(() => {
   }
 }
 
-.footer-marquee {
-  overflow: hidden;
-  padding: 0.5rem 0;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-}
 
-.footer-marquee__track {
-  display: flex;
-  width: max-content;
-  animation: footer-marquee-scroll 26s linear infinite;
-}
 
-.footer-marquee__group {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-}
 
-.footer-marquee__item {
-  padding: 0 0.9rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.65);
-  white-space: nowrap;
-  transition: color 0.3s ease;
-}
 
-.footer-marquee__item:hover {
-  color: #2bb6c4;
-}
 
-.footer-marquee__dot {
-  color: rgba(43, 182, 196, 0.7);
-}
-
-@keyframes footer-marquee-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
 
 @media (prefers-reduced-motion: reduce) {
   .footer-marquee__track {
