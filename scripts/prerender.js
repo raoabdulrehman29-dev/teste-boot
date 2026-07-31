@@ -124,8 +124,8 @@ async function prerender() {
     console.log(`Rendering: ${route}`);
 
     try {
-      await page.goto(url, { waitUntil: "networkidle0", timeout: 30000 });
-      await new Promise((resolve) => setTimeout(resolve, 300));
+      await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30000 });
+      await new Promise((resolve) => setTimeout(resolve, 600));
 
       const actualPath = await page.evaluate(() => window.location.pathname);
       if (actualPath !== route) {
