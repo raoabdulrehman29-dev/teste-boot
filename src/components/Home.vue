@@ -17,11 +17,11 @@
       ></div>
 
       <div class="relative z-10 px-4 md:px-14 xl:px-14 lg:pt-14 xl:pt-12">
-        <div class="max-w-[1250px] mx-auto xl:mb-10">
-          <div class="relative z-10">
+        <div class="max-w-[1250px] mx-auto xl:mx-2 xl:mb-10 2xl:max-w-[70%]">
+          <div class="relative z-10 ">
             <h1
               data-hero-el
-              class="text-[40px] sm:mr-6 md:text-[60px] lg:text-[85px] xl:text-[95px] xl:font-semibold inline-block text-6xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent lg:mx-6 xl:mx-6"
+              class="text-[40px] sm:mr-6 md:text-[60px] lg:text-[85px] xl:text-[95px] xl:font-semibold inline-block text-6xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent lg:mx-6 xl:mx-6 "
             >
               Innovate, transform &amp;
               <span class="bg-gradient-to-r from-[#185464]/80 via-gray-800 to-gray-900 to-70% bg-clip-text text-transparent">
@@ -191,128 +191,166 @@
     <!-- ============================================ -->
     <!-- SECTION 4: SERVICE CARDS (Video on Hover)    -->
     <!-- ============================================ -->
-    <div
-      data-reveal-group
-      class="flex mb-10 flex-col justify-center gap-2 md:flex-row item-center md:gap-2"
-    >
-      <!-- Card 1: Website Development -->
-      <div
-        class="card-video card1 relative overflow-hidden bg-gray-900 p-5 rounded-3xl rounded-br-[2rem] text-white flex flex-col justify-between md:flex-1 min-h-[320px] group/video"
-        @mouseenter="playVideo('video-website')"
-        @mouseleave="pauseVideo('video-website')"
+   <div
+  data-reveal-group
+  class="flex mb-16 flex-col justify-center gap-8 md:flex-row item-center md:gap-8"
+>
+  <!-- Card 1: Website Development -->
+  <div
+    class="card-video card1 relative isolate bg-gray-900 p-5 rounded-3xl rounded-br-[2rem] text-white flex flex-col justify-between md:flex-1 min-h-[320px] group/video"
+    @mouseenter="playVideo('video-website')"
+    @mouseleave="pauseVideo('video-website')"
+  >
+    <!-- Clipping layer for video + gradient -->
+    <div class="absolute inset-0 z-0 overflow-hidden rounded-3xl rounded-br-[2rem]">
+      <video
+        id="video-website"
+        class="absolute inset-0 w-full h-full object-cover"
+        muted
+        playsinline
+        preload="metadata"
+        loop
+        aria-label="Website development showcase video"
       >
-        <video id="video-website" class="absolute rounded-br-[2rem] inset-0 w-full h-full object-cover z-0" muted playsinline preload="metadata" loop aria-label="Website development showcase video">
-          <source src="../assets/videos/website.mp4" type="video/mp4" />
-          <track kind="captions" srclang="en" label="English" default />
-          
-        </video>
-        <div class="absolute  inset-0 bg-gradient-to-r from-[#185464]/80 via-[#13404c]/60 to-transparent z-10 transition-opacity duration-500 group-hover/video:opacity-60"></div>
+        <source src="../assets/videos/website.mp4" type="video/mp4" />
+        <track kind="captions" srclang="en" label="English" default />
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#185464]/80 via-[#13404c]/60 to-transparent transition-opacity duration-500 group-hover/video:opacity-60"></div>
+    </div>
 
-        <div class="flex flex-col justify-left items-left w-[60%] 2xl:w-[55%] relative z-20">
-          <h3 class="mt-6 text-lg font-semibold 2xl:text-[25px] 2xl:my-10">Website Development</h3>
-          <p class="mt-4 text-base lg:w-[90%] xl:w-[80%] leading-normal lg:leading-loose 2xl:mb-8">
-            We build professional responsive websites optimized for the most popular search engines
-          </p>
-        </div>
-        <div>
-          <div>
-            <img class="w-[105px] xl:w-[138px] object-right relative top-[10px] left-[1px] inset-0 overflow-hidden z-10 opacity-[80%]" src="../assets/logoji.webp" alt="Website Development" loading="lazy" width="138" height="138" />
-          </div>
-          <div class="absolute bottom-0 right-0 z-20 overflow-visible">
-            <div class="relative inline-block overflow-visible">
-              <div class="absolute -inset-[2px] z-20 rounded-[2rem] bg-white"></div>
-              <div class="absolute -top-[19px] right-0 h-[17px] w-[34px] rounded-br-3xl bg-transparent shadow-[18px_15px_0_14px_#fff] z-30"></div>
-              <div class="absolute bottom-0 -left-[20px] h-[29px] w-[18px] rounded-br-3xl bg-transparent shadow-[13px_13px_0_12px_#fff] z-30"></div>
-              <div class="relative z-40 p-1 bg-white md:p-2 rounded-3xl">
-                <router-link to="/services/web-development" class="relative z-40 flex items-center justify-between p-4 bg-gray-900 rounded-3xl md:p-5" aria-label="Learn more about Web Development services">
-                  <svg width="100%" height="100%" class="h-5 w-auto -translate-y-0.5 transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:stroke-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </router-link>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- Content -->
+    <div class="flex flex-col justify-left items-left w-[60%] 2xl:w-[55%] relative z-20">
+      <h3 class="mt-6 text-lg font-semibold 2xl:text-[25px] 2xl:my-10">Website Development</h3>
+      <p class="mt-4 text-base lg:w-[90%] xl:w-[80%] leading-normal lg:leading-loose 2xl:mb-8">
+        We build professional responsive websites optimized for the most popular search engines
+      </p>
+    </div>
+
+    <div>
+      <div>
+        <img class="w-[105px] xl:w-[138px] object-right relative top-[10px] left-[1px] inset-0 overflow-hidden z-10 opacity-[80%]" src="../assets/logoji.webp" alt="Website Development" loading="lazy" width="138" height="138" />
       </div>
-
-      <!-- Card 2: Mobile Applications -->
-      <div
-        class="card-video card2 relative overflow-hidden bg-gray-500 p-5 rounded-3xl rounded-br-[2rem] text-white flex flex-col justify-between md:flex-1 min-h-[320px] group/video"
-        @mouseenter="playVideo('video-app')"
-        @mouseleave="pauseVideo('video-app')"
-      >
-        <video id="video-app" class="absolute inset-0 w-full h-full object-cover z-0" muted playsinline preload="metadata" loop aria-label="Mobile applications showcase video" >
-          <source src="../assets/videos/app.mp4" type="video/mp4" />
-          <track kind="captions" srclang="en" label="English" default />
-        </video>
-        <div class="absolute inset-0 bg-gradient-to-r from-[#185464]/80 via-[#13404c]/60 to-transparent z-10 transition-opacity duration-500 group-hover/video:opacity-60"></div>
-
-        <div class="flex flex-col justify-left items-left w-[60%] 2xl:w-[55%] relative z-20">
-          <h3 class="mt-6 text-lg font-semibold 2xl:text-[25px] 2xl:my-10">Mobile Applications</h3>
-          <p class="mt-4 text-base lg:w-[90%] xl:w-[80%] leading-normal lg:leading-loose 2xl:mb-8">
-            Follow the global trend and create your revolutionary mobile app built with the best technologies
-          </p>
-        </div>
-        <div>
-          <div>
-            <img class="w-[105px] xl:w-[138px] object-right relative top-[10px] left-[1px] inset-0 overflow-hidden z-10 opacity-[80%]" src="../assets/logoji.webp" alt="Mobile Applications" loading="lazy" width="138" height="138" />
-          </div>
-          <div class="absolute bottom-0 right-0 z-20 overflow-visible">
-            <div class="relative inline-block overflow-visible">
-              <div class="absolute -inset-[2px] z-20 rounded-[2rem] bg-white"></div>
-              <div class="absolute -top-[19px] right-0 h-[17px] w-[34px] rounded-br-3xl bg-transparent shadow-[18px_15px_0_14px_#fff] z-30"></div>
-              <div class="absolute bottom-0 -left-[20px] h-[29px] w-[18px] rounded-br-3xl bg-transparent shadow-[13px_13px_0_12px_#fff] z-30"></div>
-              <div class="relative z-40 p-1 bg-white md:p-2 rounded-3xl">
-                <router-link to="/services/app-development" class="relative z-40 flex items-center justify-between p-4 bg-gray-900 rounded-3xl md:p-5" aria-label="Learn more about App Development services">
-                  <svg width="100%" height="100%" class="h-5 w-auto -translate-y-0.5 transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:stroke-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </router-link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3: E-Commerce Solutions -->
-      <div
-        class="card-video card3 relative overflow-hidden bg-gray-500 p-5 rounded-3xl rounded-br-[2rem] text-white flex flex-col justify-between md:flex-1 min-h-[320px] group/video"
-        @mouseenter="playVideo('video-ecommerce')"
-        @mouseleave="pauseVideo('video-ecommerce')"
-      >
-        <video id="video-ecommerce" class="absolute inset-0 w-full h-full object-cover z-0" muted playsinline preload="metadata" loop aria-label="E-commerce solutions showcase video" >
-          <source src="../assets/videos/design.mp4" type="video/mp4" />
-          <track kind="captions" srclang="en" label="English" default />
-        </video>
-        <div class="absolute inset-0 bg-gradient-to-r from-[#185464]/80 via-[#13404c]/60 to-transparent z-10 transition-opacity duration-500 group-hover/video:opacity-60"></div>
-
-        <div class="flex flex-col justify-left items-left w-[60%] 2xl:w-[55%] relative z-20">
-          <h3 class="mt-6 text-lg font-semibold 2xl:text-[25px] 2xl:my-10">E-Commerce Solutions</h3>
-          <p class="mt-4 text-base lg:w-[90%] xl:w-[80%] leading-normal lg:leading-loose 2xl:mb-8">
-            Increase your sales with an incredible online store, full of features and functionality
-          </p>
-        </div>
-        <div>
-          <div>
-            <img class="w-[105px] xl:w-[138px] object-right relative top-[10px] left-[1px] inset-0 overflow-hidden z-10 opacity-[80%]" src="../assets/logoji.webp" alt="E-Commerce Solutions" loading="lazy" width="138" height="138" />
-          </div>
-          <div class="absolute bottom-0 right-0 z-20 overflow-visible">
-            <div class="relative inline-block overflow-visible">
-              <div class="absolute -inset-[2px] z-20 rounded-[2rem] bg-white"></div>
-              <div class="absolute -top-[19px] right-0 h-[17px] w-[34px] rounded-br-3xl bg-transparent shadow-[18px_15px_0_14px_#fff] z-30"></div>
-              <div class="absolute bottom-0 -left-[20px] h-[29px] w-[18px] rounded-br-3xl bg-transparent shadow-[13px_13px_0_12px_#fff] z-30"></div>
-              <div class="relative z-40 p-1 bg-white md:p-2 rounded-3xl">
-                <router-link to="/services/design-and-development" class="relative z-40 flex items-center justify-between p-4 bg-gray-900 rounded-3xl md:p-5" aria-label="Learn more about Design and Development services">
-                  <svg width="100%" height="100%" class="h-5 w-auto -translate-y-0.5 transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:stroke-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </router-link>
-              </div>
-            </div>
+      <div class="absolute bottom-0 right-0 z-20 overflow-visible">
+        <div class="relative inline-block overflow-visible">
+          <div class="absolute -inset-[2px] z-20 rounded-[2rem] bg-white"></div>
+          <div class="absolute -top-[19px] right-0 h-[17px] w-[34px] rounded-br-3xl bg-transparent shadow-[18px_15px_0_14px_#fff] z-30"></div>
+          <div class="absolute bottom-0 -left-[20px] h-[29px] w-[18px] rounded-br-3xl bg-transparent shadow-[13px_13px_0_12px_#fff] z-30"></div>
+          <div class="relative z-40 p-1 bg-white md:p-2 rounded-3xl">
+            <router-link to="/services/web-development" class="relative z-40 flex items-center justify-between p-4 bg-gray-900 rounded-3xl md:p-5" aria-label="Learn more about Web Development services">
+              <svg width="100%" height="100%" class="h-5 w-auto -translate-y-0.5 transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:stroke-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </router-link>
           </div>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Card 2: Mobile Applications -->
+  <div
+    class="card-video card2 relative isolate bg-gray-500 p-5 rounded-3xl rounded-br-[2rem] text-white flex flex-col justify-between md:flex-1 min-h-[320px] group/video"
+    @mouseenter="playVideo('video-app')"
+    @mouseleave="pauseVideo('video-app')"
+  >
+    <!-- Clipping layer for video + gradient -->
+    <div class="absolute inset-0 z-0 overflow-hidden rounded-3xl rounded-br-[2rem]">
+      <video
+        id="video-app"
+        class="absolute inset-0 w-full h-full object-cover"
+        muted
+        playsinline
+        preload="metadata"
+        loop
+        aria-label="Mobile applications showcase video"
+      >
+        <source src="../assets/videos/app.mp4" type="video/mp4" />
+        <track kind="captions" srclang="en" label="English" default />
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#185464]/80 via-[#13404c]/60 to-transparent transition-opacity duration-500 group-hover/video:opacity-60"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="flex flex-col justify-left items-left w-[60%] 2xl:w-[55%] relative z-20">
+      <h3 class="mt-6 text-lg font-semibold 2xl:text-[25px] 2xl:my-10">Mobile Applications</h3>
+      <p class="mt-4 text-base lg:w-[90%] xl:w-[80%] leading-normal lg:leading-loose 2xl:mb-8">
+        Follow the global trend and create your revolutionary mobile app built with the best technologies
+      </p>
+    </div>
+
+    <div>
+      <div>
+        <img class="w-[105px] xl:w-[138px] object-right relative top-[10px] left-[1px] inset-0 overflow-hidden z-10 opacity-[80%]" src="../assets/logoji.webp" alt="Mobile Applications" loading="lazy" width="138" height="138" />
+      </div>
+      <div class="absolute bottom-0 right-0 z-20 overflow-visible">
+        <div class="relative inline-block overflow-visible">
+          <div class="absolute -inset-[2px] z-20 rounded-[2rem] bg-white"></div>
+          <div class="absolute -top-[19px] right-0 h-[17px] w-[34px] rounded-br-3xl bg-transparent shadow-[18px_15px_0_14px_#fff] z-30"></div>
+          <div class="absolute bottom-0 -left-[20px] h-[29px] w-[18px] rounded-br-3xl bg-transparent shadow-[13px_13px_0_12px_#fff] z-30"></div>
+          <div class="relative z-40 p-1 bg-white md:p-2 rounded-3xl">
+            <router-link to="/services/app-development" class="relative z-40 flex items-center justify-between p-4 bg-gray-900 rounded-3xl md:p-5" aria-label="Learn more about App Development services">
+              <svg width="100%" height="100%" class="h-5 w-auto -translate-y-0.5 transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:stroke-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </router-link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3: E-Commerce Solutions -->
+  <div
+    class="card-video card3 relative isolate bg-gray-500 p-5 rounded-3xl rounded-br-[2rem] text-white flex flex-col justify-between md:flex-1 min-h-[320px] group/video"
+    @mouseenter="playVideo('video-ecommerce')"
+    @mouseleave="pauseVideo('video-ecommerce')"
+  >
+    <!-- Clipping layer for video + gradient -->
+    <div class="absolute inset-0 z-0 overflow-hidden rounded-3xl rounded-br-[2rem]">
+      <video
+        id="video-ecommerce"
+        class="absolute inset-0 w-full h-full object-cover"
+        muted
+        playsinline
+        preload="metadata"
+        loop
+        aria-label="E-commerce solutions showcase video"
+      >
+        <source src="../assets/videos/design.mp4" type="video/mp4" />
+        <track kind="captions" srclang="en" label="English" default />
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#185464]/80 via-[#13404c]/60 to-transparent transition-opacity duration-500 group-hover/video:opacity-60"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="flex flex-col justify-left items-left w-[60%] 2xl:w-[55%] relative z-20">
+      <h3 class="mt-6 text-lg font-semibold 2xl:text-[25px] 2xl:my-10">E-Commerce Solutions</h3>
+      <p class="mt-4 text-base lg:w-[90%] xl:w-[80%] leading-normal lg:leading-loose 2xl:mb-8">
+        Increase your sales with an incredible online store, full of features and functionality
+      </p>
+    </div>
+
+    <div>
+      <div>
+        <img class="w-[105px] xl:w-[138px] object-right relative top-[10px] left-[1px] inset-0 overflow-hidden z-10 opacity-[80%]" src="../assets/logoji.webp" alt="E-Commerce Solutions" loading="lazy" width="138" height="138" />
+      </div>
+      <div class="absolute bottom-0 right-0 z-20 overflow-visible">
+        <div class="relative inline-block overflow-visible">
+          <div class="absolute -inset-[2px] z-20 rounded-[2rem] bg-white"></div>
+          <div class="absolute -top-[19px] right-0 h-[17px] w-[34px] rounded-br-3xl bg-transparent shadow-[18px_15px_0_14px_#fff] z-30"></div>
+          <div class="absolute bottom-0 -left-[20px] h-[29px] w-[18px] rounded-br-3xl bg-transparent shadow-[13px_13px_0_12px_#fff] z-30"></div>
+          <div class="relative z-40 p-1 bg-white md:p-2 rounded-3xl">
+            <router-link to="/services/design-and-development" class="relative z-40 flex items-center justify-between p-4 bg-gray-900 rounded-3xl md:p-5" aria-label="Learn more about Design and Development services">
+              <svg width="100%" height="100%" class="h-5 w-auto -translate-y-0.5 transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:stroke-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </router-link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- ============================================ -->
     <!-- SECTION 5: TECH WE USE                       -->
@@ -552,85 +590,93 @@
     <!-- SECTION 8: TESTIMONIALS                      -->
     <!-- ============================================ -->
     <div class="my-6 lg:my-8 mx-1 md:mx-16 min-[1500px]:mx-[10%] xl:my-10 2xl:my-16 max-w-[1450px]">
+  <div
+    ref="testiSection"
+    class="testi-shell relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#050a14] via-[#0a1a3a] to-[#0a0a1a] px-4 py-10 md:px-10 md:py-14"
+  >
+    <!-- Background Glows -->
+    <div class="pointer-events-none absolute -top-20 left-1/4 h-[280px] w-[280px] rounded-full bg-[#2bb6c4]/15 blur-[110px]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute -bottom-20 right-1/4 h-[260px] w-[260px] rounded-full bg-[#185464]/25 blur-[110px]" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <div class="relative z-10 flex flex-col gap-4 mb-8 md:flex-row md:items-end md:justify-between">
+      <div data-reveal>
+        <p class="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#2bb6c4]">[ Testimonials ]</p>
+        <h2 class="text-[30px] font-semibold md:text-[40px] lg:text-[48px] xl:font-semibold inline-block bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+          What Our Clients Say
+        </h2>
+      </div>
+
+      <div data-reveal class="flex gap-3 self-end md:self-auto">
+        <button @click="scrollTesti(-1)" aria-label="Previous testimonials" class="testi-nav-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button @click="scrollTesti(1)" aria-label="Next testimonials" class="testi-nav-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ====== FIXED: Testimonial Track with proper alignment ====== -->
+    <div 
+      ref="testiTrack" 
+      class="testi-scroll-track relative z-10" 
+      @scroll="handleTestiScroll"
+    >
       <div
-        ref="testiSection"
-        class="testi-shell relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#050a14] via-[#0a1a3a] to-[#0a0a1a] px-4 py-10 md:px-10 md:py-14"
+        v-for="(t, index) in testimonialsData"
+        :key="t.id"
+        :data-testi-card="index"
+        class="testi-card"
+        @mousemove="handleTiltMove"
+        @mouseleave="handleTiltLeave"
       >
-        <div class="pointer-events-none absolute -top-20 left-1/4 h-[280px] w-[280px] rounded-full bg-[#2bb6c4]/15 blur-[110px]" aria-hidden="true"></div>
-        <div class="pointer-events-none absolute -bottom-20 right-1/4 h-[260px] w-[260px] rounded-full bg-[#185464]/25 blur-[110px]" aria-hidden="true"></div>
-
-        <div class="relative z-10 flex flex-col gap-4 mb-8 md:flex-row md:items-end md:justify-between">
-          <div data-reveal>
-            <p class="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#2bb6c4]">[ Testimonials ]</p>
-            <h2 class="text-[30px] font-semibold md:text-[40px] lg:text-[48px] xl:font-semibold inline-block bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-              What Our Clients Say
-            </h2>
+        <div class="testi-card__inner">
+          <div class="testi-card__header">
+            <span class="testi-card__badge">{{ t.initial }}</span>
+            <span class="testi-card__company">{{ t.company }}</span>
           </div>
 
-          <div data-reveal class="flex gap-3 self-end md:self-auto">
-            <button @click="scrollTesti(-1)" aria-label="Previous testimonials" class="testi-nav-btn">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button @click="scrollTesti(1)" aria-label="Next testimonials" class="testi-nav-btn">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+          <div class="testi-card__body">
+            <p class="testi-card__label">Review</p>
+            <p class="testi-card__quote">{{ t.review }}</p>
+            <p class="testi-card__label">Scope of Work</p>
+            <p class="testi-card__scope">{{ t.scope }}</p>
           </div>
-        </div>
 
-        <div ref="testiTrack" class="testi-scroll-track relative z-10" @scroll="handleTestiScroll">
-          <div
-            v-for="(t, index) in testimonialsData"
-            :key="t.id"
-            :data-testi-card="index"
-            class="testi-card"
-            @mousemove="handleTiltMove"
-            @mouseleave="handleTiltLeave"
-          >
-            <div class="testi-card__inner">
-              <div class="testi-card__header">
-                <span class="testi-card__badge">{{ t.initial }}</span>
-                <span class="testi-card__company">{{ t.company }}</span>
+          <div class="testi-card__footer">
+            <div class="testi-card__person">
+              <img :src="t.avatar" :alt="t.name" loading="lazy" class="testi-card__avatar" width="44" height="44" />
+              <div>
+                <p class="testi-card__name">{{ t.name }}</p>
+                <p class="testi-card__role">{{ t.role }}</p>
               </div>
-
-              <div class="testi-card__body">
-                <p class="testi-card__label">Review</p>
-                <p class="testi-card__quote">{{ t.review }}</p>
-                <p class="testi-card__label">Scope of Work</p>
-                <p class="testi-card__scope">{{ t.scope }}</p>
-              </div>
-
-              <div class="testi-card__footer">
-                <div class="testi-card__person">
-                  <img :src="t.avatar" :alt="t.name" loading="lazy" class="testi-card__avatar" width="44" height="44" />
-                  <div>
-                    <p class="testi-card__name">{{ t.name }}</p>
-                    <p class="testi-card__role">{{ t.role }}</p>
-                  </div>
-                </div>
-                <div class="testi-card__rating">
-                  <span class="testi-card__stars">★★★★★</span>
-                  <span class="testi-card__rating-num">{{ t.rating.toFixed(1) }}</span>
-                </div>
-              </div>
+            </div>
+            <div class="testi-card__rating">
+              <span class="testi-card__stars">★★★★★</span>
+              <span class="testi-card__rating-num">{{ t.rating.toFixed(1) }}</span>
             </div>
           </div>
         </div>
-
-        <div class="relative z-10 flex justify-center gap-2 mt-6">
-          <button
-            v-for="(t, index) in testimonialsData"
-            :key="'dot-' + t.id"
-            @click="goToTesti(index)"
-            :class="['testi-dot', { 'testi-dot--active': activeTesti === index }]"
-            :aria-label="'Go to testimonial ' + (index + 1)"
-          ></button>
-        </div>
       </div>
     </div>
+
+    <!-- Dots Navigation -->
+    <div class="hidden  relative z-10 md:flex justify-center gap-2 mt-6">
+      <button
+        v-for="(t, index) in testimonialsData"
+        :key="'dot-' + t.id"
+        @click="goToTesti(index)"
+        :class="['testi-dot', { 'testi-dot--active': activeTesti === index }]"
+        :aria-label="'Go to testimonial ' + (index + 1)"
+      ></button>
+    </div>
+  </div>
+</div>
 
     <!-- ============================================ -->
 <!-- SECTION 9 : FAQ                             -->

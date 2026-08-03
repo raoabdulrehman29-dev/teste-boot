@@ -132,8 +132,16 @@ onUnmounted(() => {
 <style scoped>
 .banner {
   background:
-    linear-gradient(to right, rgba(24, 84, 100, 0.45), rgba(19, 64, 76, 0.45)),
-    url("@/assets/page-banner.webp");
+    linear-gradient(
+      100deg,
+      rgba(6, 22, 30, 0.82) 0%,
+      rgba(12, 45, 58, 0.76) 25%,
+      rgba(24, 84, 100, 0.68) 55%,
+      rgba(33, 126, 145, 0.58) 80%,
+      rgba(43, 182, 196, 0.45) 100%
+    ),
+    url("@/assets/bannerbg.png");
+
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;

@@ -72,6 +72,8 @@
 
             <div
               class="relative hidden overflow-hidden rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 lg:mx-4 lg:mr-10 xl:flex lg:aspect-[16/9] lg:h-auto lg:self-center lg:items-center lg:justify-center xl:mx-6 xl:mr-14 xl:aspect-auto 2xl:h-full xl:min-h-[320px]"
+              @mouseenter="playDetailVideo"
+              @mouseleave="pauseDetailVideo"
             >
               <div class="absolute rounded-full opacity-50 -inset-4 bg-black/20 blur-3xl"></div>
 
@@ -172,14 +174,39 @@
 
                     <rect x="85" y="10" width="400" height="215" rx="10" fill="#1a1a1a" />
 
+                    <!-- Screen: image + video crossfade, same visual technique as
+                         the homepage project cards (.laptop-image / .laptop-video),
+                         but driven by a Vue ref + reactive class instead of
+                         document.getElementById - more reliable across a
+                         foreignObject boundary and across route changes. -->
                     <foreignObject x="90" y="15" width="390" height="205" rx="4">
-                      <img
-                        :src="`/${project.images[0]}`"
-                        class="w-full h-full object-cover rounded"
-                        :alt="project.title"
-                        loading="lazy"
-                        @error="(e) => (e.target.src = '/images/placeholder.jpg')"
-                      />
+                      <div
+                        xmlns="http://www.w3.org/1999/xhtml"
+                        style="width:100%;height:100%;position:relative;overflow:hidden;border-radius:4px;"
+                        :class="{ 'is-playing': isDetailVideoPlaying }"
+                      >
+                        <img
+                          :src="`/${project.images[0]}`"
+                          class="laptop-image"
+                          :alt="project.title"
+                          loading="lazy"
+                          @error="(e) => (e.target.src = '/images/placeholder.jpg')"
+                        />
+                        <video
+                          ref="detailVideoEl"
+                          class="laptop-video"
+                          muted
+                          playsinline
+                          preload="metadata"
+                          loop
+                          :aria-label="project.title + ' showcase video'"
+                          :poster="`/${project.images[0]}`"
+                          @error="handleDetailVideoError"
+                        >
+                          <source :src="detailVideoSrc" type="video/mp4" />
+                          <track kind="captions" srclang="en" label="English" default />
+                        </video>
+                      </div>
                     </foreignObject>
 
                     <rect
@@ -190,6 +217,7 @@
                       rx="4"
                       fill="url(#screen-glare)"
                       opacity="0.3"
+                      pointer-events="none"
                     />
                     <circle cx="285" cy="12" r="2.5" fill="#1a1a1a" />
                     <circle cx="285" cy="12" r="1" fill="#2a6a2a" opacity="0.8" />
@@ -657,7 +685,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, computed } from "vue";
+import { ref, onMounted, watch, computed, nextTick } from "vue";
 import { useRoute } from "vue-router";
 import { userSearchStore } from "@/stores/SearchStore";
 import projectsData from "@/stores/projects.json";
@@ -701,15 +729,86 @@ const relatedServices = computed(() => {
     .filter(Boolean);
 });
 
+// --- Laptop-screen hover video. IMPORTANT: this uses a project-root-
+// absolute glob path ("/src/assets/videos/*.mp4"), NOT a path relative
+// to this file. That's deliberate - Home.vue and the Projects listing
+// page use "../assets/videos/..." (relative to their own location) and
+// that works there, but this file also references its banner via the
+// "@/assets/page-banner.webp" alias rather than a relative path -
+// meaning ProjectDetail.vue almost certainly does NOT live at the same
+// folder depth as those other files, so the same relative "../" was
+// silently resolving to the wrong folder and 404ing. A root-absolute
+// glob sidesteps that entirely: it always resolves from the project
+// root no matter which file calls it. ---
+const detailVideoEl = ref(null);
+const isDetailVideoPlaying = ref(false);
+
+const videoModules = import.meta.glob("/src/assets/videos/*.mp4", {
+  eager: true,
+  import: "default",
+});
+
+const getVideoUrl = (slug) => {
+  if (!slug) return "";
+  const entry = Object.entries(videoModules).find(([path]) => path.endsWith(`/${slug}.mp4`));
+  return entry ? entry[1] : "";
+};
+
+const detailVideoSrc = computed(() => {
+  return project.value?.slug ? getVideoUrl(project.value.slug) : "";
+});
+
+const playDetailVideo = () => {
+  const video = detailVideoEl.value;
+  if (!video) return;
+  isDetailVideoPlaying.value = true;
+  video.currentTime = 0;
+  video.play().catch(() => {
+    // Autoplay can be blocked in rare cases - poster/image stays visible either way
+  });
+};
+
+const pauseDetailVideo = () => {
+  isDetailVideoPlaying.value = false;
+  detailVideoEl.value?.pause();
+};
+
+// If a project simply has no matching video file, the <video> will
+// fire an error - fall back to just showing the poster image instead
+// of leaving the player in a broken state.
+const handleDetailVideoError = () => {
+  isDetailVideoPlaying.value = false;
+};
+
 onMounted(loadProject);
 watch(() => route.params.slug, loadProject);
+
+// A <source src="..."> changing doesn't make the browser reload the
+// video on its own - without this, navigating from one project's
+// detail page to another (same component instance reused by the
+// router) would keep showing the previous project's video.
+watch(
+  () => project.value?.slug,
+  async () => {
+    await nextTick();
+    detailVideoEl.value?.load();
+  },
+);
 </script>
 
 <style scoped>
 .banner {
   background:
-    linear-gradient(to right, rgba(24, 84, 100, 0.45), rgba(19, 64, 76, 0.45)),
-    url("@/assets/page-banner.webp");
+    linear-gradient(
+      100deg,
+      rgba(6, 22, 30, 0.82) 0%,
+      rgba(12, 45, 58, 0.76) 25%,
+      rgba(24, 84, 100, 0.68) 55%,
+      rgba(33, 126, 145, 0.58) 80%,
+      rgba(43, 182, 196, 0.45) 100%
+    ),
+    url("@/assets/bannerbg.png");
+
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -742,5 +841,32 @@ watch(() => route.params.slug, loadProject);
   100% {
     transform: scale(1) rotate(360deg);
   }
+}
+
+/* Laptop screen image/video crossfade - identical rules to the
+   homepage's project cards, so the hover behavior matches exactly. */
+.laptop-image,
+.laptop-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.45s ease;
+}
+
+.laptop-video {
+  opacity: 0;
+  pointer-events: none;
+}
+.laptop-image {
+  opacity: 1;
+}
+.is-playing .laptop-video {
+  opacity: 1;
+}
+.is-playing .laptop-image {
+  opacity: 0;
 }
 </style>

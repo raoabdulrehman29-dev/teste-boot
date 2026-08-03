@@ -44,20 +44,28 @@
       </div>
     </div>
 
+    <!-- ============================================ -->
+    <!-- PROJECT CARDS WITH ENTRANCE ANIMATION        -->
+    <!-- ============================================ -->
     <div
       v-if="isVisible('case studies hospatility medlink neurology plannio trueleads capaMulti')"
       :class="store.isSearchEmpty ? 'pb-20' : 'pb-24 lg:pb-32 mb-8 lg:mb-16'"
+      ref="projectCardsGrid"
+      style="perspective: 1600px;"
       class="mx-auto px-2 md:px-6 lg:px-8 flex flex-col items-center justify-between gap-4 md:flex-row md:flex-wrap"
     >
       <div
-        v-for="project in filteredProjects"
+        v-for="(project, index) in filteredProjects"
         :key="project.id"
-        data-reveal
-        class="w-full md:w-[48%] my-4 group"
+        :data-project-card="index"
+        class="w-full md:w-[48%] my-4 group project-card"
+        style="transform-style: preserve-3d;"
+        @mouseenter="playProjectVideo('project-video-' + project.id)"
+        @mouseleave="pauseProjectVideo('project-video-' + project.id)"
       >
         <router-link :to="{ name: 'ProjectDetail', params: { slug: project.slug } }">
           <div
-            class="flex flex-col justify-center p-4 bg-white border border-gray-100 rounded-[2rem] shadow-sm hover:shadow-xl transition-all duration-300"
+            class="flex flex-col justify-center p-4 bg-white border border-gray-100 rounded-[2rem] shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 Cards"
           >
             <!-- Device Mockup Container -->
             <div
@@ -66,7 +74,6 @@
               <div class="relative w-full aspect-[16/9] p-4" preserveAspectRatio="xMidYMid meet">
                 <svg viewBox="6 6 514.96 310" class="w-full h-full">
                   <defs>
-                    <!-- Gradients -->
                     <linearGradient
                       id="bg-gradient"
                       x1="42.21"
@@ -90,6 +97,12 @@
                     >
                       <stop offset="0" stop-color="#109a5c" stop-opacity=".6" />
                       <stop offset=".99" stop-color="#109a5c" stop-opacity=".3" />
+                    </linearGradient>
+                    <linearGradient id="screen-glare" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.05" />
+                      <stop offset="30%" stop-color="#ffffff" stop-opacity="0.02" />
+                      <stop offset="70%" stop-color="#ffffff" stop-opacity="0" />
+                      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.01" />
                     </linearGradient>
                   </defs>
 
@@ -155,14 +168,35 @@
 
                     <rect x="85" y="10" width="400" height="215" rx="10" fill="#1a1a1a" />
 
+                    <!-- ====== LAPTOP SCREEN WITH VIDEO ====== -->
                     <foreignObject x="90" y="15" width="390" height="205" rx="4">
-                      <img
-                        :src="getImage(project.images[0] || project.image)"
-                        class="w-full h-full object-cover rounded"
-                        :alt="project.title"
-                        loading="lazy"
-                        @error="(e) => (e.target.src = '/images/placeholder.jpg')"
-                      />
+                      <div xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%;position:relative;overflow:hidden;border-radius:4px;">
+                        <!-- Image (visible by default) -->
+                        <img
+                          :src="getImage(project.images[0] || project.image)"
+                          class="laptop-image"
+                          :alt="project.title"
+                          loading="lazy"
+                          width="390"
+                          height="205"
+                          @error="(e) => (e.target.src = '/images/placeholder.jpg')"
+                        />
+                        <!-- Video (hidden by default, shows on hover) -->
+                        <video
+                          :id="'project-video-' + project.id"
+                          class="laptop-video"
+                          muted
+                          playsinline
+                          preload="metadata"
+                          loop
+                          :aria-label="project.title + ' showcase video'"
+                          :poster="getImage(project.images[0] || project.image)"
+                          style="aspect-ratio: 16/9; width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;"
+                        >
+                          <source :src="getVideoUrl(project.slug)" type="video/mp4" />
+                          <track kind="captions" srclang="en" label="English" default />
+                        </video>
+                      </div>
                     </foreignObject>
 
                     <rect
@@ -173,26 +207,27 @@
                       rx="4"
                       fill="url(#screen-glare)"
                       opacity="0.3"
+                      pointer-events="none"
                     />
                     <circle cx="285" cy="12" r="2.5" fill="#1a1a1a" />
                     <circle cx="285" cy="12" r="1" fill="#2a6a2a" opacity="0.8" />
                   </g>
 
+                  <!-- Tablet -->
                   <g transform="translate(0, 120)">
                     <ellipse cx="96.5" cy="165" rx="65" ry="6" fill="#000000" opacity="0.1" />
-
                     <rect x="40" y="75" width="113" height="85" rx="6" fill="#000000" />
-
                     <foreignObject x="43" y="78" width="107" height="79" rx="4">
                       <img
                         :src="getImage(project.images[1] || project.image)"
                         class="w-full h-full object-cover rounded"
                         :alt="project.title"
                         loading="lazy"
+                        width="107"
+                        height="79"
                         @error="(e) => (e.target.src = '/images/placeholder.jpg')"
                       />
                     </foreignObject>
-
                     <rect
                       x="43"
                       y="78"
@@ -201,26 +236,27 @@
                       rx="4"
                       fill="url(#screen-glare)"
                       opacity="0.3"
+                      pointer-events="none"
                     />
                     <circle cx="96.5" cy="77" r="2" fill="#1a1a1a" />
                     <circle cx="96.5" cy="77" r="1" fill="#2a6a2a" opacity="0.6" />
                   </g>
 
+                  <!-- Phone -->
                   <g transform="translate(370, 70)">
                     <ellipse cx="76.77" cy="200" rx="40" ry="5" fill="#000000" opacity="0.1" />
-
                     <rect x="43" y="50" width="67.5" height="145" rx="8" fill="#000000" />
-
                     <foreignObject x="46" y="53" width="61.5" height="139" rx="6">
                       <img
                         :src="getImage(project.images[2] || project.image)"
                         class="w-full h-full object-cover rounded"
                         :alt="project.title"
                         loading="lazy"
+                        width="61"
+                        height="139"
                         @error="(e) => (e.target.src = '/images/placeholder.jpg')"
                       />
                     </foreignObject>
-
                     <rect
                       x="46"
                       y="53"
@@ -229,10 +265,14 @@
                       rx="6"
                       fill="url(#screen-glare)"
                       opacity="0.3"
+                      pointer-events="none"
                     />
-
                     <g transform="translate(61, 55)">
                       <rect x="0" y="0" width="28" height="7" rx="3.5" fill="#000000" />
+                      <circle cx="9" cy="3.5" r="1.8" fill="#1a1a1a" />
+                      <circle cx="9" cy="3.5" r="1" fill="#2a6a2a" opacity="0.6" />
+                      <rect x="14" y="2.5" width="10" height="2" rx="1" fill="#1a1a1a" opacity="0.7" />
+                      <rect x="1" y="1" width="26" height="5" rx="2.5" fill="#ffffff" opacity="0.06" />
                     </g>
                   </g>
 
@@ -371,11 +411,12 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onBeforeUnmount } from "vue";
+import { ref, computed, onMounted, onBeforeUnmount, nextTick } from "vue";
 import PageBanner from "@/components/PageBanner.vue";
 import { userSearchStore } from "@/stores/SearchStore";
 import projectsData from "@/stores/projects.json";
 import { useScrollReveal } from "@/composables/useScrollReveal";
+import { gsap, ScrollTrigger } from "@/lib/gsap";
 
 const store = userSearchStore();
 
@@ -384,9 +425,12 @@ const projects = ref([]);
 const activeCategory = ref("All Projects");
 
 const pageRoot = ref(null);
+const projectCardsGrid = ref(null);
+
 useScrollReveal(pageRoot, {
   rebuildOn: [() => store.searchQuery, () => activeCategory.value],
 });
+
 const completedProjectsCount = ref(0);
 const clientSatisfiedCount = ref(0);
 const happyClientsCount = ref(0);
@@ -394,6 +438,45 @@ const yearsExperienceCount = ref(0);
 const funFactsElement = ref(null);
 let funFactsObserver = null;
 
+// ============================================ -->
+// VIDEO FUNCTIONS (Same as Homepage)
+// ============================================ -->
+const getVideoUrl = (slug) => {
+  return new URL(`../assets/videos/${slug}.mp4`, import.meta.url).href;
+};
+
+const playProjectVideo = (videoId) => {
+  const video = document.getElementById(videoId);
+  if (!video) return;
+  video.parentElement?.classList.add("is-playing");
+  video.currentTime = 0;
+  video.play().catch(() => {});
+};
+
+const pauseProjectVideo = (videoId) => {
+  const video = document.getElementById(videoId);
+  if (!video) return;
+  video.parentElement?.classList.remove("is-playing");
+  video.pause();
+};
+
+// ============================================ -->
+// IMAGE HELPER
+// ============================================ -->
+const imageModules = import.meta.glob(
+  "../assets/**/*.{png,jpg,jpeg,webp,svg}",
+  { eager: true, import: "default" }
+);
+
+const getImage = (imgName) => {
+  if (!imgName) return "/images/placeholder.jpg";
+  const entry = Object.entries(imageModules).find(([path]) => path.endsWith(`/${imgName}`));
+  return entry ? entry[1] : "/images/placeholder.jpg";
+};
+
+// ============================================ -->
+// FILTER FUNCTIONS
+// ============================================ -->
 const isVisible = (tags) => {
   const query = store.searchQuery.toLowerCase().trim();
   if (!query) return true;
@@ -456,11 +539,60 @@ const filteredProjects = computed(() => {
   });
 });
 
-const getImage = (imgName) => {
-  return new URL(`../assets/${imgName}`, import.meta.url).href;
+// ============================================ -->
+// ENTRANCE ANIMATION FOR PROJECT CARDS
+// ============================================ -->
+const setupProjectCardAnimations = () => {
+  if (!projectCardsGrid.value) return;
+  const cards = projectCardsGrid.value.querySelectorAll("[data-project-card]");
+
+  cards.forEach((card) => {
+    const index = Number(card.dataset.projectCard);
+    const fromLeft = index % 2 === 0;
+
+    gsap.fromTo(
+      card,
+      { 
+        x: fromLeft ? -140 : 140, 
+        opacity: 0, 
+        rotateY: fromLeft ? -28 : 28, 
+        scale: 0.9 
+      },
+      {
+        x: 0,
+        opacity: 1,
+        rotateY: 0,
+        scale: 1,
+        duration: 1.1,
+        ease: "power3.out",
+        scrollTrigger: { 
+          trigger: card, 
+          start: "top 88%", 
+          once: true,
+          invalidateOnRefresh: true
+        },
+      },
+    );
+  });
 };
 
+// ============================================ -->
+// LIFECYCLE
+// ============================================ -->
 onMounted(async () => {
+  // Load projects data
+  projects.value = projectsData || [];
+  if (!projects.value.length) {
+    console.warn("No projects found in projects.json");
+  }
+
+  // Wait for DOM to render
+  await nextTick();
+
+  // Setup card entrance animations
+  setupProjectCardAnimations();
+
+  // Fun facts counter
   funFactsObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -481,10 +613,12 @@ onMounted(async () => {
   if (funFactsElement.value) {
     funFactsObserver.observe(funFactsElement.value);
   }
-  projects.value = projectsData || [];
-  if (!projects.value.length) {
-    console.warn("No projects found in projects.json");
-  }
+
+  // Preload first video
+  setTimeout(() => {
+    const firstVideo = document.querySelector(".laptop-video");
+    if (firstVideo) firstVideo.load();
+  }, 1000);
 });
 
 onBeforeUnmount(() => {
@@ -502,6 +636,48 @@ onBeforeUnmount(() => {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* ============================================ -->
+/* VIDEO HOVER EFFECT (Same as Homepage)        -->
+/* ============================================ */
+.laptop-image,
+.laptop-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.45s ease;
+  border-radius: 4px;
+}
+
+.laptop-video {
+  opacity: 0;
+  pointer-events: none;
+}
+.laptop-image {
+  opacity: 1;
+}
+.is-playing .laptop-video {
+  opacity: 1;
+}
+.is-playing .laptop-image {
+  opacity: 0;
+}
+
+/* ============================================ -->
+/* PROJECT CARD ENTRANCE ANIMATION              -->
+/* ============================================ */
+.project-card {
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+/* Card hover effect */
+.group:hover .Cards {
+  transform: translateY(-4px);
 }
 
 @keyframes spin988 {

@@ -64,6 +64,7 @@
         data-reveal
         class="rounded-3xl bg-gradient-to-b from-gray-900 via-gray-800 to-[#185464] px-4 pb-6 pt-12 md:rounded-3xl lg:w-[40%] xl:w-[35%] lg:px-8"
       >
+        <CardAnimationTwo />
         <h2
           class="mt-6 text-2xl font-semibold text-white md:text-3xl lg:my-10 xl:my-6 lg:text-4xl xl:text-4xl"
         >
@@ -154,6 +155,7 @@
       data-reveal
       class="bg-gradient-to-r from-white via-[#185464]/[15%] to-white rounded-3xl sm:mx-2 relative z-20 overflow-hidden border border-white/20 px-4 pt-10 pb-4 md:px-6 md:pt-10 lg:px-8 lg:py-16 2xl:py-20"
     >
+      <CyberBurstBg />
       <div class="relative z-20 mt-4 min-h-[220px] md:min-h-[300px] lg:min-h-[360px]">
         <div
           class="relative z-10 py-8 md:py-10 pl-6 md:pl-28 lg:pl-36 xl:pl-40 min-[1500px]:pl-[clamp(12rem,15vw,20rem)] min-[1800px]:pl-[clamp(14rem,20vw,22rem)] 2xl:mr-10 mb-6"
@@ -542,6 +544,9 @@ import { ref, onMounted } from "vue";
 import { userSearchStore } from "@/stores/SearchStore";
 import PageBanner from "@/components/PageBanner.vue";
 import { useScrollReveal } from "@/composables/useScrollReveal";
+import { defineAsyncComponent } from "vue";
+const CyberBurstBg = defineAsyncComponent(() => import("@/components/CyberBurstBg.vue"));
+const CardAnimationTwo = defineAsyncComponent(() => import("@/components/CardAnimationTwo.vue"));
 
 const store = userSearchStore();
 

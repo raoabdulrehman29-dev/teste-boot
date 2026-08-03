@@ -22,66 +22,62 @@
         </p>
       </div>
 
-      <!-- Service Cards Grid - Loop from JSON -->
+      <!-- Service Cards Grid -->
       <div
         v-if="displayServices.length > 0"
         data-reveal-group
-        class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+        class="service-expand-wrapper mt-12"
       >
-        <router-link
-          v-for="(service, index) in displayServices"
-          :key="service.id || index"
-          :to="`/services/${service.id}`"
-          class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-[#2bb6c4]/50 hover:shadow-xl"
+        <div
+          v-for="(row, rowIndex) in chunkedServices"
+          :key="rowIndex"
+          class="service-row"
         >
-          <!-- Image header -->
-          <div class="relative h-44 overflow-hidden">
-            <img
-              :src="getServiceImage(service.id)"
-              :alt="getDisplayTitle(service.title)"
-              loading="lazy"
-              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-[#13404c]/70 via-[#13404c]/10 to-transparent"
-            ></div>
-            <!-- Icon badge -->
-            <div
-              class="absolute bottom-3 left-4 flex h-12 w-12 items-center justify-center rounded-xl border-4 border-white bg-gradient-to-br from-[#185464] to-[#2bb6c4] text-xl text-white shadow-lg transition-transform duration-300 group-hover:scale-110"
-            >
-              {{ getServiceIcon(service.id) }}
+          <router-link
+            v-for="(service, index) in row"
+            :key="service.id || index"
+            :to="`/services/${service.id}`"
+            class="service-card group"
+          >
+            <!-- IMAGE -->
+            <div class="service-image">
+              <img
+                :src="getServiceImage(service.id)"
+                :alt="getDisplayTitle(service.title)"
+                loading="lazy"
+              />
+              <div class="service-overlay"></div>
+              <div class="service-icon">
+                {{ getServiceIcon(service.id) }}
+              </div>
             </div>
-          </div>
 
-          <!-- Body -->
-          <div class="flex flex-1 flex-col p-6">
-            <h3
-              class="text-lg font-bold text-slate-900 transition-colors duration-300 group-hover:text-[#185464]"
-            >
-              {{ getDisplayTitle(service.title) }}
-            </h3>
-            <p class="mt-2 flex-1 text-sm leading-6 text-slate-500">
-              {{ getShortDescription(service) }}
-            </p>
-            <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#185464]">
-              Learn more
-              <svg
-                class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5 12h14M13 6l6 6-6 6"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </span>
-          </div>
-        </router-link>
+            <!-- CONTENT -->
+            <div class="service-content">
+              <h3>
+                {{ getDisplayTitle(service.title) }}
+              </h3>
+              <p>
+                {{ getShortDescription(service) }}
+              </p>
+              <span class="service-button">
+                Learn More
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M5 12h14M13 6l6 6-6 6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </div>
+          </router-link>
+        </div>
       </div>
 
       <!-- Fallback if no services -->
@@ -203,7 +199,7 @@ import { userSearchStore } from "@/stores/SearchStore";
 import servicesData from "@/stores/Services.json";
 import { useScrollReveal } from "@/composables/useScrollReveal";
 
-// Static image imports so Vite bundles subfolder assets correctly
+// Static image imports
 import genAiImg from "@/assets/Services/gen-ai.jpg";
 import dataAnalyticsImg from "@/assets/Services/data-analytics.jpg";
 import businessIntelImg from "@/assets/Services/business-intelegence.jpg";
@@ -222,7 +218,6 @@ useScrollReveal(pageRoot, { rebuildOn: [() => store.searchQuery] });
 const allServices = computed(() => {
   const services = [];
 
-  // Check if servicesData exists
   if (!servicesData) {
     console.warn("Services data not found");
     return services;
@@ -237,7 +232,6 @@ const allServices = computed(() => {
           if (service) {
             services.push({
               ...service,
-              // Add search tags for filtering
               searchTags:
                 `${service.title || ""} ${service.hero?.tagline || ""} ${service.hero?.description || ""} ${service.intro?.heading || ""}`.toLowerCase(),
             });
@@ -308,7 +302,6 @@ const servicesHomeTags = computed(() => {
     "services what we offer comprehensive digital solutions business grow modern world",
   ];
 
-  // Add all service titles and descriptions to tags
   allServices.value.forEach((service) => {
     if (service.title) tags.push(service.title);
     if (service.hero?.tagline) tags.push(service.hero.tagline);
@@ -377,4 +370,571 @@ onBeforeUnmount(() => {
     funFactsObserver.disconnect();
   }
 });
+
+// ============================================ -->
+// FIXED: CHUNK SERVICES FOR CONSISTENT ROWS
+// ============================================ -->
+// Add this after your other refs
+const windowWidth = ref(window.innerWidth);
+
+// Add resize handler
+const handleResize = () => {
+  windowWidth.value = window.innerWidth;
+};
+const chunkedServices = computed(() => {
+  const items = displayServices.value;
+  const rows = [];
+  
+  // Use reactive windowWidth
+  const width = windowWidth.value;
+  
+  let itemsPerRow;
+  if (width >= 1024) {
+    itemsPerRow = 3;
+  } else if (width >= 768) {
+    itemsPerRow = 2;
+  } else {
+    itemsPerRow = 1;
+  }
+
+  for (let i = 0; i < items.length; i += itemsPerRow) {
+    rows.push(items.slice(i, i + itemsPerRow));
+  }
+
+  return rows;
+});
+onMounted(() => {
+  // ... existing code ...
+  
+  window.addEventListener('resize', handleResize);
+});
+
+onBeforeUnmount(() => {
+  // ... existing code ...
+  
+  window.removeEventListener('resize', handleResize);
+});
 </script>
+
+<style scoped>
+/* ============================================ */
+/* SERVICE EXPAND WRAPPER                      */
+/* ============================================ */
+.service-expand-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.service-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+/* ============================================ */
+/* SERVICE CARD - BASE STYLES                  */
+/* ============================================ */
+.service-card {
+  position: relative;
+  flex: 1;
+  height: 480px;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #fff;
+  transition: flex 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  will-change: transform, flex;
+}
+
+.service-row:hover .service-card {
+  flex: 0.65;
+}
+
+.service-row .service-card:hover {
+  flex: 2.2;
+  z-index: 10;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.18);
+  transform: translateY(-4px);
+}
+
+/* ============================================ */
+/* SERVICE IMAGE                               */
+/* ============================================ */
+.service-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    filter 0.5s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.75);
+}
+
+/* ============================================ */
+/* SERVICE OVERLAY                             */
+/* ============================================ */
+.service-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(8, 17, 31, 0.92) 5%,
+    rgba(8, 17, 31, 0.55) 38%,
+    rgba(8, 17, 31, 0.15) 70%,
+    transparent 100%
+  );
+  transition: background 0.5s ease;
+}
+
+.service-card:hover .service-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(8, 17, 31, 0.95) 5%,
+    rgba(8, 17, 31, 0.65) 40%,
+    rgba(8, 17, 31, 0.2) 70%,
+    transparent 100%
+  );
+}
+
+/* ============================================ */
+/* SERVICE ICON                                */
+/* ============================================ */
+.service-icon {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #185464, #2bb6c4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.4s ease;
+  box-shadow: 0 8px 24px rgba(43, 182, 196, 0.3);
+  z-index: 2;
+}
+
+.service-card:hover .service-icon {
+  transform: rotate(8deg) scale(1.12);
+  box-shadow: 0 12px 32px rgba(43, 182, 196, 0.45);
+}
+
+/* ============================================ */
+/* SERVICE CONTENT                             */
+/* ============================================ */
+.service-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  padding: 32px 28px 28px;
+  color: white;
+}
+
+.service-content h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+  transition: transform 0.4s ease;
+}
+
+/* ============================================ */
+/* FIXED: PARAGRAPH ANIMATION                  */
+/* ============================================ */
+.service-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 16px;
+  max-width: 90%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* FIXED: Hidden by default, slides up on hover */
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ============================================ */
+/* SERVICE BUTTON                              */
+/* ============================================ */
+.service-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2bb6c4;
+  transition: opacity 0.4s ease 0.2s,
+    transform 0.4s ease 0.2s;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.service-button svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+/* ============================================ */
+/* HOVER EFFECTS                               */
+/* ============================================ */
+.service-card:hover .service-content h3 {
+  transform: translateY(-4px);
+}
+
+.service-card:hover .service-content p {
+  /* FIXED: Appears from bottom on hover */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card:hover .service-button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card:hover .service-button svg {
+  transform: translateX(6px);
+}
+
+/* ============================================ */
+/* RESPONSIVE BREAKPOINTS                      */
+/* ============================================ */
+
+/* Desktop (1280px+) */
+@media (min-width: 1280px) {
+  .service-row {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .service-card {
+    height: 480px;
+  }
+}
+
+/* Small Desktop / Large Tablet (1024px - 1279px) */
+@media (max-width: 1279px) and (min-width: 1024px) {
+  .service-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .service-card {
+    height: 420px;
+    flex: unset !important;
+  }
+
+  .service-row:hover .service-card {
+    flex: unset !important;
+  }
+
+  .service-row .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+  }
+
+  .service-content h3 {
+    font-size: 20px;
+  }
+
+  .service-content p {
+    font-size: 13px;
+    -webkit-line-clamp: 2;
+  }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    top: 20px;
+    left: 20px;
+  }
+
+  .service-content {
+    padding: 24px 20px 20px;
+  }
+
+  .service-button {
+    font-size: 13px;
+  }
+}
+
+/* ============================================ */
+/* FIXED: TABLET (768px - 1023px)              */
+/* ALWAYS 2 CARDS PER ROW                      */
+/* ============================================ */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .service-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px;
+  }
+
+  .service-card {
+    height: 380px;
+    flex: unset !important;
+  }
+
+  .service-row:hover .service-card {
+    flex: unset !important;
+  }
+
+  .service-row .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    flex: unset !important;
+  }
+
+  .service-content h3 {
+    font-size: 18px;
+  }
+
+  .service-content p {
+    font-size: 13px;
+    -webkit-line-clamp: 2;
+  }
+
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    top: 18px;
+    left: 18px;
+  }
+
+  .service-content {
+    padding: 20px 18px 18px;
+  }
+
+  .service-button {
+    font-size: 12px;
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  /* Keep hover effect on tablet */
+  .service-card:hover .service-button {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================ */
+/* MOBILE (320px - 767px)                      */
+/* ============================================ */
+@media (max-width: 767px) {
+  .service-expand-wrapper {
+    gap: 16px;
+  }
+
+  .service-row {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .service-card {
+    height: 320px;
+    flex: unset !important;
+    border-radius: 20px;
+  }
+
+  .service-row:hover .service-card {
+    flex: unset !important;
+  }
+
+  .service-row .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  }
+
+  .service-image img {
+    transform: scale(1.05);
+  }
+
+  .service-card:hover img {
+    transform: scale(1.08);
+  }
+
+  .service-content h3 {
+    font-size: 17px;
+    margin-bottom: 4px;
+  }
+
+  .service-content p {
+    font-size: 13px;
+    -webkit-line-clamp: 2;
+    margin-bottom: 12px;
+    max-width: 100%;
+    /* Mobile: always visible */
+    opacity: 0.85;
+    transform: translateY(0);
+  }
+
+  .service-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    top: 16px;
+    left: 16px;
+    border-radius: 14px;
+  }
+
+  .service-content {
+    padding: 16px 16px 16px;
+  }
+
+  .service-button {
+    font-size: 12px;
+    opacity: 1;
+    transform: translateY(0);
+    color: #2bb6c4;
+  }
+
+  /* Disable hover animations on mobile */
+  .service-card:hover .service-content h3 {
+    transform: translateY(0);
+  }
+
+  .service-card:hover .service-content p {
+    opacity: 0.85;
+    transform: translateY(0);
+  }
+
+  .service-card:hover .service-button {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .service-card:hover .service-icon {
+    transform: rotate(6deg) scale(1.08);
+  }
+}
+
+/* Very Small Mobile (320px - 400px) */
+@media (max-width: 400px) {
+  .service-card {
+    height: 280px;
+    border-radius: 16px;
+  }
+
+  .service-content h3 {
+    font-size: 15px;
+  }
+
+  .service-content p {
+    font-size: 12px;
+    -webkit-line-clamp: 2;
+  }
+
+  .service-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+    top: 14px;
+    left: 14px;
+    border-radius: 12px;
+  }
+
+  .service-content {
+    padding: 14px 14px 14px;
+  }
+
+  .service-button {
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .service-button svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* ============================================ */
+/* REDUCED MOTION                             */
+/* ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .service-image img,
+  .service-overlay,
+  .service-icon,
+  .service-content h3,
+  .service-content p,
+  .service-button,
+  .service-button svg {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .service-card:hover {
+    transform: none !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06) !important;
+  }
+
+  .service-card:hover img {
+    transform: none !important;
+    filter: brightness(0.85) !important;
+  }
+
+  .service-icon {
+    transform: none !important;
+  }
+
+  .service-card:hover .service-icon {
+    transform: none !important;
+  }
+
+  .service-content h3 {
+    transform: none !important;
+  }
+
+  .service-content p {
+    opacity: 0.85 !important;
+    transform: none !important;
+  }
+
+  .service-button {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .service-row:hover .service-card {
+    flex: unset !important;
+  }
+
+  .service-row .service-card:hover {
+    flex: unset !important;
+  }
+}
+</style>
