@@ -22,7 +22,7 @@ const handleMouseMove = (event) => {
 };
 
 onMounted(() => {
-    if (typeof window !== "undefined" && window.__IS_PRERENDER__) {
+  if (typeof window !== "undefined" && window.__IS_PRERENDER__) {
     return;
   }
   const el = container.value;
@@ -42,10 +42,6 @@ onMounted(() => {
   const pointLight = new PointLight(0x2bb6c4, 3);
   pointLight.position.set(5, 5, 5);
   scene.add(pointLight);
-
-  // Emissive material replaces the bloom post-processing pass -
-  // gives a similar "glowing" look without the heavy multi-pass
-  // shader pipeline that was costing 3+ seconds of CPU time
   const geometry = new IcosahedronGeometry(1.4, 1);
   const material = new MeshStandardMaterial({
     color: 0x2bb6c4,
@@ -117,7 +113,7 @@ onMounted(() => {
       particlesMesh.rotation.y = t * 0.04;
     }
 
-    renderer.render(scene, camera); // direct render, no composer
+    renderer.render(scene, camera); 
   };
   animate();
 
@@ -150,5 +146,6 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div ref="container" class="absolute inset-0 -z-10 pointer-events-none opacity-70 overflow-hidden rounded-[inherit]" aria-hidden="true"></div>
+  <div ref="container" class="absolute inset-0 -z-10 pointer-events-none opacity-70 overflow-hidden rounded-[inherit]"
+    aria-hidden="true"></div>
 </template>

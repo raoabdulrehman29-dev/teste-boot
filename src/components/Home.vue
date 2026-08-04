@@ -21,7 +21,7 @@
           <div class="relative z-10 ">
             <h1
               data-hero-el
-              class="text-[40px] sm:mr-6 md:text-[60px] lg:text-[85px] xl:text-[95px] xl:font-semibold inline-block text-6xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent lg:mx-6 xl:mx-6 "
+              class="text-[40px] sm:mr-6 md:text-[60px] lg:text-[85px] xl:text-[95px] xl:font-semibold inline-block text-6xl font-semibold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent lg:mx-6  "
             >
               Innovate, transform &amp;
               <span class="bg-gradient-to-r from-[#185464]/80 via-gray-800 to-gray-900 to-70% bg-clip-text text-transparent">
@@ -30,7 +30,7 @@
             </h1>
           </div>
 
-          <div data-hero-el class="flex items-end justify-start my-4 md:justify-end">
+          <div data-hero-el class="flex items-end justify-start my-4 md:justify-end  lg:mx-6 2xl:mt-8 2xl:mr-[10%]">
             <router-link to="/about" class="group">
               <button
                 class="flex items-center gap-2 rounded-2xl border border-[#185464] text-[#185464] bg-transparent px-3 sm:px-5 py-3 sm:py-4 hover:bg-gradient-to-r hover:from-[#185464] hover:to-[#2bb6c4] hover:text-white hover:shadow-[0_10px_20px_-10px_rgba(24,84,100,0.8),0_4px_6px_-2px_rgba(24,84,100,0.5)] transition-all duration-300"

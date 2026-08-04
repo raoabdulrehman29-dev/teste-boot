@@ -457,7 +457,7 @@
           <div class="items-center justify-end flex-1 hidden gap-5 xl:flex">
             <router-link to="/contact">
               <button
-                class="px-6 py-3 xl:px-10 h-14 rounded-full border-[2px] font-medium border-[#185464] text-[#185464] bg-transparent hover:bg-gradient-to-r hover:from-[#185464] hover:to-[#2bb6c4] hover:text-white transition-all duration-300"
+                class="px-6 py-3 xl:px-10 h-14 rounded-full border font-medium border-[#185464] text-[#185464] bg-transparent hover:bg-gradient-to-r hover:from-[#185464] hover:to-[#2bb6c4] hover:text-white transition-all duration-300"
               >
                 Get In Touch
               </button>

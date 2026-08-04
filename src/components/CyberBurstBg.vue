@@ -20,11 +20,10 @@ let targetRotationY = 0;
 
 const COLOR_START = new Color("#edf7ff");
 const COLOR_END = new Color("#ede9fe");
-const COLOR_TIP = new Color("#faf5ff");   // Vibrant lavender tip highlight
+const COLOR_TIP = new Color("#faf5ff");
 
 const TOTAL_LINES = 320;
 
-// Soft radial glow texture for line tips using the new purple highlight palette
 function createGlowDotTexture() {
   const canvas = document.createElement("canvas");
   canvas.width = 64;
@@ -33,8 +32,8 @@ function createGlowDotTexture() {
 
   const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
   gradient.addColorStop(0, "rgba(255, 255, 255, 1)");
-  gradient.addColorStop(0.35, "rgba(138, 116, 206, 0.85)"); // Vibrant lavender glow
-  gradient.addColorStop(0.75, "rgba(74, 58, 126, 0.35)");   // Deep purple fade
+  gradient.addColorStop(0.35, "rgba(138, 116, 206, 0.85)");
+  gradient.addColorStop(0.75, "rgba(74, 58, 126, 0.35)");
   gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
 
   ctx.fillStyle = gradient;
@@ -71,7 +70,7 @@ function buildBurstGeometry() {
     directions.push(dir);
     lengths.push(length);
 
-    // 1. Line Start Color & Position (#507c9e base)
+
     linePositions[i * 6] = origin.x;
     linePositions[i * 6 + 1] = origin.y;
     linePositions[i * 6 + 2] = origin.z;
@@ -80,7 +79,7 @@ function buildBurstGeometry() {
     lineColors[i * 6 + 1] = COLOR_START.g;
     lineColors[i * 6 + 2] = COLOR_START.b;
 
-    // 2. Line End Color & Position (#4a3a7e top)
+
     const tipPos = origin.clone().addScaledVector(dir, length);
 
     linePositions[i * 6 + 3] = tipPos.x;
@@ -91,13 +90,11 @@ function buildBurstGeometry() {
     lineColors[i * 6 + 4] = COLOR_END.g;
     lineColors[i * 6 + 5] = COLOR_END.b;
 
-    // 3. Tip Node Position
     tipPositions[i * 3] = tipPos.x;
     tipPositions[i * 3 + 1] = tipPos.y;
     tipPositions[i * 3 + 2] = tipPos.z;
   }
 
-  // Create Lines
   const lineGeo = new BufferGeometry();
   lineGeo.setAttribute("position", new BufferAttribute(linePositions, 3));
   lineGeo.setAttribute("color", new BufferAttribute(lineColors, 3));
@@ -111,7 +108,7 @@ function buildBurstGeometry() {
 
   lineSystem = new LineSegments(lineGeo, lineMat);
 
-  // Create Tip Nodes
+
   const tipGeo = new BufferGeometry();
   tipGeo.setAttribute("position", new BufferAttribute(tipPositions, 3));
 
@@ -201,7 +198,7 @@ function handleResize() {
 }
 
 onMounted(() => {
-    if (typeof window !== "undefined" && window.__IS_PRERENDER__) {
+  if (typeof window !== "undefined" && window.__IS_PRERENDER__) {
     return;
   }
   const width = canvasHost.value.clientWidth;

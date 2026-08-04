@@ -3,10 +3,7 @@
     <!-- section 1  -->
     <PageBanner title="About Us" currentPage="About Us" />
     <!-- section 2  -->
-    <div
-      v-if="isVisible('About working  awesome things in with us')"
-      class="mx-auto my-6 md:mt-10 w-full lg:my-8 px-4 max-w-[1450px]"
-    >
+    <div class="mx-auto my-6 md:mt-10 w-full   lg:my-8  px-4 max-w-[1450px]">
       <p data-reveal class="mb-2 font-semibold md:ml-8 lg:ml-10">[ About ]</p>
       <div class="flex flex-col lg:flex-row lg:justify-between">
         <div class="w-full xl:h-full">
@@ -25,11 +22,7 @@
     </div>
 
     <div
-      v-if="
-        isVisible(
-          'Invictus Hub digital solutions for companies looking to scale up their business and gain greater visibility online Offering innovative solutions sophisticated knowledge and technological advancement competitiveness and efficiency',
-        )
-      "
+    
       class="mx-auto my-10 flex w-full max-w-[1920px] flex-col items-center justify-center gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-4 lg:my-16 2xl:my-20 xl:gap-2 px-4"
     >
       <div data-reveal class="w-full lg:w-[50%]">
@@ -53,11 +46,7 @@
 
     <!-- Missions Section  -->
     <div
-      v-if="
-        isVisible(
-          'We aim increase efficiency success by offering state-of-the-art products technological and interdisciplinary expertise  Mission vision curiosity and commitment Our creative thinkers  designers  developers Great Projects View Projects',
-        )
-      "
+   
       class="Main mx-auto flex w-full max-w-[1920px] flex-col justify-center gap-4 lg:flex-row lg:gap-3 mt-10"
     >
       <div
@@ -135,7 +124,7 @@
     <!-- Customer Satisfation Animation  -->
 
     <div
-      v-if="isVisible('Customer Satisfaction and Business ')"
+  
       class="px-2 my-6 overflow-hidden whitespace-nowrap"
     >
       <h2
@@ -147,11 +136,7 @@
 
     <!-- Content Section -->
     <div
-      v-if="
-        isVisible(
-          'Customer Satisfaction and Business Not everyone is aware of the technological customized solutions for all your business processes ',
-        )
-      "
+   
       data-reveal
       class="bg-gradient-to-r from-white via-[#185464]/[15%] to-white rounded-3xl sm:mx-2 relative z-20 overflow-hidden border border-white/20 px-4 pt-10 pb-4 md:px-6 md:pt-10 lg:px-8 lg:py-16 2xl:py-20"
     >
@@ -188,11 +173,7 @@
 
     <!-- What you will get  -->
     <div
-      v-if="
-        isVisible(
-          'Designed to Help You Succeed  We already know head start focused consultation Cross-linked action Assistance',
-        )
-      "
+    
       class="mx-auto w-full px-2 md:px-6 lg:px-8 max-w-[1450px]"
     >
       <div class="mb-2 mt-20 rounded-3xl px-4 py-2 lg:mb-2 xl:pl-[1rem]">
@@ -288,11 +269,7 @@
 
     <!-- Vision Section  -->
     <div
-      v-if="
-        isVisible(
-          'Our vision leading digital solution  business success attention Transparency and Integrity uality and Excellence Flexibility and Efficiency Experience Innovations Inclusion and collaboration',
-        )
-      "
+    
       class="mx-auto flex h-full w-full flex-col items-stretch justify-center gap-6 px-4 md:my-14 md:flex-row md:px-6 lg:my-20 lg:px-8 max-w-[1450px]"
     >
       <div
@@ -435,9 +412,7 @@
 
     <!-- Over the Years Section -->
     <div
-      v-if="
-        isVisible('Over the years motivates us to continue  new challenges improve our services')
-      "
+   
       class="mx-auto my-10 mt-14 w-full px-4 md:my-2 md:px-12 lg:my-8 lg:mt-24 lg:px-16 max-w-[1450px]"
     >
       <p data-reveal class="mb-2 font-semibold">[Fun Facts]</p>
@@ -454,7 +429,7 @@
       </div>
     </div>
     <div
-      v-if="isVisible('Projects Completed Client Satisfaction Happy Clients Years Experience')"
+    
       ref="funFactsElement"
       data-reveal-group
       class="mx-auto my-10 flex w-full flex-wrap items-center justify-center px-4 py-2 md:justify-start md:px-12 lg:px-16 lg:pb-6 max-w-[1450px]"
